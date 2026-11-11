@@ -1,0 +1,1 @@
+50943d9c4da7e6ed5e3ce049a46c58574ee19ada README: document pacing, digit guard and anchor grid

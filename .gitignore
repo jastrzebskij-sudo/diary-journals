@@ -1,0 +1,62 @@
+# Diary repo: text, scripts and manifests only. Written by workstream C.
+# Originals and archives
+/Images/
+/Archival-Images/
+**/archival-images/
+# Media and large binaries
+*.wav
+*.mp3
+*.flac
+*.ogg
+*.m4a
+*.mp4
+*.mkv
+*.mov
+*.avi
+*.webm
+*.gif
+*.jpg
+*.jpeg
+*.png
+*.tif
+*.tiff
+*.bmp
+*.webp
+*.zip
+*.7z
+*.rar
+*.pptx
+*.pt
+*.pth
+*.onnx
+*.safetensors
+*.ckpt
+*.bin
+**/audio/
+**/render/
+/Publish/
+# Environments and caches
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.log
+# Key-like and secret-like
+*.key
+*.pem
+*.pfx
+*.p12
+*.ppk
+*.kdbx
+.env
+.env.*
+id_rsa*
+id_ed25519*
+id_ecdsa*
+*secret*
+*token*
+*credential*
+*apikey*
+*api_key*
+.git-credentials
+.netrc
