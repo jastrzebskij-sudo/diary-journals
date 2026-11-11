@@ -1,0 +1,89 @@
+<!doctype html><html lang="pl"><head><meta charset="utf-8">
+<title>Zeszyt 2 - proofreading</title>
+<style>
+:root{--bg:#f6f3ec;--ink:#1d1b16;--line:#cfc8b8;--hl:#ffe08a;--gap:#f7b2a8;--acc:#27507a}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 Georgia,serif;background:var(--bg);color:var(--ink);height:100vh;display:flex;flex-direction:column}
+header{display:flex;gap:10px;align-items:center;padding:6px 12px;border-bottom:1px solid var(--line);flex-wrap:wrap;font-family:system-ui,sans-serif;font-size:13px}
+header select,header button,header input{font:inherit;padding:3px 8px}
+button{cursor:pointer;border:1px solid var(--line);background:#fff;border-radius:4px}
+button.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+#stat{margin-left:auto;color:#555}
+main{flex:1;display:flex;min-height:0}
+#imgpane{flex:1 1 55%;overflow:auto;background:#2b2a27;cursor:grab}
+#imgpane img{display:block;transform-origin:0 0}
+#txtpane{flex:1 1 45%;overflow:auto;padding:14px 18px;border-left:1px solid var(--line);min-width:320px}
+#view{white-space:pre-wrap;font-size:17px;line-height:1.75}
+#edit{width:100%;height:100%;min-height:70vh;font:16px/1.7 Georgia,serif;padding:8px;border:1px solid var(--line);display:none;background:#fffdf7}
+mark.u{background:var(--hl);border-radius:3px;padding:0 2px}
+mark.g{background:var(--gap);border-radius:3px;padding:0 2px}
+.tag{color:var(--acc);font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.03em}
+#meta{font-family:system-ui,sans-serif;font-size:12px;color:#555;margin-bottom:10px;border-bottom:1px dashed var(--line);padding-bottom:6px}
+.edited{color:#a33;font-weight:600}
+</style></head><body>
+<header>
+ <button id="prev" title="previous page (Alt+Left)">&#9664;</button>
+ <select id="page"></select>
+ <button id="next" title="next page (Alt+Right)">&#9654;</button>
+ <label>set <select id="set"></select></label>
+ <button id="zout">&minus;</button><button id="zfit">fit</button><button id="zin">+</button>
+ <button id="mode">Edit</button>
+ <button id="save">Save corrected</button>
+ <button id="revert">Discard my edits</button>
+ <span id="stat"></span>
+</header>
+<main><div id="imgpane"><img id="img" alt="scan"></div>
+<div id="txtpane"><div id="meta"></div><div id="view"></div><textarea id="edit" spellcheck="false"></textarea></div></main>
+<script>
+const DATA={"imgbase": "../../../Assets/Diary/Notebook2/prep/e1568/", "sets": ["draft"], "pages": [{"id": "01", "file": "1.jpg", "type": "", "text": {}, "meta": {}}, {"id": "02", "file": "2.jpg", "type": "", "text": {}, "meta": {}}, {"id": "03", "file": "3.jpg", "type": "", "text": {}, "meta": {}}, {"id": "04", "file": "4.jpg", "type": "", "text": {}, "meta": {}}, {"id": "05", "file": "5.jpg", "type": "", "text": {}, "meta": {}}, {"id": "06", "file": "6.jpg", "type": "", "text": {}, "meta": {}}, {"id": "07", "file": "7.jpg", "type": "", "text": {}, "meta": {}}, {"id": "08", "file": "8.jpg", "type": "", "text": {}, "meta": {}}, {"id": "09", "file": "9.jpg", "type": "", "text": {}, "meta": {}}, {"id": "10", "file": "10.jpg", "type": "", "text": {}, "meta": {}}, {"id": "11", "file": "11.jpg", "type": "", "text": {}, "meta": {}}, {"id": "12", "file": "12.jpg", "type": "", "text": {}, "meta": {}}, {"id": "13", "file": "13.jpg", "type": "", "text": {}, "meta": {}}, {"id": "14", "file": "14.jpg", "type": "", "text": {}, "meta": {}}, {"id": "15", "file": "15.jpg", "type": "", "text": {}, "meta": {}}, {"id": "16", "file": "16.jpg", "type": "", "text": {}, "meta": {}}, {"id": "17", "file": "17.jpg", "type": "", "text": {}, "meta": {}}, {"id": "18", "file": "18.jpg", "type": "", "text": {}, "meta": {}}, {"id": "19", "file": "19.jpg", "type": "", "text": {}, "meta": {}}, {"id": "20", "file": "20.jpg", "type": "", "text": {}, "meta": {}}, {"id": "21", "file": "21.jpg", "type": "", "text": {}, "meta": {}}, {"id": "22", "file": "22.jpg", "type": "", "text": {}, "meta": {}}, {"id": "23", "file": "23.jpg", "type": "", "text": {}, "meta": {}}, {"id": "24", "file": "24.jpg", "type": "", "text": {}, "meta": {}}, {"id": "25", "file": "25.jpg", "type": "", "text": {}, "meta": {}}, {"id": "26", "file": "26.jpg", "type": "", "text": {}, "meta": {}}, {"id": "27", "file": "27.jpg", "type": "", "text": {}, "meta": {}}, {"id": "28", "file": "28.jpg", "type": "", "text": {}, "meta": {}}, {"id": "29", "file": "29.jpg", "type": "", "text": {}, "meta": {}}, {"id": "30", "file": "30.jpg", "type": "", "text": {}, "meta": {}}, {"id": "31", "file": "31.jpg", "type": "", "text": {}, "meta": {}}, {"id": "32", "file": "32.jpg", "type": "", "text": {}, "meta": {}}, {"id": "33", "file": "33.jpg", "type": "", "text": {}, "meta": {}}, {"id": "34", "file": "34.jpg", "type": "", "text": {}, "meta": {}}, {"id": "35", "file": "35.jpg", "type": "", "text": {}, "meta": {}}, {"id": "36", "file": "36.jpg", "type": "", "text": {}, "meta": {}}, {"id": "37", "file": "37.jpg", "type": "", "text": {}, "meta": {}}, {"id": "38", "file": "38.jpg", "type": "", "text": {}, "meta": {}}, {"id": "39", "file": "39.jpg", "type": "", "text": {}, "meta": {}}, {"id": "40", "file": "40.jpg", "type": "", "text": {}, "meta": {}}, {"id": "40a", "file": "40_.jpg", "type": "", "text": {}, "meta": {}}, {"id": "41", "file": "41.jpg", "type": "", "text": {}, "meta": {}}, {"id": "42", "file": "42.jpg", "type": "", "text": {}, "meta": {}}, {"id": "43", "file": "43.jpg", "type": "", "text": {}, "meta": {}}, {"id": "44", "file": "44.jpg", "type": "", "text": {}, "meta": {}}, {"id": "45", "file": "45.jpg", "type": "", "text": {}, "meta": {}}, {"id": "46", "file": "46.jpg", "type": "", "text": {}, "meta": {}}, {"id": "47", "file": "47.jpg", "type": "", "text": {}, "meta": {}}, {"id": "48", "file": "48.jpg", "type": "", "text": {}, "meta": {}}, {"id": "49", "file": "49.jpg", "type": "", "text": {}, "meta": {}}, {"id": "50", "file": "50.jpg", "type": "", "text": {}, "meta": {}}, {"id": "51", "file": "51.jpg", "type": "", "text": {}, "meta": {}}, {"id": "52", "file": "52.jpg", "type": "", "text": {}, "meta": {}}, {"id": "53", "file": "53.jpg", "type": "", "text": {}, "meta": {}}, {"id": "54", "file": "54.jpg", "type": "", "text": {}, "meta": {}}, {"id": "55", "file": "55.jpg", "type": "", "text": {}, "meta": {}}, {"id": "56", "file": "56.jpg", "type": "", "text": {}, "meta": {}}, {"id": "57", "file": "57.jpg", "type": "", "text": {}, "meta": {}}, {"id": "58", "file": "58.jpg", "type": "", "text": {}, "meta": {}}, {"id": "59", "file": "59.jpg", "type": "", "text": {}, "meta": {}}, {"id": "60", "file": "60.jpg", "type": "", "text": {}, "meta": {}}, {"id": "61", "file": "61.jpg", "type": "", "text": {}, "meta": {}}, {"id": "62", "file": "62.jpg", "type": "", "text": {}, "meta": {}}, {"id": "63", "file": "63.jpg", "type": "", "text": {}, "meta": {}}, {"id": "64", "file": "64.jpg", "type": "", "text": {}, "meta": {}}, {"id": "65", "file": "65.jpg", "type": "", "text": {}, "meta": {}}, {"id": "66", "file": "66.jpg", "type": "", "text": {}, "meta": {}}, {"id": "67", "file": "67.jpg", "type": "", "text": {}, "meta": {}}, {"id": "68", "file": "68.jpg", "type": "", "text": {}, "meta": {}}, {"id": "69", "file": "69.jpg", "type": "", "text": {}, "meta": {}}, {"id": "70", "file": "70.jpg", "type": "", "text": {}, "meta": {}}, {"id": "71", "file": "71.jpg", "type": "", "text": {}, "meta": {}}, {"id": "72", "file": "72.jpg", "type": "", "text": {}, "meta": {}}, {"id": "73", "file": "73.jpg", "type": "", "text": {}, "meta": {}}, {"id": "74", "file": "74.jpg", "type": "", "text": {}, "meta": {}}, {"id": "75", "file": "75.jpg", "type": "", "text": {}, "meta": {}}, {"id": "76", "file": "76.jpg", "type": "", "text": {}, "meta": {}}, {"id": "77", "file": "77.jpg", "type": "", "text": {}, "meta": {}}, {"id": "78", "file": "78.jpg", "type": "", "text": {}, "meta": {}}, {"id": "79", "file": "79.jpg", "type": "", "text": {}, "meta": {}}, {"id": "80", "file": "80.jpg", "type": "", "text": {}, "meta": {}}, {"id": "81", "file": "81.jpg", "type": "", "text": {}, "meta": {}}, {"id": "82", "file": "82.jpg", "type": "", "text": {}, "meta": {}}, {"id": "83", "file": "83.jpg", "type": "", "text": {}, "meta": {}}, {"id": "84", "file": "84.jpg", "type": "", "text": {}, "meta": {}}, {"id": "84a", "file": "_ 2z 84.jpg", "type": "", "text": {}, "meta": {}}, {"id": "84b", "file": "_ 2z 84a.jpg", "type": "", "text": {}, "meta": {}}]};
+const $=id=>document.getElementById(id);
+let pi=0,si=0,zoom=1,editing=false;
+const key=()=>'z2:'+DATA.pages[pi].id;
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function hl(t){
+  return esc(t).split('\n').map(line=>{
+    line=line.replace(/^\s*\[(\/?wycinek|margines|zdjęcie:[^\]]*)\]/,m=>'<span class="tag">'+m+'</span>');
+    return line.split(/(\s+)/).map(w=>{
+      if(/\[\.{3,}\]/.test(w)) return '<mark class="g">'+w+'</mark>';
+      if(/\[\?\]|\[[^\]\s|]+\|[^\]]*\?\]/.test(w)) return '<mark class="u">'+w+'</mark>';
+      return w}).join('')}).join('\n')}
+function cur(){const p=DATA.pages[pi];const s=DATA.sets[si];return (p.text[s]??null)}
+function render(){
+  const p=DATA.pages[pi],s=DATA.sets[si];
+  $('img').src=DATA.imgbase+p.id+'.jpg';
+  const saved=localStorage.getItem(key());
+  const base=cur();
+  const t=saved!==null?saved:(base??'');
+  $('view').innerHTML=base===null&&saved===null?'<i>no transcript for this page in set "'+s+'"</i>':hl(t);
+  $('edit').value=t;
+  const m=(p.meta[s]||{});
+  const words=t.split(/\s+/).filter(Boolean),unc=words.filter(w=>/\[\?\]|\[\.{3,}\]|\|[^\]]*\?\]/.test(w)).length;
+  $('meta').innerHTML='page <b>'+p.id+'</b> &middot; file '+esc(p.file)+' &middot; '+(m.type||p.type||'')+' '+(m.language||'')+
+    (m.dates&&m.dates.length?' &middot; '+m.dates.join(', '):'')+(m.model?' &middot; '+esc(m.model)+' / '+esc(m.images||''):'')+
+    (m.margin_notes?'<br>margin: '+esc(m.margin_notes):'')+(m.notes?'<br>note: '+esc(m.notes):'')+
+    (saved!==null?'<br><span class="edited">showing your unsaved edits (kept in this browser)</span>':'');
+  $('stat').textContent=words.length+' words, '+unc+' marked uncertain ('+(words.length?(100*unc/words.length).toFixed(1):0)+'%)';
+  $('page').value=pi;$('set').value=si}
+function setMode(e){editing=e;$('edit').style.display=e?'block':'none';$('view').style.display=e?'none':'block';
+  $('mode').textContent=e?'Preview':'Edit';$('mode').classList.toggle('on',e);if(!e)render()}
+function go(d){pi=Math.max(0,Math.min(DATA.pages.length-1,pi+d));render();$('imgpane').scrollTo(0,0)}
+function z(f){zoom=f;const im=$('img');im.style.width=(im.naturalWidth*zoom)+'px'}
+function fit(){const im=$('img');if(im.naturalWidth)z(($('imgpane').clientWidth-4)/im.naturalWidth)}
+DATA.pages.forEach((p,i)=>$('page').add(new Option(p.id+(p.type&&p.type!=='handwriting'?' ('+p.type+')':''),i)));
+DATA.sets.forEach((s,i)=>$('set').add(new Option(s,i)));
+$('page').onchange=e=>{pi=+e.target.value;render()};$('set').onchange=e=>{si=+e.target.value;render()};
+$('prev').onclick=()=>go(-1);$('next').onclick=()=>go(1);
+$('zin').onclick=()=>z(zoom*1.2);$('zout').onclick=()=>z(zoom/1.2);$('zfit').onclick=fit;$('img').onload=fit;
+$('mode').onclick=()=>setMode(!editing);
+$('edit').oninput=()=>localStorage.setItem(key(),$('edit').value);
+$('revert').onclick=()=>{if(confirm('Discard your unsaved edits for page '+DATA.pages[pi].id+'?')){localStorage.removeItem(key());render()}};
+$('save').onclick=()=>{const t=$('edit').value;const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([t],{type:'text/plain;charset=utf-8'}));a.download=DATA.pages[pi].id+'.txt';a.click();
+  alert('Downloaded '+a.download+'. Move it into Notebook2\\proofread\\ (it is the corrected text of this page).')};
+document.onkeydown=e=>{if(e.altKey&&e.key==='ArrowRight')go(1);if(e.altKey&&e.key==='ArrowLeft')go(-1)};
+let drag=null;const ip=$('imgpane');
+ip.onmousedown=e=>{drag={x:e.clientX,y:e.clientY,l:ip.scrollLeft,t:ip.scrollTop};e.preventDefault()};
+window.onmouseup=()=>drag=null;window.onmousemove=e=>{if(drag){ip.scrollLeft=drag.l-(e.clientX-drag.x);ip.scrollTop=drag.t-(e.clientY-drag.y)}};
+const h=location.hash.slice(1).split(',');if(h[0]){const i=DATA.pages.findIndex(p=>p.id===h[0]);if(i>=0)pi=i}
+if(h[1]){const i=DATA.sets.indexOf(h[1]);if(i>=0)si=i}
+render();
+</script></body></html>
