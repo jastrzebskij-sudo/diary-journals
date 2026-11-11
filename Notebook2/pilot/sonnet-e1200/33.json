@@ -1,0 +1,20 @@
+{
+ "page": "33",
+ "type": "handwriting",
+ "language": "pl",
+ "dates": [
+  "1942-06-29",
+  "1942-07-01",
+  "1942-07-02",
+  "1942-07-03",
+  "1942-07-04"
+ ],
+ "margin_notes": "'starań' and 'cukier' look like pencil additions among the ink lines (placed in the text)",
+ "notes": "Page is badly torn: several holes remove words in the first half; [...] and [.....] mark lost text, not illegible handwriting. The date line of the second entry (30 VI?) is partly lost.",
+ "words": 188,
+ "uncertain": 27,
+ "model": "claude-sonnet-5-5 (configured id; read in chat session)",
+ "images": "e1200",
+ "prompt": "a_transcribe_prompt.md v1",
+ "transcribed_on": "2026-11-11"
+}

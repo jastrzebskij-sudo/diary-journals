@@ -1,0 +1,16 @@
+{
+ "page": "40",
+ "type": "clipping",
+ "language": "pl+fr",
+ "dates": [
+  "1942-08-19"
+ ],
+ "margin_notes": "Polish pencil note written vertically along the left edge of the clipping, naming the paper (Echo d'Oran); last words faint",
+ "notes": "Map of the Channel/North Sea (labels Londres, Dieppe, Bruxelles etc.) not transcribed; a [zdjecie] line was not used because the rules cover photos only. A fragment of the next clipping's text is visible at the bottom edge and was skipped. Dateline Berlin, 19 aout; no handwritten date.",
+ "words": 209,
+ "uncertain": 2,
+ "model": "claude-sonnet-5-5 (configured id; read in chat session)",
+ "images": "e1200",
+ "prompt": "a_transcribe_prompt.md v1",
+ "transcribed_on": "2026-11-11"
+}

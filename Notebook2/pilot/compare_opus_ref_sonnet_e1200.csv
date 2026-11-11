@@ -1,0 +1,8 @@
+﻿set,page,words,uncertain,uncertain_rate,diff_words_vs_ref,diff_rate_vs_ref
+sonnet-e1200,01,328,4,0.012,9,0.027
+sonnet-e1200,17,246,4,0.016,9,0.037
+sonnet-e1200,33,188,27,0.144,6,0.032
+sonnet-e1200,40,209,2,0.010,2,0.010
+sonnet-e1200,55,220,3,0.014,4,0.018
+sonnet-e1200,75,191,3,0.016,4,0.021
+sonnet-e1200,ALL,1382,43,0.031,34,0.025

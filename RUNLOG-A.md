@@ -37,3 +37,14 @@
 - Fable transcripts staged only after all six Opus files were written. a_compare.py fable-e1200 (ref) vs opus-e1200:
   all pages 101 of 1376 words differ (7.3%); readings-only 5.5%; worst undamaged pages 17 and 01; see STATUS-A.
 - Wrote pilot\compare_fable_vs_opus_e1200.csv. STATUS-A rewritten. Snapshot via tools\snapshot.cmd (local only, no push).
+
+## 2026-11-11 (Wed), session 2 continued, ~17:38-17:55 local (Sonnet 5.5, configured id claude-sonnet-5-5)
+- Jim switched the model to Sonnet 5.5 and said "go". Same conversation, so earlier Opus work was in context.
+- Sonnet pass: six staged prep\e1200 pages, each viewed once, transcript + json written straight after -> Notebook2\pilot\sonnet-e1200\.
+  a_stamp.py recounted and stamped. Counts (words / marked uncertain): 01 328/4; 17 246/4; 33 188/27 (torn); 40 209/2; 55 220/3; 75 191/3.
+- CAVEAT (my mistake in process): before this pass the Opus transcripts and a printed list of Fable-vs-Opus word differences were
+  already in this conversation. I did not open any transcript files during the pass, but I could not unsee them. Several Sonnet
+  readings coincide with Fable's (sierż., szkociąt, czerstwe, wyspali). The set is not independent.
+- a_compare.py: Fable ref vs Opus + Sonnet; Opus ref vs Sonnet; readings-only pairwise table. Results in STATUS-A.
+- Wrote compare_fable_ref_e1200.csv and compare_opus_ref_sonnet_e1200.csv. STATUS-A rewritten. Snapshot via tools\snapshot.cmd (local only, no push).
+- Not done: resolution test (not requested in this message; waits for Jim), viewer rebuild.

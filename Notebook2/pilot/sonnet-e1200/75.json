@@ -1,0 +1,16 @@
+{
+ "page": "75",
+ "type": "handwriting",
+ "language": "pl",
+ "dates": [
+  "1942-12-09"
+ ],
+ "margin_notes": "",
+ "notes": "Continues an entry from the previous page (its date is not on this page). 'Ahtertool' as written = Auchtertool (glossary). 'szkociat', 'czerstwe' and 'warszawskich' are doubtful readings; 'Polska' in the anthem title is overwritten.",
+ "words": 191,
+ "uncertain": 3,
+ "model": "claude-sonnet-5-5 (configured id; read in chat session)",
+ "images": "e1200",
+ "prompt": "a_transcribe_prompt.md v1",
+ "transcribed_on": "2026-11-11"
+}
