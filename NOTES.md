@@ -12,3 +12,5 @@
 [A] 2026-11-11 In the Cowork chat session the loki Read tool returns images as base64 text, not as pictures: never use it for scans; images must be read by subagents on loki or staged into the session.
 [C] 2026-11-11 c_assemble.py is the assembly entry point (args: --episode --page --audio --face --journal [--title]); face may be mp4 or a still; look/grain/zoom are arguments, defaults sepia, grain 12.
 [C] 2026-11-11 SadTalker needs a compatibility shim (tools\c_sadtalker_shim.py) and a remaining fix in face3d preprocess.py; no third-party file has been edited yet, awaiting Jim's OK to patch it or to switch candidate.
+[C] 2026-11-11 No XTTS service exists on brokkr; TTS runs as batch scripts from ~/work/tts/.venv as claude-agent (GPU index 1 only); my wrapper scripts live in ~/c-workstream on brokkr and in Diary\tools\c_brokkr_*.sh.
+[C] 2026-11-11 Narrator candidates for Ep1 page 1 were chosen by me from the existing blend latents (Kumar65_Ilkin35, Kumar35_Ilkin65, Kumar20_Ilkin80), an assumption about Jim's shortlist; the narrator pick is Jim's.
