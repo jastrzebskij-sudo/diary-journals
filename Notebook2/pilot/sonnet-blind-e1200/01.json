@@ -1,1 +1,17 @@
-{"page":"01","type":"handwriting","language":"pl","dates":["1942-02-01","1942-02-02"],"words":0,"uncertain":0,"margin_notes":"","notes":"'nakaz' is a small insertion at line start, kept in place. 'd-[?]' after pułkownik: line-end hyphen before 'okręgu', not rejoined because d-ca is an abbreviation. Two crossed-out words unreadable. Glossary and pilot sets not consulted (blind pass)."}
+{
+ "page": "01",
+ "type": "handwriting",
+ "language": "pl",
+ "dates": [
+  "1942-02-01",
+  "1942-02-02"
+ ],
+ "words": 320,
+ "uncertain": 20,
+ "margin_notes": "",
+ "notes": "'nakaz' is a small insertion at line start, kept in place. 'd-[?]' after pułkownik: line-end hyphen before 'okręgu', not rejoined because d-ca is an abbreviation. Two crossed-out words unreadable. Glossary and pilot sets not consulted (blind pass).",
+ "model": "claude-sonnet-5-5",
+ "images": "e1200",
+ "prompt": "v2",
+ "transcribed_on": "2026-11-11"
+}

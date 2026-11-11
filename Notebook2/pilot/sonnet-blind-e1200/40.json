@@ -1,0 +1,16 @@
+{
+ "page": "40",
+ "type": "clipping",
+ "language": "pl+fr",
+ "dates": [
+  "1942-08-19"
+ ],
+ "words": 204,
+ "uncertain": 2,
+ "margin_notes": "vertical note along the left edge, written bottom to top, describing the clipping (source Echo d'Oran, landing of the British)",
+ "notes": "Printed French copied as printed (headlines without accents as in the original). Map labels not transcribed; caption 'Dieppe est situé...' and credit 'Y. Y. 5448' are. Line-end hyphens in the printed columns rejoined. A cut-off printed line at the bottom edge is unreadable ([.....]). Margin word 'dezbarkowaniu' is a guess between desant/debark-type spellings. Glossary and pilot sets not consulted (blind pass).",
+ "model": "claude-sonnet-5-5",
+ "images": "e1200",
+ "prompt": "v2",
+ "transcribed_on": "2026-11-11"
+}

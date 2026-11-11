@@ -1,0 +1,20 @@
+{
+ "page": "33",
+ "type": "handwriting",
+ "language": "pl",
+ "dates": [
+  "1942-06-29",
+  "1942-07-01",
+  "1942-07-02",
+  "1942-07-03",
+  "1942-07-04"
+ ],
+ "words": 182,
+ "uncertain": 33,
+ "margin_notes": "",
+ "notes": "Torn page: many holes where words are lost, marked [...] or [.....]. Pencil. 'cukier' is a small insertion above the line, placed in the text. Several day headers partly lost. The first weekday ends '-niedziałek' (hole before it). Glossary and pilot sets not consulted (blind pass).",
+ "model": "claude-sonnet-5-5",
+ "images": "e1200",
+ "prompt": "v2",
+ "transcribed_on": "2026-11-11"
+}

@@ -1,0 +1,16 @@
+{
+ "page": "75",
+ "type": "handwriting",
+ "language": "pl",
+ "dates": [
+  "1942-12-09"
+ ],
+ "words": 185,
+ "uncertain": 11,
+ "margin_notes": "",
+ "notes": "'Polska' in 'Jeszcze Polska' appears overwritten; final reading given. 'szkociąt' and 'czerstwe' are contextual readings (letters ambiguous). Place name on the last line is a guess. Right edge cut on 'narodow[...]'. Glossary and pilot sets not consulted (blind pass).",
+ "model": "claude-sonnet-5-5",
+ "images": "e1200",
+ "prompt": "v2",
+ "transcribed_on": "2026-11-11"
+}

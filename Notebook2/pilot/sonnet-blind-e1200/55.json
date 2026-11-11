@@ -1,0 +1,17 @@
+{
+ "page": "55",
+ "type": "handwriting",
+ "language": "pl",
+ "dates": [
+  "1942-10-11",
+  "1942-10-12"
+ ],
+ "words": 213,
+ "uncertain": 18,
+ "margin_notes": "",
+ "notes": "Right edge cut/blurred on many lines (several words end in [...]). Number before 'tuneli' (route to Fez) is [4|7?]: glyph is close to the 4 in '4 ludzi'. 'o 4 jesteśmy w Casablance' read as 4. Line 29-31 ('gdzie ma / nas umieścić ... trzymany') partly guessed; no hyphen rejoin where none was visible. Glossary and pilot sets not consulted (blind pass).",
+ "model": "claude-sonnet-5-5",
+ "images": "e1200",
+ "prompt": "v2",
+ "transcribed_on": "2026-11-11"
+}
