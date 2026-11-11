@@ -1,5 +1,5 @@
 """c_listening_sheet.py - build a self-contained HTML listening sheet from candidate narration WAVs (workstream C, 2026-11-11).
-Usage (Assets venv python):
+Usage (Assets venv python; add --external-audio if the viewer will not play inline audio):
   python c_listening_sheet.py --text page1.txt --out sheet.html --title "Episode 1, page 1 (PL)" \
          --voice LABEL=path/to/file.wav [--voice LABEL=...] [--assets D:\\Claude\\Assets\\Diary]
 Each WAV is converted to 64 kbit/s mono mp3 with ffmpeg (from <assets>\\bin) and embedded as base64, so the single
@@ -11,6 +11,7 @@ from pathlib import Path
 ap = argparse.ArgumentParser()
 ap.add_argument("--text", required=True); ap.add_argument("--out", required=True)
 ap.add_argument("--title", default="Listening sheet"); ap.add_argument("--voice", action="append", required=True)
+ap.add_argument("--external-audio", action="store_true", help="write <out stem>-audio/<label>.mp3 beside the HTML and link them (for viewers that block inline data: audio)")
 ap.add_argument("--assets", default=r"D:\Claude\Assets\Diary")
 a = ap.parse_args()
 ff = str(Path(a.assets) / "bin" / "ffmpeg.exe"); fp = str(Path(a.assets) / "bin" / "ffprobe.exe")
@@ -21,12 +22,17 @@ with tempfile.TemporaryDirectory() as td:
         mp3 = Path(td) / (label + ".mp3")
         subprocess.run([ff, "-hide_banner", "-loglevel", "error", "-y", "-i", path, "-ac", "1", "-b:a", "64k", str(mp3)], check=True)
         dur = float(subprocess.check_output([fp, "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(mp3)]))
-        cards.append((label, dur, base64.b64encode(mp3.read_bytes()).decode()))
+        if a.external_audio:
+            ext = Path(a.out).with_suffix("").with_name(Path(a.out).stem + "-audio"); ext.mkdir(exist_ok=True)
+            (ext / (label + ".mp3")).write_bytes(mp3.read_bytes())
+            cards.append((label, dur, None, ext.name + "/" + label + ".mp3"))
+        else:
+            cards.append((label, dur, base64.b64encode(mp3.read_bytes()).decode(), None))
 text = Path(a.text).read_text(encoding="utf-8-sig").strip()
-items = "".join(f"""<section class="card"><h2>{html.escape(l)}</h2><audio controls preload="none" src="data:audio/mpeg;base64,{b}"></audio>
+items = "".join(f"""<section class="card"><h2>{html.escape(l)}</h2><audio controls preload="metadata" src="{u if u else "data:audio/mpeg;base64," + b}"></audio>
 <div class="row"><span>{d:.0f} s</span><label>Rating <select data-k="{html.escape(l)}"><option value="">-</option>{''.join(f'<option>{i}</option>' for i in range(1,6))}</select></label>
 <label><input type="radio" name="pick" value="{html.escape(l)}"> my pick</label></div>
-<textarea data-n="{html.escape(l)}" placeholder="notes (pace, warmth, Polish diction, artefacts)"></textarea></section>""" for l, d, b in cards)
+<textarea data-n="{html.escape(l)}" placeholder="notes (pace, warmth, Polish diction, artefacts)"></textarea></section>""" for l, d, b, u in cards)
 page = f"""<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Narrator choice</title><style>
 :root{{--bg:#f6f2ea;--fg:#2b2620;--card:#fffdf8;--line:#d9d0bf;--acc:#7a4b22}}
@@ -50,4 +56,4 @@ document.querySelectorAll('input,select,textarea').forEach(e=>{{const k=(e.datas
  else{{const v=G(k);if(v)e.value=v;e.oninput=()=>{{S(k,e.value);show()}}}}}});show();
 </script></html>"""
 Path(a.out).write_text(page, encoding="utf-8")
-print("wrote", a.out, f"{Path(a.out).stat().st_size/1e6:.1f} MB", [(l, round(d)) for l, d, _ in cards])
+print("wrote", a.out, f"{Path(a.out).stat().st_size/1e6:.1f} MB", [(l, round(d)) for l, d, _, _ in cards])

@@ -23,3 +23,4 @@
 [B] 2026-11-11 Wikimedia throttles loki (HTTP 429 on the API and on upload.wikimedia.org even after a polite retry) and WebFetch cannot load commons.wikimedia.org; stopped per the two-failures rule, no mirror used; Commons category listings work better than free-text search.
 [B] 2026-11-11 Device tool calls time out at about 80 s: long steps run in the background and are polled.
 [B] 2026-11-11 Production-Tracker archival_images_sourced is TRUE for Eps 1, 3, 4 but the storyboards list many more landmarks than the images on disk; flags left unchanged pending Jim.
+[C] 2026-11-11 Listening sheets: prefer plain MP3 files or the linked-audio variant (--external-audio); inline base64 audio did not play in Jim's viewer.

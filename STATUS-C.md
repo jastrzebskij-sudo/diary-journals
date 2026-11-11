@@ -1,5 +1,5 @@
 # STATUS-C (workstream C) - rewritten 2026-11-11 ~12:20 local
-STATE: step 3 done (candidates rendered, listening sheet sent); waiting on Jim's narrator pick and SadTalker decision.
+STATE: step 3 done; waiting on Jim narrator pick (sheet audio replaced by plain MP3s) and SadTalker decision.
 DONE
 - Git local baseline + snapshots (nothing pushed). Toolchain on loki (Assets\Diary: py3.11, ffmpeg, venv\face).
 - brokkr discovery: no XTTS service; ~/work/tts has venv, weights, latents; run as batch scripts (GPU1). uv added user-level.
