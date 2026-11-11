@@ -1,5 +1,5 @@
 # STATUS-C (workstream C) - rewritten 2026-11-11 ~18:35 local
-STATE: audio done; face bake-off blocked on one decision.
+STATE: narration v2 (commas, take-selected) sent; waiting on Jim: Otwock spelling pick + SadTalker patch OK.
 DONE
 - Narrator chosen by Jim: Kumar65_Ilkin35 80% + Damien_Black 20% blend, deepened -1.0 st. Recorded in NOTES.md.
 - Ep1 page 1 narration: Assets\Diary\tts\ep01_pl\narration_ep01_p1_PL.wav (+ _16k.wav, .mp3), 83.3 s, 93.6 Hz.
