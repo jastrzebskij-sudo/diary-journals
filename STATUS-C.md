@@ -1,19 +1,18 @@
-# STATUS-C (workstream C) - rewritten 2026-11-11 ~12:20 local
-STATE: waiting on Jim: narrator pick among deep-1.0 and Damien 80/20 variants, and SadTalker decision.
+# STATUS-C (workstream C) - rewritten 2026-11-11 ~18:35 local
+STATE: audio done; face bake-off blocked on one decision.
 DONE
-- Git local baseline + snapshots (nothing pushed). Toolchain on loki (Assets\Diary: py3.11, ffmpeg, venv\face).
-- brokkr discovery: no XTTS service; ~/work/tts has venv, weights, latents; run as batch scripts (GPU1). uv added user-level.
-- Ep1 page 1 (2 paragraphs) rendered in 3 blend voices, 107-118 s each (target was 60-90 s); listening sheet
-  Assets\Diary\tts\ep01p1\narrator-choice-ep01p1-PL.html sent to Jim.
-- tools\c_assemble.py tested with a still face + placeholder audio.
+- Narrator chosen by Jim: Kumar65_Ilkin35 80% + Damien_Black 20% blend, deepened -1.0 st. Recorded in NOTES.md.
+- Ep1 page 1 narration: Assets\Diary\tts\ep01_pl\narration_ep01_p1_PL.wav (+ _16k.wav, .mp3), 83.3 s, 93.6 Hz.
+- Assembly script tools\c_assemble.py works (tested with still face); loki toolchain and brokkr TTS run via scripts.
+- Git local snapshots only (nothing pushed).
 BLOCKED
-- SadTalker fails at face3d\util\preprocess.py:101 (t[0],t[1] arrays); needs a one-line third-party edit (Jim's OK) or another model.
+- Face models: SadTalker fails at face3d\util\preprocess.py:101 (t[0],t[1] arrays); fix = float() on those two values
+  in the Assets copy. Awaiting Jim's OK; alternative = try other models first (MuseTalk/Hallo2/Sonic: several GB each).
 NEXT
-1. On Jim's pick: re-render chosen voice if page 1 is to be shortened to ~90 s (first paragraph + part of 2).
-2. Face bake-off (3 models) on identical audio: that audio = chosen voice (or Kumar65_Ilkin35 meanwhile).
-3. Add --jx to c_assemble.py; assemble final mp4; README.
+1. Face bake-off on narration_ep01_p1_PL_16k.wav with WA0003 (young/low-res) and WA0005 (older/sharp), 3 models,
+   judge lip sync, likeness, artifacts, speed; manifest per run.
+2. Add --jx to c_assemble.py; assemble final mp4 from the best face video; write README.
 NEEDS JIM
-- Narrator pick (the sheet) and whether page 1 should be cut to ~90 s.
-- OK to patch SadTalker line (Assets copy) or choose different models for the bake-off.
-- brokkr notes: ~/CLAUDE.md there asks for agent/<topic> branches pushed to outbox; I pushed nothing and committed nothing on brokkr.
-SPEND: ~85 tool calls, ~1h45, moderate tokens.
+- OK to patch the SadTalker line (Assets copy), and which other 2 models, if any, you prefer.
+- Confirm the narration audio plays and sounds right (sent as mp3).
+SPEND: ~140 tool calls, ~6.5 h wall incl. idle, moderate tokens.
