@@ -10,3 +10,5 @@
 [A] 2026-11-11 Transcription is diplomatic (the writer's spelling is kept, no correction); marks: word[?], [a|b?], [...], [margines], [wycinek]..[/wycinek], [zdjęcie: ...]; rules live in tools\a_transcribe_prompt.md (v1).
 [A] 2026-11-11 PROVISIONAL, not confirmed from content: 40_.jpg = 40a (after 40), "_ 2z 84.jpg" = 84a, "_ 2z 84a.jpg" = 84b (after 84); set in a_paths.py EXTRA.
 [A] 2026-11-11 In the Cowork chat session the loki Read tool returns images as base64 text, not as pictures: never use it for scans; images must be read by subagents on loki or staged into the session.
+[C] 2026-11-11 c_assemble.py is the assembly entry point (args: --episode --page --audio --face --journal [--title]); face may be mp4 or a still; look/grain/zoom are arguments, defaults sepia, grain 12.
+[C] 2026-11-11 SadTalker needs a compatibility shim (tools\c_sadtalker_shim.py) and a remaining fix in face3d preprocess.py; no third-party file has been edited yet, awaiting Jim's OK to patch it or to switch candidate.

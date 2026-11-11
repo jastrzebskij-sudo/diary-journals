@@ -1,19 +1,19 @@
-# STATUS-C (workstream C) - rewritten 2026-11-11 ~11:50 local
-STATE: working loki-only; brokkr on hold until Jim says go.
+# STATUS-C (workstream C) - rewritten 2026-11-11 ~12:10 local
+STATE: loki-only work paused at SadTalker (two-failure rule); brokkr on hold until Jim says go.
 DONE
-- Git baseline c315de5 + notes snapshot; tools\snapshot tested. Nothing pushed/deleted.
-- Assets\Diary set up: Python 3.11, ffmpeg (libx264, nvenc), venv\face (torch 2.11 cu128, CUDA OK on RTX 4080 SUPER 16 GB).
-- SadTalker installed (candidate 1) with checkpoints; setup script tools\c_setup_sadtalker.ps1.
-- brokkr ssh: refused 3x; client offered no key (no agent reachable from loki's shell). Server side untested.
-- FaceTest\tts = brokkr XTTS-v2 Docker repo @50943d9 (GTX 1080 Ti, GPU idx 1); its docker build log ends FAILED.
-IN PROGRESS
-- Placeholder PL narration with Edge-TTS (online Microsoft service; placeholder only, not the final voice).
-- SadTalker run on WA0003/WA0005 with that audio; then tools\c_assemble.ps1/py (ffmpeg).
+- Git: baseline + snapshots, local only. Assets\Diary toolchain: Python 3.11, ffmpeg, venv\face (torch cu128, numpy 1.26.4).
+- Placeholder PL narration (Edge-TTS, 24.8 s) and tools\c_assemble.py; test mp4 built from a still portrait:
+  Assets\Diary\video\test_ep01_p1_stillface.mp4 (sepia, grain, flicker, moving division, title crossfade).
+- SadTalker installed; runs reach 3DMM extraction, then fail in third-party face3d\util\preprocess.py:101
+  (np.array of unequal t[0],t[1] shapes). Proposed fix: float(t[0]), float(t[1]) in that file.
+IN PROGRESS: nothing running.
 NEXT
-1. Face bake-off candidates 2-3 (pending SadTalker result); judge sync, likeness, artifacts, speed.
-2. Assembly script, page/episode as arguments, sepia/grain/moving division.
-3. After Jim's go: brokkr discovery and XTTS-v2 renders (step 3), HTML listening sheet.
-BLOCKERS / NEEDS JIM
-- brokkr ssh agent for loki's shell (Jim working on it). Docker use on brokkr still unconfirmed.
-- Narrator voice choice (step 3) is Jim's.
-SPEND: ~40 tool calls, ~35 min, modest tokens.
+1. If Jim OKs: patch that line (third-party, in Assets), rerun SadTalker on WA0003 and WA0005; else pick another model.
+2. Add --jx offset to c_assemble.py so the face does not cover the handwriting; rerun with real face video.
+3. Candidates 2-3 for the bake-off (MuseTalk / Hallo2 / Sonic: need model downloads, several GB each).
+4. After Jim's go: brokkr discovery, XTTS-v2 candidate voices, HTML listening sheet (his choice of narrator).
+NEEDS JIM
+- OK to edit the one line in SadTalker's third-party source (under Assets) or to switch model.
+- Say go for brokkr when the agent is fixed. Docker use on brokkr still unconfirmed.
+- FYI tools\ now has a_*.py files from another workstream; tools\snapshot commits them too.
+SPEND: ~60 tool calls, ~65 min, moderate tokens.

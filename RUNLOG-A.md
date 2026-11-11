@@ -13,3 +13,4 @@
 - FAILED x2: subagent on loki (survey of page types; then a one-line check): "OAuth session expired and could not be refreshed". Stopped per the two-failures rule.
 - Not available in this session: the file-staging tool that would bring image copies into the session. It is only offered behind the "enable computer use" switch, which is outside the approved list, so not called.
 - Result: no page has been read by any model. Pilot (step 3) not started. Extra-file order is provisional only.
+- tools\snapshot.cmd run via PowerShell on loki: commit e480033 (local only). STATUS-A.md written. Stopped to wait for Jim.
