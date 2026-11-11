@@ -1,0 +1,16 @@
+{
+ "page": "40",
+ "type": "clipping",
+ "language": "pl+fr",
+ "dates": [
+  "1942-08-19"
+ ],
+ "margin_notes": "Polish pencil note written vertically along the left edge of the clipping, naming the paper (Echo d'Oran); last words faint",
+ "notes": "Map of the Channel/North Sea area with place labels (Londres, Dieppe, Bruxelles etc.) not transcribed; only its caption and credit lines. Clipping has no handwritten date; dateline is Berlin, 19 août.",
+ "words": 209,
+ "uncertain": 3,
+ "model": "claude-opus-5-5 (configured id; read in chat session)",
+ "images": "e1200",
+ "prompt": "a_transcribe_prompt.md v1",
+ "transcribed_on": "2026-11-11"
+}

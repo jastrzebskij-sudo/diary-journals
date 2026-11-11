@@ -1,0 +1,19 @@
+{
+ "page": "17",
+ "type": "handwriting",
+ "language": "pl",
+ "dates": [
+  "1942-03-22",
+  "1942-03-23",
+  "1942-03-24",
+  "1942-03-25"
+ ],
+ "margin_notes": "'32=' (or similar) in the left margin beside 23 III entry",
+ "notes": "'Krzyż' in 'Czerwony Krzyż' is overwritten/corrected in the original. 'wypości[?]' unclear (wypościli?). 'pospieszał wstrzymał' - first word may be a false start; read doubtful.",
+ "words": 244,
+ "uncertain": 5,
+ "model": "claude-opus-5-5 (configured id; read in chat session)",
+ "images": "e1200",
+ "prompt": "a_transcribe_prompt.md v1",
+ "transcribed_on": "2026-11-11"
+}

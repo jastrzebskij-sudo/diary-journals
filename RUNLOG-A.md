@@ -24,3 +24,16 @@
 - Glossary: +13 entries from the pilot pages (Nowicki, Aïn Sefra, siroko, Berguent, Oujda, Taza, Fez, Casablanca, D.I.M., trawajerzy, Auchtertool, Baczyński, Echo d'Oran).
 - a_viewer.py rebuilt. Viewer tested in a headless browser in the session (copy of viewer.html + staged images): loads, image shows, 23 highlights on p.33, edit mode and paging work, no script errors. That test screenshot showed p.33 on screen again; the transcript was not changed afterwards.
 - Not done: Opus and Sonnet passes (need Jim to switch model); resolution test (900 px / contrast); survey of page types; order of the three extra files.
+
+## 2026-11-11 (Wed), session 2, ~17:27-17:40 local (Opus 5.5, configured id claude-opus-5-5)
+- Fresh conversation. Read STATUS-A, RUNLOG-A, NOTES, tools\a_transcribe_prompt.md only.
+- Access granted by Jim: Projects\Diary and Assets\Diary\Notebook2, file staging only. The staging tools were not
+  offered at first; Jim approved turning on the device switch for file staging only. No computer_* tools used.
+- Staged glossary, a_compare/a_stamp/a_paths, prep\e1200\{01,17,33,40,55,75}.jpg.
+- Opus pass: each page viewed once, transcript + json written straight after -> Notebook2\pilot\opus-e1200\.
+  A few readings were revised from the same single view while writing (p.17, p.55 "tra-/cimy", p.75 "rumiane");
+  no page was viewed twice. a_stamp.py recounted and stamped.
+- Counts (words / marked uncertain): 01 328/5; 17 244/5; 33 188/30 (torn); 40 209/3; 55 220/4; 75 192/3.
+- Fable transcripts staged only after all six Opus files were written. a_compare.py fable-e1200 (ref) vs opus-e1200:
+  all pages 101 of 1376 words differ (7.3%); readings-only 5.5%; worst undamaged pages 17 and 01; see STATUS-A.
+- Wrote pilot\compare_fable_vs_opus_e1200.csv. STATUS-A rewritten. Snapshot via tools\snapshot.cmd (local only, no push).

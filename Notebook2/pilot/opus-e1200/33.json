@@ -1,0 +1,20 @@
+{
+ "page": "33",
+ "type": "handwriting",
+ "language": "pl",
+ "dates": [
+  "1942-06-29",
+  "1942-07-01",
+  "1942-07-02",
+  "1942-07-03",
+  "1942-07-04"
+ ],
+ "margin_notes": "'starań' and 'cukier' are pencil additions above/among the ink lines (placed in the text)",
+ "notes": "Page is badly torn: several holes remove words in the first half; [...] marks lost text, not illegible handwriting. 29 VI 1942 was a Monday. The date line of the second entry (30 VI?) is lost to the tear.",
+ "words": 188,
+ "uncertain": 30,
+ "model": "claude-opus-5-5 (configured id; read in chat session)",
+ "images": "e1200",
+ "prompt": "a_transcribe_prompt.md v1",
+ "transcribed_on": "2026-11-11"
+}
