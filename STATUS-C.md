@@ -1,5 +1,5 @@
 # STATUS-C (workstream C) - rewritten 2026-11-11 ~12:20 local
-STATE: waiting on Jim: deeper-voice candidates (6 MP3s) and SadTalker decision.
+STATE: waiting on Jim: narrator pick among deep-1.0 and Damien 80/20 variants, and SadTalker decision.
 DONE
 - Git local baseline + snapshots (nothing pushed). Toolchain on loki (Assets\Diary: py3.11, ffmpeg, venv\face).
 - brokkr discovery: no XTTS service; ~/work/tts has venv, weights, latents; run as batch scripts (GPU1). uv added user-level.
