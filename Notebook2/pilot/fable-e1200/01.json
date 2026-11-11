@@ -1,1 +1,17 @@
-{"page":"01","type":"handwriting","language":"pl","dates":["1942-02-01","1942-02-02"],"margin_notes":"word 'nakaz' added in the left margin, placed in the text","notes":"Page title line gives the camp location (98 km). 'siroko' is probably the sirocco wind."}
+{
+ "page": "01",
+ "type": "handwriting",
+ "language": "pl",
+ "dates": [
+  "1942-02-01",
+  "1942-02-02"
+ ],
+ "margin_notes": "word 'nakaz' added in the left margin, placed in the text",
+ "notes": "Page title line gives the camp location (98 km). 'siroko' is probably the sirocco wind.",
+ "words": 329,
+ "uncertain": 6,
+ "model": "claude-fable-5-2 (configured id; read in chat session)",
+ "images": "e1200",
+ "prompt": "a_transcribe_prompt.md v1",
+ "transcribed_on": "2026-11-11"
+}

@@ -14,3 +14,13 @@
 - Not available in this session: the file-staging tool that would bring image copies into the session. It is only offered behind the "enable computer use" switch, which is outside the approved list, so not called.
 - Result: no page has been read by any model. Pilot (step 3) not started. Extra-file order is provisional only.
 - tools\snapshot.cmd run via PowerShell on loki: commit e480033 (local only). STATUS-A.md written. Stopped to wait for Jim.
+
+## 2026-11-11 (Wed), session 1 continued, ~12:10-12:45 local
+- Jim approved: device tools switch on, file staging only, no computer_* tools; pilot in the chat, one model at a time (Fable, then Opus, then Sonnet); read each page once; 1200 px copies; keep verbatim spelling. Bulk later through subagents once Jim fixes the Claude Code sign-in.
+- Staged prep\e1200\{01,17,33,40,55,75}.jpg into the session. Pilot pages chosen by spread, without a survey.
+- Fable pass (configured id claude-fable-5-2): each page viewed once, transcript written straight after -> Notebook2\pilot\fable-e1200\<id>.txt/.json. a_stamp.py recounted and stamped.
+- Counts (words / marked uncertain): 01 329/6 (1.8%); 17 244/3 (1.2%); 33 186/23 (12.4%, torn page); 40 209/2 (1.0%, French clipping); 55 217/4 (1.8%); 75 191/3 (1.6%). All six 1376/41 (3.0%); the five undamaged pages 1190/18 (1.5%). These are self-marked doubts, not measured errors.
+- Content found: p.01 opens 1 II 1942 (camp at km 98); p.33 = 29 VI-4 VII 1942; p.40 = Echo d'Oran clipping, dateline 19 Aug 1942, Polish note along its left edge; p.55 = 10-12 X 1942, train to Casablanca; p.75 = 8-9 XII 1942, Scotland.
+- Glossary: +13 entries from the pilot pages (Nowicki, Aïn Sefra, siroko, Berguent, Oujda, Taza, Fez, Casablanca, D.I.M., trawajerzy, Auchtertool, Baczyński, Echo d'Oran).
+- a_viewer.py rebuilt. Viewer tested in a headless browser in the session (copy of viewer.html + staged images): loads, image shows, 23 highlights on p.33, edit mode and paging work, no script errors. That test screenshot showed p.33 on screen again; the transcript was not changed afterwards.
+- Not done: Opus and Sonnet passes (need Jim to switch model); resolution test (900 px / contrast); survey of page types; order of the three extra files.

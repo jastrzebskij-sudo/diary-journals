@@ -1,22 +1,22 @@
-# STATUS-A (workstream A) - rewritten 2026-11-11 ~12:15 local
-STATE: steps 1-2 done (scripts, image copies, glossary seed, empty viewer). Step 3 (pilot) BLOCKED: no working way to look at an image.
+# STATUS-A (workstream A) - rewritten 2026-11-11 ~12:45 local
+STATE: pilot 1 of 3 model passes done (Fable, 6 pages at 1200 px). Waiting for Jim to switch model.
 DONE
-- tools\a_*.py (paths, prep_images, glossary_seed, stamp, manifest, compare, viewer) + a_transcribe_prompt.md v1.
-- Assets\Diary\Notebook2\prep: 87 pages at long edge 1568/1200/900 px, plain and contrast, + 8 contact sheets.
-- Notebook2\glossary.csv (78 curated entries from notebook 1), glossary_candidates.csv (325, raw).
-- Notebook2\manifest.csv (87 rows; type/language/date empty until pages are read).
-- Notebook2\viewer.html builds and passes a JS syntax check; not yet opened in a browser.
+- Steps 1-2: tools\a_*.py, image copies (1568/1200/900 px, plain + contrast), glossary (91 entries), manifest, viewer.
+- Fable pass: Notebook2\pilot\fable-e1200\ pages 01, 17, 33, 40 (clipping), 55, 75. Each page viewed once.
+  Self-marked uncertain words: 1.5% on the five undamaged pages (18 of 1190); 12.4% on p.33, which is torn.
+  Stop rule (15% on typical pages) is not triggered. These are the model's own doubts, not measured errors.
+- Viewer tested in a headless browser: scan beside text, highlights, edit mode, paging all work.
 NOT DONE
-- No scan has been read by any model. No transcripts, no accuracy or cost numbers.
-- Order of 40_, "_ 2z 84", "_ 2z 84a" is provisional (40a after 40; 84a, 84b after 84), not confirmed from content.
-BLOCKERS / NEEDS JIM (either one unblocks the pilot)
-1. Claude Code on loki: its login has expired ("OAuth session expired and could not be refreshed", twice).
-   Sign in again there. Then subagents on loki read the scans locally, with the model chosen per run.
-2. OR approve switching on the device tools in this chat (the switch is labelled "computer use"; I would use
-   only its file-staging part to bring the downscaled copies into the session, no screen or app control).
-NEXT ACTION (once unblocked)
-1. Survey: page types, and where the three extra files belong; log the order in NOTES.md.
-2. Pilot: 6 pages (incl. clipping p.40) on the strongest model and on Sonnet 5.5 at 1568 px; 2 pages each at
-   1200 and 900 px and with contrast copies. a_stamp, a_compare, a_viewer.
-3. Stop; ask Jim to proofread 3 pilot pages in the viewer.
-SPEND: ~40 min; roughly 200k tokens (my estimate, no meter), of which ~50k wasted on a tool mistake (see RUNLOG-A).
+- Opus pass and Sonnet 5.5 pass on the same six pages (same 1200 px copies).
+- Resolution test (900 px, contrast copies). Survey of page types. Order of 40_, "_ 2z 84", "_ 2z 84a".
+- No measured accuracy yet: that needs Jim's proofreading of 3 pages.
+NEEDS JIM
+1. Switch this chat to Opus and say "go"; after that pass, switch to Sonnet 5.5 and say "go".
+2. After the three passes: proofread 3 pages in Notebook2\viewer.html (suggest 01, 55, 75).
+3. Before bulk: sign in to Claude Code on loki again so subagents work.
+NEXT ACTION
+- On "go" under Opus: read the same six staged pages once each -> pilot\opus-e1200\. Same under Sonnet.
+- Then a_compare.py across the three sets, resolution test on 2 pages with the cheapest plausible model,
+  report differences per page and relative cost, stop for proofreading.
+SPEND: ~1 h 10 min total. Tokens (estimate, no meter): ~300k so far, ~50k of it wasted earlier.
+  Fable pass itself: about 6 images + 6 transcripts, small next to the conversation's running context.

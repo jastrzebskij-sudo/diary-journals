@@ -14,3 +14,5 @@
 [C] 2026-11-11 SadTalker needs a compatibility shim (tools\c_sadtalker_shim.py) and a remaining fix in face3d preprocess.py; no third-party file has been edited yet, awaiting Jim's OK to patch it or to switch candidate.
 [C] 2026-11-11 No XTTS service exists on brokkr; TTS runs as batch scripts from ~/work/tts/.venv as claude-agent (GPU index 1 only); my wrapper scripts live in ~/c-workstream on brokkr and in Diary\tools\c_brokkr_*.sh.
 [C] 2026-11-11 Narrator candidates for Ep1 page 1 were chosen by me from the existing blend latents (Kumar65_Ilkin35, Kumar35_Ilkin65, Kumar20_Ilkin80), an assumption about Jim's shortlist; the narrator pick is Jim's.
+[A] 2026-11-11 Pilot pages are 01, 17, 33, 40, 55, 75 at 1200 px; each model pass writes Notebook2\pilot\<model>-e1200\; p.33 is torn and is excluded from "typical page" accuracy figures.
+[A] 2026-11-11 Notebook 2 runs from 1 II 1942 (camp at km 98, Bou Arfa line) through Casablanca (Oct 1942) to Scotland (Dec 1942, p.75); the Dieppe clipping (p.40) is from Echo d'Oran, dateline 19 Aug 1942.

@@ -1,0 +1,16 @@
+{
+ "page": "40",
+ "type": "clipping",
+ "language": "fr+pl",
+ "dates": [
+  "1942-08-19"
+ ],
+ "margin_notes": "Polish note written vertically along the left edge of the clipping: it is from the Oran newspaper 'Echo d'Oran' and reports the English landing.",
+ "notes": "Loose or glued newspaper clipping, scanned on its own (no notebook page visible). Date is the clipping's dateline (Berlin, 19 août), i.e. the Dieppe raid, 1942. Map place names not transcribed. A further headline at the bottom edge is cut off.",
+ "words": 209,
+ "uncertain": 2,
+ "model": "claude-fable-5-2 (configured id; read in chat session)",
+ "images": "e1200",
+ "prompt": "a_transcribe_prompt.md v1",
+ "transcribed_on": "2026-11-11"
+}

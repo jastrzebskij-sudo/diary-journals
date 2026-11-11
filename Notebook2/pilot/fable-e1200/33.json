@@ -1,1 +1,21 @@
-{"page":"33","type":"handwriting","language":"pl","dates":["1942-06-29","1942-06-30","1942-07-01","1942-07-02","1942-07-03","1942-07-04"],"margin_notes":"","notes":"DAMAGED PAGE: the paper surface is torn away in several patches (something glued here was pulled off), taking parts of about 12 lines. A later hand has pencilled 'stara' and 'cukier' into two gaps. Fainter ink than pages 01 and 17. The 30 VI header is inferred from position, not read. Not a typical page for accuracy numbers."}
+{
+ "page": "33",
+ "type": "handwriting",
+ "language": "pl",
+ "dates": [
+  "1942-06-29",
+  "1942-06-30",
+  "1942-07-01",
+  "1942-07-02",
+  "1942-07-03",
+  "1942-07-04"
+ ],
+ "margin_notes": "",
+ "notes": "DAMAGED PAGE: the paper surface is torn away in several patches (something glued here was pulled off), taking parts of about 12 lines. A later hand has pencilled 'stara' and 'cukier' into two gaps. Fainter ink than pages 01 and 17. The 30 VI header is inferred from position, not read. Not a typical page for accuracy numbers.",
+ "words": 186,
+ "uncertain": 23,
+ "model": "claude-fable-5-2 (configured id; read in chat session)",
+ "images": "e1200",
+ "prompt": "a_transcribe_prompt.md v1",
+ "transcribed_on": "2026-11-11"
+}
