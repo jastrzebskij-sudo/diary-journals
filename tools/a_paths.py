@@ -52,15 +52,20 @@ def pages():
     return [(pid, p) for _, pid, p in items]
 
 # ---- transcript helpers (shared by a_manifest, a_stamp, a_compare, a_viewer) ----
-MARKUP_LINE = re.compile(r"^\s*\[(/?wycinek|zdjęcie:[^\]]*)\]\s*$")
+MARKUP_LINE = re.compile(r"^\s*\[(/?wycinek|zdjęcie:[^\]]*|mapa:[^\]]*)\]\s*$")
+MARGIN_V2 = re.compile(r"^\s*\[margines:\s*(.*)\]\s*$")      # prompt v2: [margines: text]
 UNCERTAIN = re.compile(r"\[\?\]|\[\.{3,}\]|\[[^\]\s|]+\|[^\]]*\?\]")
 
 def tokens(text: str):
-    """Whitespace tokens of transcribed text, without pure markup lines and the [margines] tag."""
+    """Whitespace tokens of transcribed text, without pure markup lines and the margin tag
+    (v1 "[margines] text" and v2 "[margines: text]"; the words of the note count)."""
     out = []
     for line in text.splitlines():
         if MARKUP_LINE.match(line):
             continue
+        m = MARGIN_V2.match(line)
+        if m:
+            line = m.group(1)
         line = line.replace("[margines]", " ")
         out.extend(line.split())
     return out

@@ -48,3 +48,11 @@
 - a_compare.py: Fable ref vs Opus + Sonnet; Opus ref vs Sonnet; readings-only pairwise table. Results in STATUS-A.
 - Wrote compare_fable_ref_e1200.csv and compare_opus_ref_sonnet_e1200.csv. STATUS-A rewritten. Snapshot via tools\snapshot.cmd (local only, no push).
 - Not done: resolution test (not requested in this message; waits for Jim), viewer rebuild.
+
+## 2026-11-11 (Wed), session 2 continued, ~18:00-18:15 local (Sonnet 5.5)
+- Jim: no more passes; (1) write rules v2, (2) rebuild the viewer with all three sets, highlighting disagreements, script only, no scans viewed; (3) snapshot, stop.
+- tools\a_transcribe_prompt.md rewritten as v2 (conventions in STATUS-A). Reading of "(clippings first)": clipping/photo/map blocks come first, then the handwritten main text, then [margines: ...] notes last. Words written in a margin that belong to a line stay in place.
+- tools\a_paths.py: MARKUP_LINE also skips [mapa: ...]; tokens() reads v2 [margines: text] (words of the note count). Regression: counts of fable/opus/sonnet sets unchanged (1376/41, 1381/50, 1382/43).
+- tools\a_viewer.py: disagreement marking (blue), rejoins line-end hyphens, ignores crossed-out words, gaps and margin position in the comparison, per-page disagreement count in the page list, toggle button. Built in the session from a scratch copy of the tree (empty placeholder files named like the originals, so a_paths.pages() works; no scan content touched); viewer references images, none embedded. Output Notebook2\viewer.html, 3 sets, 87 pages, image base e1568 unchanged. Checked with a headless browser on the text only: no script errors, marks and tooltips present, toggle and paging work.
+- Disagreement counts per page (words in the busiest set that another set reads differently): 01 16, 17 14, 33 12, 40 2, 55 5, 75 5. (Opus-vs-Fable p.55 count was 7 before allowing [?] after a hyphen.)
+- NOTES.md: two [A] lines appended. Snapshot via tools\snapshot.cmd (local only, no push).

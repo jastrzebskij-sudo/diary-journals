@@ -4,6 +4,8 @@ Writes  Notebook2\viewer.html  (open it in a browser from its place on disk)
 Shows the scan beside the transcript; uncertain words ([?], [...], [a|b?]) are highlighted.
 Transcript sets found automatically: Notebook2\transcripts (label "draft"), every folder in
 Notebook2\pilot\, and Notebook2\proofread (Jim's corrected files, <page>.txt).
+Where the transcript sets in Notebook2\pilot\ read a word differently, the word is marked blue (hover shows the other
+sets' readings); line-end hyphens are rejoined, crossed-out words and margin notes are left out of that comparison.
 Edit mode lets Jim correct the text; "Save corrected" downloads <page>.txt - move it into Notebook2\proofread\.
 Edits are also kept in the browser (localStorage) until saved. Images are referenced, not embedded:
 ..\..\..\Assets\Diary\Notebook2\prep\<images>\<page>.jpg relative to the viewer.
@@ -31,6 +33,10 @@ main{flex:1;display:flex;min-height:0}
 #edit{width:100%;height:100%;min-height:70vh;font:16px/1.7 Georgia,serif;padding:8px;border:1px solid var(--line);display:none;background:#fffdf7}
 mark.u{background:var(--hl);border-radius:3px;padding:0 2px}
 mark.g{background:var(--gap);border-radius:3px;padding:0 2px}
+mark.d{background:#bfdcff;box-shadow:inset 0 -2px 0 var(--acc);border-radius:3px;padding:0 2px;cursor:help}
+mark.d.u,mark.d.g{background:linear-gradient(90deg,var(--hl) 50%,#bfdcff 50%)}
+#legend{font-family:system-ui,sans-serif;font-size:12px;color:#555}
+#legend mark{padding:0 4px}
 .tag{color:var(--acc);font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.03em}
 #meta{font-family:system-ui,sans-serif;font-size:12px;color:#555;margin-bottom:10px;border-bottom:1px dashed var(--line);padding-bottom:6px}
 .edited{color:#a33;font-weight:600}
@@ -41,6 +47,8 @@ mark.g{background:var(--gap);border-radius:3px;padding:0 2px}
  <button id="next" title="next page (Alt+Right)">&#9654;</button>
  <label>set <select id="set"></select></label>
  <button id="zout">&minus;</button><button id="zfit">fit</button><button id="zin">+</button>
+ <button id="dis" class="on" title="mark words the other pilot sets read differently">Disagreements</button>
+ <span id="legend"><mark class="u">[?]</mark> <mark class="g">[...]</mark> <mark class="d">differs</mark></span>
  <button id="mode">Edit</button>
  <button id="save">Save corrected</button>
  <button id="revert">Discard my edits</button>
@@ -51,16 +59,80 @@ mark.g{background:var(--gap);border-radius:3px;padding:0 2px}
 <script>
 const DATA=__DATA__;
 const $=id=>document.getElementById(id);
-let pi=0,si=0,zoom=1,editing=false;
+let pi=0,si=0,zoom=1,editing=false,showD=true;
 const key=()=>'z2:'+DATA.pages[pi].id;
 function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
-function hl(t){
-  return esc(t).split('\n').map(line=>{
-    line=line.replace(/^\s*\[(\/?wycinek|margines|zdjęcie:[^\]]*)\]/,m=>'<span class="tag">'+m+'</span>');
-    return line.split(/(\s+)/).map(w=>{
-      if(/\[\.{3,}\]/.test(w)) return '<mark class="g">'+w+'</mark>';
-      if(/\[\?\]|\[[^\]\s|]+\|[^\]]*\?\]/.test(w)) return '<mark class="u">'+w+'</mark>';
-      return w}).join('')}).join('\n')}
+const SKIPLINE=/^\s*\[(\/?wycinek|zdjęcie:|mapa:)/;
+const TAGCHUNK=/^\[margines[\]:]/;
+const ATTR=x=>x.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const short=n=>n.split('/').pop().replace(/-e\d+c?$/,'');
+function norm(w){const m=w.match(/^\[([^|\]\s]+)\|/);if(m)w=m[1];
+  return w.replace(/\[\?\]/g,'').replace(/[\[\]?.,;:„”"'()—|<>…\-]/g,'').toLowerCase()}
+/* tokens for comparison: main-text stream T and margin-note stream M. Skips markup lines, crossed-out words and
+   gaps; rejoins a word split by a line-end hyphen. Each token keeps the [line,chunk] positions it came from. */
+function toks(text){
+  const T=[],M=[];let skr=false,pend=null;
+  const flush=()=>{if(pend){(pend.m?M:T).push({n:pend.n,raw:pend.raw,pos:pend.pos});pend=null}};
+  const lines=text.split('\n');
+  lines.forEach((line,li)=>{
+    const blank=!line.trim(),skip=SKIPLINE.test(line),isM=/^\s*\[margines[\]:]/.test(line);
+    if(pend&&(blank||skip||isM!==pend.m))flush();
+    if(skip)return;
+    const parts=line.split(/(\s+)/);let last=-1;
+    parts.forEach((w,ci)=>{if(ci%2===0&&w&&!TAGCHUNK.test(w))last=ci});
+    parts.forEach((w,ci)=>{
+      if(ci%2||!w||TAGCHUNK.test(w))return;
+      if(w.startsWith('<skreślone:'))skr=true;
+      if(skr){if(w.endsWith('>'))skr=false;return}
+      let n=norm(w);
+      if(pend){const p=pend;pend=null;
+        (isM?M:T).push({n:p.n+n,raw:p.raw+w,pos:p.pos.concat([[li,ci]])});return}
+      if(!n)return;
+      if(ci===last&&/\p{L}-(\[\?\])?$/u.test(w)&&li+1<lines.length&&lines[li+1].trim()&&!SKIPLINE.test(lines[li+1])){
+        pend={n:n,raw:w.replace(/-(\[\?\])?$/,''),pos:[[li,ci]],m:isM};return}
+      (isM?M:T).push({n:n,raw:w,pos:[[li,ci]]})});
+  });
+  flush();return {T:T,M:M}}
+function lcsPairs(a,b){
+  const n=a.length,m=b.length,L=[];
+  for(let i=0;i<=n;i++)L.push(new Uint16Array(m+1));
+  for(let i=n-1;i>=0;i--)for(let j=m-1;j>=0;j--)
+    L[i][j]=a[i].n===b[j].n?L[i+1][j+1]+1:Math.max(L[i+1][j],L[i][j+1]);
+  const out=[];let i=0,j=0;
+  while(i<n&&j<m){if(a[i].n===b[j].n){out.push([i,j]);i++;j++}else if(L[i+1][j]>=L[i][j+1])i++;else j++}
+  return out}
+/* words of `text` that another pilot set reads differently: {map:"line:chunk"->[{set,alt}], n:token count, others:[names]} */
+function dis(text,curName){
+  const p=DATA.pages[pi],others=DATA.sets.filter(s=>s!==curName&&s.indexOf('pilot/')===0&&p.text[s]!=null);
+  const map=new Map();let n=0;if(!others.length)return {map:map,n:0,others:others};
+  const A=toks(text);
+  others.forEach(name=>{
+    const B=toks(p.text[name]);
+    ['T','M'].forEach(k=>{
+      const a=A[k],b=B[k],pr=lcsPairs(a,b);pr.unshift([-1,-1]);pr.push([a.length,b.length]);
+      for(let x=0;x+1<pr.length;x++){
+        const i0=pr[x][0],j0=pr[x][1],i1=pr[x+1][0],j1=pr[x+1][1];
+        if(i1-i0<2)continue;
+        const alt=b.slice(j0+1,j1).map(t=>t.raw).join(' ')||'∅';
+        for(let i=i0+1;i<i1;i++){
+          if(!a[i]._d){a[i]._d=1;n++}
+          a[i].pos.forEach(q=>{const key=q[0]+':'+q[1];if(!map.has(key))map.set(key,[]);map.get(key).push({set:short(name),alt:alt})})}}})});
+  return {map:map,n:n,others:others}}
+function hl(t,dm){
+  return t.split('\n').map((line,li)=>{
+    if(SKIPLINE.test(line))return '<span class="tag">'+esc(line)+'</span>';
+    return line.split(/(\s+)/).map((w,ci)=>{
+      if(ci%2||!w)return esc(w);
+      const e=esc(w);
+      if(TAGCHUNK.test(w))return '<span class="tag">'+e+'</span>';
+      const cls=[];
+      if(/\[\.{3,}\]/.test(w))cls.push('g');
+      else if(/\[\?\]|\[[^\]\s|]+\|[^\]]*\?\]/.test(w))cls.push('u');
+      const d=dm&&dm.get(li+':'+ci);
+      if(d)cls.push('d');
+      if(!cls.length)return e;
+      return '<mark class="'+cls.join(' ')+'"'+(d?' title="'+ATTR(d.map(x=>x.set+': '+x.alt).join('  |  '))+'"':'')+'>'+e+'</mark>'
+    }).join('')}).join('\n')}
 function cur(){const p=DATA.pages[pi];const s=DATA.sets[si];return (p.text[s]??null)}
 function render(){
   const p=DATA.pages[pi],s=DATA.sets[si];
@@ -68,7 +140,8 @@ function render(){
   const saved=localStorage.getItem(key());
   const base=cur();
   const t=saved!==null?saved:(base??'');
-  $('view').innerHTML=base===null&&saved===null?'<i>no transcript for this page in set "'+s+'"</i>':hl(t);
+  const dd=showD&&(base!==null||saved!==null)?dis(t,s):{map:null,n:0,others:[]};
+  $('view').innerHTML=base===null&&saved===null?'<i>no transcript for this page in set "'+s+'"</i>':hl(t,dd.map);
   $('edit').value=t;
   const m=(p.meta[s]||{});
   const words=t.split(/\s+/).filter(Boolean),unc=words.filter(w=>/\[\?\]|\[\.{3,}\]|\|[^\]]*\?\]/.test(w)).length;
@@ -76,14 +149,21 @@ function render(){
     (m.dates&&m.dates.length?' &middot; '+m.dates.join(', '):'')+(m.model?' &middot; '+esc(m.model)+' / '+esc(m.images||''):'')+
     (m.margin_notes?'<br>margin: '+esc(m.margin_notes):'')+(m.notes?'<br>note: '+esc(m.notes):'')+
     (saved!==null?'<br><span class="edited">showing your unsaved edits (kept in this browser)</span>':'');
-  $('stat').textContent=words.length+' words, '+unc+' marked uncertain ('+(words.length?(100*unc/words.length).toFixed(1):0)+'%)';
+  $('stat').textContent=words.length+' words, '+unc+' marked uncertain ('+(words.length?(100*unc/words.length).toFixed(1):0)+'%)'+
+    (dd.others.length?' \u00b7 '+dd.n+' differ from '+dd.others.map(short).join(', '):'');
   $('page').value=pi;$('set').value=si}
 function setMode(e){editing=e;$('edit').style.display=e?'block':'none';$('view').style.display=e?'none':'block';
   $('mode').textContent=e?'Preview':'Edit';$('mode').classList.toggle('on',e);if(!e)render()}
 function go(d){pi=Math.max(0,Math.min(DATA.pages.length-1,pi+d));render();$('imgpane').scrollTo(0,0)}
 function z(f){zoom=f;const im=$('img');im.style.width=(im.naturalWidth*zoom)+'px'}
 function fit(){const im=$('img');if(im.naturalWidth)z(($('imgpane').clientWidth-4)/im.naturalWidth)}
-DATA.pages.forEach((p,i)=>$('page').add(new Option(p.id+(p.type&&p.type!=='handwriting'?' ('+p.type+')':''),i)));
+function pageDelta(i){const save=pi;pi=i;let best=null;
+  const ps=DATA.sets.filter(x=>x.indexOf('pilot/')===0&&DATA.pages[i].text[x]!=null);
+  if(ps.length>1)ps.forEach(x=>{const r=dis(DATA.pages[i].text[x],x).n;if(best===null||r>best)best=r});
+  pi=save;return best}
+DATA.pages.forEach((p,i)=>{const d=pageDelta(i);
+  $('page').add(new Option(p.id+(p.type&&p.type!=='handwriting'?' ('+p.type+')':'')+(d!==null?'  \u0394'+d:''),i))});
+$('dis').onclick=()=>{showD=!showD;$('dis').classList.toggle('on',showD);render()};
 DATA.sets.forEach((s,i)=>$('set').add(new Option(s,i)));
 $('page').onchange=e=>{pi=+e.target.value;render()};$('set').onchange=e=>{si=+e.target.value;render()};
 $('prev').onclick=()=>go(-1);$('next').onclick=()=>go(1);

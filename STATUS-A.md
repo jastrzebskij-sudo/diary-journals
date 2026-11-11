@@ -1,5 +1,5 @@
-# STATUS-A (workstream A) - rewritten 2026-11-11 ~17:55 local
-STATE: pilot 3 of 3 model passes written (Fable, Opus, Sonnet 5.5; 6 pages at 1200 px). Waiting for Jim: proofreading and decisions below.
+# STATUS-A (workstream A) - rewritten 2026-11-11 ~18:15 local
+STATE: pilot 3 of 3 model passes written (Fable, Opus, Sonnet 5.5; 6 pages at 1200 px). Transcription rules v2 written, viewer rebuilt with all three sets. No more passes run until Jim says. Waiting for Jim: proofreading and decisions below.
 DONE
 - Steps 1-2: tools\a_*.py, image copies (1568/1200/900 px, plain + contrast), glossary (91 entries), manifest, viewer.
 - Pilot passes in Notebook2\pilot\: fable-e1200\, opus-e1200\, sonnet-e1200\ (pages 01, 17, 33 torn, 40 clipping, 55, 75).
@@ -25,12 +25,12 @@ DONE
 - Open readings for the proofreader: p.55 tunnels before Fez "7"(F) / "4"(O) / "[4|7?]"(S) - changes a fact;
   p.01 "sierż." / "siła" / "sierż.[?]"; p.17 "wyspali"(F,S[?]) vs "wypości"(O); p.75 "szkociąt"(F,S[?]) / "szkocistów"(O),
   "czerstwe" (F,S[?]) / "chrześcijańskie"(O); p.40 margin "dezbarkowaniu"(F) / "desantowaniu"(O) / "debarkowaniu"(S).
-- Convention gaps seen between passes (fix in prompt v2 before bulk): where margin notes go relative to a clipping;
+- Prompt v2 (tools\a_transcribe_prompt.md) now fixes these conventions: margin notes as [margines: ...] after the main text, clippings/photos/maps first; every photo and map gets [zdjęcie: ...] or [mapa: ...]; crossed-out words always marked <skreślone: ...>; numbers and suffixes as written; line-end hyphens rejoined. v2 is untested: no page has been transcribed under it. (Gaps it closes: where margin notes go relative to a clipping;
   whether a map gets a [zdjęcie: ...] line (F yes, O no, S no); crossed-out words (O and S mark, F skips); numbers
-  with suffixes ("12tu" / "12 tu"); hyphenation at line end kept or not.
+  with suffixes ("12tu" / "12 tu"); hyphenation at line end kept or not.)
+- Viewer (Notebook2\viewer.html, rebuilt by script from the three pilot sets, images e1568 as before): words where the pilot sets read differently are marked blue (hover shows the other readings), page list shows the disagreement count per page, Disagreements button toggles it. Crossed-out words, gaps, margin-note position and line-end hyphens are left out of the comparison. Tested on the text only (headless DOM check, no scan opened). a_paths.py counting now understands the v2 markup; counts of the existing sets are unchanged.
 NOT DONE
 - Resolution test (900 px, contrast copies). Survey of page types. Order of 40_, "_ 2z 84", "_ 2z 84a".
-- Viewer not rebuilt with the Opus and Sonnet sets.
 - No measured accuracy yet: that needs Jim's proofreading of 3 pages.
 - A clean Sonnet run, if wanted: needs a fresh conversation (or a subagent) that has not seen the other transcripts.
 NEEDS JIM
@@ -42,5 +42,5 @@ NEEDS JIM
 5. snapshot.ps1 hard-codes a "Claude Sonnet 5.5" co-author trailer; commits made under other models carry that
    attribution (e.g. cdf1a9a was made under Opus). Workstream C's script; not changed by A.
 NEXT ACTION
-- On Jim's go: prompt v2 (conventions above), resolution test on 2 pages, rebuild viewer with all sets, then stop for proofreading.
+- Nothing until Jim's go. Then (his choice): blind Sonnet redo and/or resolution test on 2 pages, both under prompt v2, then stop for proofreading.
 SPEND: ~1 h 40 min total. Tokens (estimate, no meter): ~430k so far. Sonnet pass: 6 images + 6 transcripts + compare.
