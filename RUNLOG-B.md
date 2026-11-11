@@ -13,3 +13,9 @@
 - Built Archival-Images\ep02\manifest.csv (12 external candidates from catalogue metadata, 1 on disk; 4 in-notebook) with tools\b_manifest.py. Candidate choice was by title/date/licence metadata only: no image was viewed yet.
 - Gap check (storyboards vs Archival-Images\manifest.csv): Ep1 covers 3 of 9 listed landmarks; Ep3 has 1 portrait for 2 landmarks; Ep4 has 1 photo for 4. Tracker says TRUE for 1, 3, 4: looks overstated. Tracker NOT changed (Ep2 not fully covered, and flipping TRUE to FALSE is outside the one allowed edit).
 - Notebook2\manifest.csv checked: rows exist but type/date columns are still empty, so not ready.
+
+## 2026-11-11 ~18:00 (second session)
+- Jim's decisions applied: Wikimedia rules (UA DiaryResearch/1.0, API thumbs 1920px, one at a time, 6 s). tools\b_thumbs.py.
+- thumbs run: 6 ok (L1 x3, L3 x3), 7th REFUSED 429 after Retry-After wait -> stopped on Wikimedia. Contact sheet reviewed.
+- LoC JSON API via tools\b_loc_search.py: nothing relevant. LoC pictures search disallowed by robots (not bypassed). NAC search JS-only.
+- Manifest updated (tools\b_manifest_update.py); tracker archival_coverage added (tools\b_tracker_coverage.py); flags untouched.

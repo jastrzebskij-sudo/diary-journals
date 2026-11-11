@@ -1,27 +1,27 @@
 # STATUS-B (workstream B: archival images, clips, audio) - rewritten at every stop
-Stopped 2026-11-11 ~12:50 local. Cause: two-failures rule (Wikimedia downloads), see Blockers.
+Stopped 2026-11-11 ~18:00 local. Cause: Wikimedia 429 again under the published rules (see Blockers).
 
 ## State
-- Ep2 first: landmark list done (12 landmarks, Archival-Images\ep02\landmarks.md; the storyboard's "none" was wrong).
-- Ep2 candidates: 12 external listed in ep02\manifest.csv, only 1 on disk (L3 infantry drill). 4 in-notebook items listed.
-- In-notebook (Notebook 1, Eps 1-4): found by contact sheets. Ep1: title page (pos 1), 2 photos (13). Ep2: photos at 15, 16, 18 (nativity-play star carollers), clipping at 33 (camp newsletter, Raczkiewicz visit; sits in May 1940 scan order). Ep3: none seen. Ep4: none besides pos 33. File: Archival-Images\notebook1-glued-items.csv.
-- Gap check done from storyboards: Ep1 3 of 9 landmarks covered, Ep3 1 of 2, Ep4 about 1 of 4. Tracker TRUE for 1/3/4 looks overstated; not changed.
-- Not started: Ep1/3/4 sourcing, Eps 5, 6, 16, music/audio, Ep2 images for L2, L4-L6, L8.
+- Ep2: 12 landmarks (ep02\landmarks.md). Covered by reviewed thumbnails or in-notebook: L1 (3 NAC thumbs), L2 (scans 18, 33), L3 (3 NAC thumbs). Tracker archival_coverage = 3/10 (L11, L12 need no image).
+- Listed but thumbnails NOT fetched (429): L7 x2, L9 x3, L10 x1. No candidates found: L4, L5, L6, L8.
+- 6 thumbs (1920 px, ep02\thumbs\) reviewed on contact sheet: all usable, subjects match. Dating is "1940" only; L3 tractor/artillery look spring, not Jan-Feb (flag).
+- Scan 33 clipping is in the Ep2 manifest as in-notebook, "placement uncertain" (per Jim).
+- Tracker: flags untouched; archival_coverage added: Ep1 3/9, Ep2 3/10, Ep3 1/2, Ep4 1/4 (Ep1/3/4 from my earlier gap check, not re-reviewed).
+- Other archives tried: LoC JSON API (3 irrelevant hits, one 503); LoC pictures search blocked by robots (not bypassed); NAC search is JavaScript-only, nothing readable; NARA/Europeana need API keys. IWM Florczyk collection (~330 prints, France 1939-40) exists but IWM terms look non-commercial: check before use.
+- Ep1/3/4 gap-fill not started (Wikimedia is the main source). Eps 5, 6, 16 and music deferred to January.
 
-## Next action (when unblocked)
-Ep2 downloads from other hosts (NAC szukajwarchiwach.gov.pl, LoC, NARA, Europeana) or Wikimedia after the throttle clears; contact sheet of Ep2 candidates; then Ep1/3/4 gaps.
+## Next action
+Retry Wikimedia after a long gap (e.g. tomorrow): fetch the 6 pending thumbs one at a time, then Commons categories for L4-L6, L8 (Forty-and-eights boxcars, Orange/Vaucluse, Mont Ventoux), then Ep1/3/4 gaps.
 
 ## Blockers
-- upload.wikimedia.org answers HTTP 429 to loki (3 attempts incl. polite Retry-After retry); commons API also 429 under load. Listed, not worked around. Possibly loki's IP is throttled; may clear on its own.
-- Searching free text on Commons is noisy; category listings worked better.
+- upload.wikimedia.org: 429 on the 7th thumbnail despite the descriptive UA, 6 s pacing and a Retry-After wait. Stopped; no workaround.
 
 ## Needs Jim
-- Decide: OK to try other hosts for the same images (NAC original site) for downloads?
-- Confirm scan 33 (nativity-play clipping) placement: glued in May 1940 or out of order?
-- Tracker flags for Eps 1/3/4: want them reset to FALSE? (I was told to touch only fully covered episodes.)
+- Is a Commons account/contact for the UA available? (Wikimedia's rules favour a contact.) Otherwise I retry later as-is.
+- Fine to read NAC via its own site in the built-in browser for L2/Ep1 gaps? (Not in my approved list; not used.)
 
 ## Notebook 2 manifest
-Notebook2\manifest.csv exists but type/date columns are empty: NOT ready for use.
+Not ready (type/date columns still empty).
 
-## Spend (rough)
-~150k tokens, ~45 min. Images viewed: 8 contact sheets. Files written: tools\b_*.py (4 scripts), ep02 CSVs, RUNLOG-B, STATUS-B.
+## Spend (since 12:50 stop)
+~60k tokens, ~1 h, 1 contact sheet viewed.
