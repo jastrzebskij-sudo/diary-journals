@@ -33,3 +33,5 @@
 [C] 2026-11-11 Narration quality rules: render per sentence in several takes with recorded seeds and pick by measured pace/tail (c_brokkr_page_takes.py) instead of one random render; narration copy of the text may get pacing commas (originals untouched); respellings for words XTTS garbles (Otwock) are chosen by Jim's ear.
 [C] 2026-11-12 Narration QA rule: verify every rendered take by Whisper transcription (c_pick_takes.py) and reject takes with extra trailing words; a word that triggers a trailing artifact at chunk end (Otwock) is rendered merged with the next sentence. SadTalker (patched, Assets copy) is bake-off candidate 1.
 [C] Narration v3 = take-based render (seed 5000, --merge 6) + Whisper pick + c_deepen; replaces v2; awaiting Jim's listen-check. Assets\tts\ep01_pl\narration_ep01_p1_PL_v3.*
+[C] Unchunked TTS is not viable: XTTS-v2 pl limit 224 chars / 400 tokens; longer input truncates audio. Keep sentence-level chunks.
+[C] DECISION (Jim): TTS chunking stays sentence-level (merge to two sentences only where needed, e.g. rare-name-final sentence), commas in text for pacing; unchunked paragraphs rejected (rate/pitch drift).
