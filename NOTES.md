@@ -39,3 +39,6 @@
 [B] 2026-11-12 The fetcher reads the User-Agent contact from tools\b_fetch.config.json and refuses to run until it is set; no contact has been given yet.
 [B] 2026-11-12 IWM: non-commercial licence only (CC BY-NC equivalent), no IWM downloads until Jim approves; NAC (Polish Narodowe Archiwum Cyfrowe) rights vary by fonds, check before use.
 [B] 2026-11-12 Tracker: archival_images_sourced TRUE for Ep1/3/4 disagrees with archival_coverage 3/9, 1/2, 1/4; flags left unchanged, reported to Jim.
+[B] 2026-11-12 Sandbox proxy blocks commons.wikimedia.org; B's Commons metadata searches run on Jim's machine via the PowerShell tool (tools\b_queue_search.py, b_queue_cats.py, same pacing as the fetcher), results kept in Archival-Images\queue-*.json.
+[B] 2026-11-12 Queue = Archival-Images\fetch-queue.csv (18 files, built by tools\b_build_queue.py); per-episode landmark lists now exist for Ep1-4 (Archival-Images\epNN\landmarks.md); no candidates yet for Ep2 L4/L6/L8, Ep1 E1-L3/L5/L6/L7, Ep4 E4-L4.
+[B] 2026-11-12 Bundesarchiv images on Commons are CC BY-SA 3.0 de (credit required, share-alike): decide before monetized use; avoid Commons copies of IWM images until Jim approves IWM use.

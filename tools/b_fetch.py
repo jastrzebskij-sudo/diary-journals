@@ -8,7 +8,7 @@ Usage:
 
 Queue CSV header: url_or_title,destination,source,license,credit,episode,landmark
   url_or_title : "File:Name.jpg", a commons.wikimedia.org/wiki/File:... URL, or a direct upload.wikimedia.org URL
-  destination  : path relative to assets_root (config); may not escape it
+  destination  : path relative to the project root (e.g. Archival-Images\\ep02\\thumbs\\x.jpg); must stay inside the project or assets_root
 
 Policy (hard-coded, see constants): single-threaded; >=20 s between requests to a host (+0-10 s jitter);
 Commons API with maxlag=5 for metadata and standard-size thumbnails; honors Retry-After;
@@ -181,11 +181,17 @@ def classify(v):
 
 
 def resolve_dest(cfg, rel):
-    root = os.path.abspath(cfg["assets_root"])
-    p = os.path.abspath(os.path.join(root, rel))
-    if os.path.commonpath([root, p]) != root:
-        raise Permanent("destination escapes assets_root")
-    return p
+    """Relative destinations are under the project root; absolute ones are allowed only inside
+    the project root or assets_root. Anything else is refused."""
+    roots = [os.path.abspath(PROJECT), os.path.abspath(cfg["assets_root"])]
+    p = os.path.abspath(os.path.join(PROJECT, rel))
+    for r in roots:
+        try:
+            if os.path.commonpath([r, p]) == r:
+                return p
+        except ValueError:
+            pass
+    raise Permanent("destination outside project and assets_root")
 
 
 def process(ctx, row):

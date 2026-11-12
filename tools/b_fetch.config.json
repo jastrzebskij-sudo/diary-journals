@@ -1,5 +1,8 @@
 {
-  "contact": "CHANGE-ME: email or URL from Jim",
+  "contact": "jastrzebskij@gmail.com",
   "assets_root": "D:\\Claude\\Assets\\Diary",
-  "allowed_hosts": ["commons.wikimedia.org", "upload.wikimedia.org"]
+  "allowed_hosts": [
+    "commons.wikimedia.org",
+    "upload.wikimedia.org"
+  ]
 }

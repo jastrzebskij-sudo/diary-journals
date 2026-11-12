@@ -1,0 +1,13 @@
+{
+ "done": {},
+ "failed": {},
+ "hosts": {
+  "wikimedia": {
+   "day": "2026-11-12",
+   "files_today": 0,
+   "last_request": 1794526843.8384044,
+   "level": 0,
+   "pause_until": 0
+  }
+ }
+}

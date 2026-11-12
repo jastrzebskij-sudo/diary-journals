@@ -1,0 +1,12 @@
+# Written=Spoken (English narration). One pair per line; '#' comments. FIRST GUESSES by Claude (assumption): the spoken respellings
+# are chosen so an English-voice XTTS reads the Polish name close to Polish. Jim's ear decides; edit here, rerun c_tts_prep_en.py.
+Otwock=Otvotsk
+Fort Wola=Fort Vola
+Saska Kępa=Saska Kempa
+Jaroński=Yaronski
+Garwolin=Garvolin
+Wrona=Vrona
+Ryki=Riki
+Łuck=Wootsk
+Chełm=Hewm
+Górczewska=Goorchevska

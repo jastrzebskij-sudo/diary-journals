@@ -3,7 +3,7 @@
 Usage (run with the Assets venv python):
   python c_assemble.py --episode 1 --page 1 --audio narration.wav --face face.mp4|portrait.jpg \
         --journal <scan.jpg> [--title <title-page.jpg>] [--out out.mp4] [--lang PL]
-        [--look sepia|grey] [--grain 12] [--no-period-audio] [--assets D:\\Claude\\Assets\\Diary]
+        [--look sepia|grey] [--grain 12] [--jx PX] [--no-period-audio] [--assets D:\\Claude\\Assets\\Diary]
 
 Layout (1280x720): journal panel (720 px wide, zoomed, panning top to bottom over the audio length) on the
 left; face panel (720x720) overlaid from the right with a MOVING DIVISION that drifts slowly (+-40 px).
@@ -11,6 +11,7 @@ Journal fades in from black (optionally title page first, crossfade at 3 s); fac
 Look: greyscale -> sepia, film grain, light flicker and vignette, 1 s fade in/out. Voice gets a period-style
 band-limit unless --no-period-audio. ffmpeg comes from <assets>\\bin. Writes OUT and OUT.manifest.json
 (settings, model inputs, ffmpeg version, date). Episode/page are labels for the output name and manifest.
+--jx PX shifts the journal crop horizontally from centre (clamped), so the handwriting sits left of the face panel.
 Originals are only read."""
 import argparse, datetime, json, subprocess, sys
 from pathlib import Path
@@ -22,6 +23,7 @@ ap.add_argument("--journal", required=True); ap.add_argument("--title")
 ap.add_argument("--out"); ap.add_argument("--lang", default="PL")
 ap.add_argument("--look", choices=["sepia", "grey"], default="sepia")
 ap.add_argument("--grain", type=int, default=12); ap.add_argument("--zoom", type=float, default=1.6)
+ap.add_argument("--jx", type=int, default=0, help="journal crop x-offset in px from the centred crop (negative = show more of the left side of a spread); clamped to the image")
 ap.add_argument("--no-period-audio", action="store_true")
 ap.add_argument("--assets", default=r"D:\Claude\Assets\Diary")
 a = ap.parse_args()
@@ -43,7 +45,7 @@ f = add(a.face, face_is_img)
 inputs.extend(["-i", a.audio]); au = sum(1 for x in inputs if x == "-i") - 1
 Z = int(H * a.zoom)
 fc = []
-fc.append(f"[{j}:v]scale=-2:{Z},crop={PW}:{H}:'(iw-{PW})/2':'(ih-{H})*t/{T:.2f}',setsar=1,fps={FPS}[jp]")
+fc.append(f"[{j}:v]scale=-2:{Z},crop={PW}:{H}:'max(0,min(iw-{PW},(iw-{PW})/2+({a.jx})))':'(ih-{H})*t/{T:.2f}',setsar=1,fps={FPS}[jp]")
 jl = "jp"
 if t_i is not None:
     fc.append(f"[{t_i}:v]scale=-2:{Z},crop={PW}:{H}:'(iw-{PW})/2':'(ih-{H})/2',setsar=1,fps={FPS}[tp]")
@@ -71,6 +73,6 @@ Path(out + ".manifest.json").write_text(json.dumps({
     "script": "c_assemble.py", "date": datetime.datetime.now().isoformat(timespec="seconds"), "episode": a.episode,
     "page": a.page, "lang": a.lang, "duration_s": round(T, 2), "ffmpeg": ver, "inputs": {
         "audio": a.audio, "face": a.face, "journal": a.journal, "title": a.title},
-    "settings": {"look": a.look, "grain": a.grain, "zoom": a.zoom, "period_audio": not a.no_period_audio,
+    "settings": {"jx": a.jx, "look": a.look, "grain": a.grain, "zoom": a.zoom, "period_audio": not a.no_period_audio,
                  "frame": f"{W}x{H}@{FPS}", "division": "560+40*sin(2*pi*t/45)"}}, indent=1), encoding="utf-8")
 print("wrote", out, f"{T:.1f}s")

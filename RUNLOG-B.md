@@ -19,3 +19,42 @@
 - thumbs run: 6 ok (L1 x3, L3 x3), 7th REFUSED 429 after Retry-After wait -> stopped on Wikimedia. Contact sheet reviewed.
 - LoC JSON API via tools\b_loc_search.py: nothing relevant. LoC pictures search disallowed by robots (not bypassed). NAC search JS-only.
 - Manifest updated (tools\b_manifest_update.py); tracker archival_coverage added (tools\b_tracker_coverage.py); flags untouched.
+- 2026-11-12 23:23 [b_fetch] SEARCH transient error: <urlopen error Tunnel connection failed: 403 Forbidden>
+- 2026-11-12 18:23 [b_fetch] SEARCH ep02-L4 'Orange Vaucluse 1940 soldats polonais' -> 0 hits
+- 2026-11-12 18:24 [b_fetch] SEARCH ep02-L4 'Sérignan-du-Comtat 1940' -> 0 hits
+- 2026-11-12 18:24 [b_fetch] SEARCH ep02-L5 'Mont Ventoux vignes hiver neige' -> 6 hits
+- 2026-11-12 18:25 [b_fetch] SEARCH ep02-L6 'wagons 40 hommes 8 chevaux 1940 train soldats' -> 0 hits
+- 2026-11-12 18:25 [b_fetch] SEARCH ep02-L6 'Polish troops train France 1940' -> 10 hits
+- 2026-11-12 18:26 [b_fetch] SEARCH ep02-L8 'Mechelen incident January 1940' -> 0 hits
+- 2026-11-12 18:26 [b_fetch] SEARCH ep01-L2 'Stuka Ju 87 Poland September 1939' -> 4 hits
+- 2026-11-12 18:26 [b_fetch] SEARCH ep01-L3 'Łuck bombed September 1939' -> 10 hits
+- 2026-11-12 18:27 [b_fetch] SEARCH ep01-L4 'Soviet invasion of Poland 17 September 1939 tanks' -> 10 hits
+- 2026-11-12 18:27 [b_fetch] SEARCH ep01-L5 'Polish soldiers Romania border September 1939' -> 10 hits
+- 2026-11-12 18:28 [b_fetch] SEARCH ep01-L6 'Polish refugees Romania Yugoslavia 1939' -> 10 hits
+- 2026-11-12 18:28 [b_fetch] SEARCH ep01-L7 'Paris 1939 sandbags monuments Invalides' -> 0 hits
+- 2026-11-12 18:29 [b_fetch] SEARCH ep03-L2 'Luftwaffe bomber shot down France May 1940' -> 10 hits
+- 2026-11-12 18:29 [b_fetch] SEARCH ep04-L1 'Belgian capitulation May 1940 Leopold III' -> 10 hits
+- 2026-11-12 18:29 [b_fetch] SEARCH ep04-L1 'Château de Versailles 1940' -> 10 hits
+- 2026-11-12 18:30 [b_fetch] SEARCH ep04-L3 'French retreat June 1940 Dijon Roanne' -> 0 hits
+- 2026-11-12 18:30 [b_fetch] SEARCH ep04-L4 "camp d'internement Polonais 1940 France" -> 0 hits
+- 2026-11-12 18:32 [b_fetch] CATS ep02-L4 catsearch|Orange Vaucluse -> 8 items
+- 2026-11-12 18:32 [b_fetch] CATS ep02-L5 catsearch|Mont Ventoux -> 8 items
+- 2026-11-12 18:33 [b_fetch] CATS ep02-L6 catsearch|40 hommes 8 chevaux -> 4 items
+- 2026-11-12 18:33 [b_fetch] CATS ep02-L8 catsearch|Mechelen Incident -> 0 items
+- 2026-11-12 18:33 [b_fetch] CATS ep01-L2-4 catsearch|Invasion of Poland 1939 -> 8 items
+- 2026-11-12 18:34 [b_fetch] CATS ep01-L4 catsearch|Soviet invasion of Poland -> 8 items
+- 2026-11-12 18:34 [b_fetch] CATS ep01-L5 catsearch|Polish soldiers Romania 1939 -> 7 items
+- 2026-11-12 18:35 [b_fetch] CATS ep01-L6 catsearch|Polish refugees 1939 -> 2 items
+- 2026-11-12 18:35 [b_fetch] CATS ep01-L7 catsearch|Paris 1939 1940 sandbags -> 0 items
+- 2026-11-12 18:35 [b_fetch] CATS ep03-L2 catsearch|Battle of Belgium -> 8 items
+- 2026-11-12 18:36 [b_fetch] CATS ep04-L1 catsearch|Belgian capitulation 1940 -> 1 items
+- 2026-11-12 18:36 [b_fetch] CATS ep04-L3 catsearch|Exode 1940 -> 0 items
+- 2026-11-12 18:37 [b_fetch] CATS ep04-L4 catsearch|internment camps France 1940 -> 8 items
+- 2026-11-12 18:37 [b_fetch] CATS ep02-L5 members|Category:Mont Ventoux -> 28 items
+- 2026-11-12 18:38 [b_fetch] CATS ep02-L8 members|Category:Mechelen Incident -> 0 items
+- 2026-11-12 18:38 [b_fetch] CATS ep01-L2-4 members|Category:German invasion of Poland of 1939 -> 40 items
+- 2026-11-12 18:39 [b_fetch] CATS ep01-L4 members|Category:Soviet invasion of Poland of 1939 -> 40 items
+- 2026-11-12 18:39 [b_fetch] CATS ep01-L7 members|Category:Paris during World War II -> 0 items
+- 2026-11-12 18:39 [b_fetch] CATS ep04-L1-3 members|Category:German invasion of Belgium (1940) -> 40 items
+- 2026-11-12 18:40 [b_fetch] CATS ep03-L2-ep04-L3 members|Category:Battle of France -> 40 items
+- 2026-11-12 18:40 [b_fetch] CATS ep04-L4 members|Category:Internierungslager in Frankreich -> 10 items
