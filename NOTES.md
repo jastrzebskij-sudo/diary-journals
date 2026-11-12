@@ -35,3 +35,7 @@
 [C] Narration v3 = take-based render (seed 5000, --merge 6) + Whisper pick + c_deepen; replaces v2; awaiting Jim's listen-check. Assets\tts\ep01_pl\narration_ep01_p1_PL_v3.*
 [C] Unchunked TTS is not viable: XTTS-v2 pl limit 224 chars / 400 tokens; longer input truncates audio. Keep sentence-level chunks.
 [C] DECISION (Jim): TTS chunking stays sentence-level (merge to two sentences only where needed, e.g. rare-name-final sentence), commas in text for pacing; unchunked paragraphs rejected (rate/pitch drift).
+[B] 2026-11-12 tools\b_fetch.py (stdlib only) is the unattended Wikimedia fetcher: queue columns url_or_title,destination,source,license,credit,episode,landmark; commons.wikimedia.org and upload.wikimedia.org share one pacing bucket; 20-30 s between requests, 30/60/120 min pause on 429/503, 40 files/day, STOP.txt in the project root ends it; results in Archival-Images\fetch-results.csv, state in tools\b_fetch_state.json.
+[B] 2026-11-12 The fetcher reads the User-Agent contact from tools\b_fetch.config.json and refuses to run until it is set; no contact has been given yet.
+[B] 2026-11-12 IWM: non-commercial licence only (CC BY-NC equivalent), no IWM downloads until Jim approves; NAC (Polish Narodowe Archiwum Cyfrowe) rights vary by fonds, check before use.
+[B] 2026-11-12 Tracker: archival_images_sourced TRUE for Ep1/3/4 disagrees with archival_coverage 3/9, 1/2, 1/4; flags left unchanged, reported to Jim.

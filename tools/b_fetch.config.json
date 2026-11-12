@@ -1,0 +1,5 @@
+{
+  "contact": "CHANGE-ME: email or URL from Jim",
+  "assets_root": "D:\\Claude\\Assets\\Diary",
+  "allowed_hosts": ["commons.wikimedia.org", "upload.wikimedia.org"]
+}

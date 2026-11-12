@@ -77,3 +77,18 @@
 - pages done: 02-16, 18-27, 40a, 41-49 (35 pages, manifest order; no errors or limit messages) -> Notebook2/calib-fable/
 - counts (words/uncertain): 35 pages; 02: 326/9; 03: 238/3; 04: 347/5; 05: 268/6; 06: 317/1; 07: 240/4; 08: 264/4; 09: 251/2; 10: 234/2; 11: 280/4; 12: 235/2; 13: 260/1; 14: 259/4; 15: 240/2; 16: 282/7; 18: 292/8; 19: 256/5; 20: 265/5; 21: 241/2; 22: 247/3; 23: 244/2; 24: 206/4; 25: 216/2; 26: 255/1; 27: 242/3; 40a: 221/4; 41: 190/3; 42: 191/4; 43: 214/4; 44: 206/6; 45: 248/3; 46: 214/3; 47: 184/1; 48: 179/1; 49: 233/5; total 8585/125
 - tool calls: 72
+
+## 2026-11-12T17:11:35+00:00  Workstream A - calib-fable, pages 50-84b
+- model: claude-fable-5-2 (configured id; serving model may differ); images: e1200; prompt: a_transcribe_prompt.md v2 + session rules
+- start: 2026-11-12T16:53:06+00:00  end: 2026-11-12T17:11:35+00:00
+- pages=37 words=6181 uncertain=113 total_txt=87
+- output: .txt only (no .json, not stamped); one view per page, no proofreading
+- tool calls: about 90 (37 image views, 37 transcript writes, 2 staging, 2 access requests, rest setup/count)
+
+## 2026-11-12 read2-fable (blind second read, Notebook 2)
+- model: claude-fable-5-2 (configured id; serving model may differ)
+- start 2026-11-12T17:35:15Z, end 2026-11-12T17:49:06Z (the two date calls)
+- pages done: 40 (01-39, 40), images prep/e1200, prompt v2 + run rules; output Notebook2/read2-fable/<page>.txt (txt only, no json)
+- words: 10069; uncertain tokens ([?], [...], [.....], [a|b?]): 114 (shell count per v2 counting rule, not a_paths.py)
+- tool calls: 90 (44 shell, 40 image views, 2 staging, 3 tool lookups, 1 access request)
+- no errors or limit messages; each page viewed once, no proofreading
