@@ -1,0 +1,1 @@
+11/11/26, using Gemini Notebook (LLM Notebook) to transcribe the Polish handwritten text verbatim, keeping all misspellings and grammatical errors, into a text file, and delineating the text of each image with the prepended image file name, postpended with the image file /filename. 

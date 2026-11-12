@@ -56,3 +56,24 @@
 - tools\a_viewer.py: disagreement marking (blue), rejoins line-end hyphens, ignores crossed-out words, gaps and margin position in the comparison, per-page disagreement count in the page list, toggle button. Built in the session from a scratch copy of the tree (empty placeholder files named like the originals, so a_paths.pages() works; no scan content touched); viewer references images, none embedded. Output Notebook2\viewer.html, 3 sets, 87 pages, image base e1568 unchanged. Checked with a headless browser on the text only: no script errors, marks and tooltips present, toggle and paging work.
 - Disagreement counts per page (words in the busiest set that another set reads differently): 01 16, 17 14, 33 12, 40 2, 55 5, 75 5. (Opus-vs-Fable p.55 count was 7 before allowing [?] after a hyphen.)
 - NOTES.md: two [A] lines appended. Snapshot via tools\snapshot.cmd (local only, no push).
+
+## 2026-11-12T04:01:07 calib-fable (blind cost calibration, prompt v2 + override rules)
+- model: claude-fable-5-2; images: e1200; .txt only (no .json, no stamp)
+- timestamps (VM clock, UTC): start 2026-11-12T03:57:55; pause 1 2026-11-12T03:59:06; end 2026-11-12T04:01:07
+- pages done: 01, 17, 28, 29, 30 -> Notebook2/calib-fable/
+- counts: 01: 323 words, 4 uncertain; 17: 237 words, 3 uncertain; 28: 216 words, 9 uncertain; 29: 211 words, 7 uncertain; 30: 238 words, 3 uncertain
+- tool calls: 20 (incl. 2 folder-access requests, 1 call that did not run)
+
+## 2026-11-12T04:10:11 calib-fable batch 2 (blind cost calibration, prompt v2 + override rules)
+- model: claude-fable-5-2; images: e1200; .txt only (no .json, no stamp)
+- timestamps (VM clock, UTC): start 2026-11-12T04:05:57; end 2026-11-12T04:10:11
+- pages done: 31-40 (none missing; 40a not included) -> Notebook2/calib-fable/
+- counts (words/uncertain): 31: 261/4; 32: 222/6; 33: 185/25; 34: 260/2; 35: 252/4; 36: 248/3; 37: 238/5; 38: 221/3; 39: 249/6; 40: 205/3; total 2341/61
+- tool calls: 22
+
+## 2026-11-12T04:41:49 calib-fable batch 3 (blind cost calibration, prompt v2 + override rules)
+- model: claude-fable-5-2; images: e1200; .txt only (no .json, no stamp)
+- timestamps (VM clock, UTC): start 2026-11-12T04:26:56; end 2026-11-12T04:41:49
+- pages done: 02-16, 18-27, 40a, 41-49 (35 pages, manifest order; no errors or limit messages) -> Notebook2/calib-fable/
+- counts (words/uncertain): 35 pages; 02: 326/9; 03: 238/3; 04: 347/5; 05: 268/6; 06: 317/1; 07: 240/4; 08: 264/4; 09: 251/2; 10: 234/2; 11: 280/4; 12: 235/2; 13: 260/1; 14: 259/4; 15: 240/2; 16: 282/7; 18: 292/8; 19: 256/5; 20: 265/5; 21: 241/2; 22: 247/3; 23: 244/2; 24: 206/4; 25: 216/2; 26: 255/1; 27: 242/3; 40a: 221/4; 41: 190/3; 42: 191/4; 43: 214/4; 44: 206/6; 45: 248/3; 46: 214/3; 47: 184/1; 48: 179/1; 49: 233/5; total 8585/125
+- tool calls: 72

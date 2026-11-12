@@ -3,9 +3,10 @@
 
   variants: python c_brokkr_page_takes.py variants LATENT VARIANTS.txt OUT_DIR [--takes 2]
             one line per text variant -> OUT_DIR/variant_NN.wav (takes joined by 0.8 s silence) + metrics printed.
-  render:   python c_brokkr_page_takes.py render LATENT TEXT.txt OUT_DIR [--takes 4] [--seed 1000] [--respell OLD=NEW ...]
+  render:   python c_brokkr_page_takes.py render LATENT TEXT.txt OUT_DIR [--takes 4] [--seed 1000] [--respell OLD=NEW ...] [--merge N ...]
             per sentence renders N takes (seed = seed + 100*sentence + take, recorded), measures each take and picks the
             best (lowest tail + pace outlier penalty), joins chosen takes with 0.3 s (sentence) / 0.7 s (paragraph) gaps.
+            --merge N renders 0-based sentence N together with the next one as one chunk (so a word that triggers an end-of-chunk artifact is not last).
             Writes take_sNN_tK.wav, chosen_all.wav and manifest.json (text, seeds, metrics, chosen take, model, date).
 
 Metrics per take (10 ms frames): tail_ms = time between the last frame above -28 dB and the last above -45 dB
@@ -44,7 +45,7 @@ def take(model, text, cond, emb, seed):
 
 ap = argparse.ArgumentParser(); ap.add_argument("mode", choices=["variants", "render"]); ap.add_argument("latent")
 ap.add_argument("text"); ap.add_argument("out"); ap.add_argument("--takes", type=int, default=None)
-ap.add_argument("--seed", type=int, default=1000); ap.add_argument("--respell", nargs="*", default=[])
+ap.add_argument("--seed", type=int, default=1000); ap.add_argument("--merge", type=int, nargs="*", default=[]); ap.add_argument("--respell", nargs="*", default=[])
 a = ap.parse_args(); out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
 common.require_tos()
 model = common.load_model(); cond, emb = common.load_voice(model, a.latent)
@@ -65,6 +66,10 @@ else:
     lim = common.model_char_limit(model, "pl"); sents = []
     for pi, p in enumerate(paras):
         for s in common.split_sentences(p, "pl", lim): sents.append((pi, s))
+    for mi in sorted(a.merge, reverse=True):          # --merge N: render sentence N together with the next one (same paragraph) as one chunk
+        assert sents[mi][0] == sents[mi + 1][0], "can only merge within a paragraph"
+        sents[mi] = (sents[mi][0], sents[mi][1] + " " + sents[mi + 1][1]); del sents[mi + 1]
+        assert len(sents[mi][1]) <= lim, "merged chunk is over the model char limit"
     allm = []; rec = []
     for si, (pi, s) in enumerate(sents):
         tk = []
@@ -83,6 +88,6 @@ else:
         parts.append(w); prev_p = r["paragraph"]
     common.save_wav(out / "chosen_all.wav", np.concatenate(parts))
     (out / "manifest.json").write_text(json.dumps(dict(script="c_brokkr_page_takes.py", date=datetime.datetime.now().isoformat(timespec="seconds"),
-        model="XTTS-v2 fp32 GPU1", latent=a.latent, text=a.text, respell=a.respell, takes=K, median_chars_per_s=round(med, 2),
+        model="XTTS-v2 fp32 GPU1", latent=a.latent, text=a.text, respell=a.respell, merge=a.merge, takes=K, median_chars_per_s=round(med, 2),
         sentences=rec), indent=1, ensure_ascii=False), encoding="utf-8")
     print("wrote", out / "chosen_all.wav", "chosen:", [r["chosen"] for r in rec])

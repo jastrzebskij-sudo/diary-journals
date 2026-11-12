@@ -12,9 +12,9 @@ $py = "$Assets\venv\face\Scripts\python.exe"; $st = "$Assets\face\SadTalker"
 New-Item -ItemType Directory -Force $OutDir | Out-Null
 $t0 = Get-Date
 Push-Location $st
-& $py "$PSScriptRoot\c_sadtalker_shim.py" $st --driven_audio $Audio --source_image $Image --result_dir $OutDir --size $Size --preprocess $Preprocess --still --enhancer none
+& $py "$PSScriptRoot\c_sadtalker_shim.py" $st --driven_audio $Audio --source_image $Image --result_dir $OutDir --size $Size --preprocess $Preprocess --still
 $code = $LASTEXITCODE; Pop-Location
 $secs = [int]((Get-Date) - $t0).TotalSeconds
-@("model=SadTalker commit $(git -C $st rev-parse --short HEAD)", "size=$Size preprocess=$Preprocess still enhancer=none", "image=$Image", "audio=$Audio",
+@("model=SadTalker commit $(git -C $st rev-parse --short HEAD)", "size=$Size preprocess=$Preprocess still no-enhancer", "image=$Image", "audio=$Audio",
   "date=$(Get-Date -Format s) seconds=$secs exit=$code") | Out-File "$OutDir\manifest.txt"
 exit $code
