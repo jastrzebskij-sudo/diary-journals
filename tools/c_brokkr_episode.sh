@@ -8,25 +8,27 @@
 set -uo pipefail
 export PATH="$HOME/.local/bin:$PATH" COQUI_TOS_AGREED=1 CUDA_DEVICE_ORDER=PCI_BUS_ID
 LANGC=$1; TEXT=$2; OUT=$3; NAME=$4; LATENT=$5; shift 5
-SEMI=${DEEPEN_ST:--1.0}; BASS=${DEEPEN_BASS:-2}
+SEMI=${DEEPEN_ST:--1.0}; BASS=${DEEPEN_BASS:-2}; GAPS=${GAP_S:-0.3}; GAPP=${GAP_P:-0.7}; TEMPO=${TEMPO:-1.0}   # env: TEMPO=1.05 speeds speech 5% pitch-preserving (applied with the deepen filter; 1.0 = off); DEEPEN_ST=0 DEEPEN_BASS=0 skips the deepen filter; GAP_S/GAP_P = sentence/paragraph gaps (s)
+case "$LATENT" in *.pth) LAT="latents/$LATENT";; *) LAT="$LATENT";; esac   # .pth file in ~/work/tts/latents, or a built-in speaker name
 mkdir -p "$OUT/state" "$OUT/final"; LOG="$OUT/run.log"; W=~/c-workstream
 say() { echo "$(date '+%F %T') $*" | tee -a "$LOG"; }
 stopped() { [ -e "$OUT/STOP" ] || [ -e "$W/STOP" ]; }
 T0=$(date +%s); say "start lang=$LANGC text=$TEXT latent=$LATENT name=$NAME args=$*"
 if [ ! -e "$OUT/state/1.done" ]; then
   stopped && { say "STOP present, not starting"; exit 3; }
-  ( cd ~/work/tts && CUDA_VISIBLE_DEVICES=1 .venv/bin/python $W/c_brokkr_episode_render.py --lang "$LANGC" --latent "latents/$LATENT" --text "$TEXT" --out "$OUT" "$@" ) >> "$LOG" 2>&1
+  ( cd ~/work/tts && CUDA_VISIBLE_DEVICES=1 .venv/bin/python $W/c_brokkr_episode_render.py --lang "$LANGC" --latent "$LAT" --text "$TEXT" --out "$OUT" "$@" ) >> "$LOG" 2>&1
   rc=$?; [ $rc -eq 0 ] || { say "render step exit $rc"; exit $rc; }; touch "$OUT/state/1.done"
 fi
 if [ ! -e "$OUT/state/2.done" ]; then
   stopped && { say "STOP present"; exit 3; }
-  CUDA_VISIBLE_DEVICES=0 $W/venv-asr/bin/python $W/c_brokkr_episode_pick.py "$OUT" --lang "$LANGC" >> "$LOG" 2>&1
+  CUDA_VISIBLE_DEVICES=0 $W/venv-asr/bin/python $W/c_brokkr_episode_pick.py "$OUT" --lang "$LANGC" --gap-sent "$GAPS" --gap-para "$GAPP" >> "$LOG" 2>&1
   rc=$?; [ $rc -eq 0 ] || { say "pick step exit $rc"; exit $rc; }; touch "$OUT/state/2.done"
 fi
 if [ ! -e "$OUT/state/3.done" ]; then
   RATIO=$(python3 -c "print(2**($SEMI/12))")
-  AF="rubberband=pitch=$RATIO:formant=shifted:pitchq=quality,bass=g=$BASS:f=160:w=0.7"
+  AF="rubberband=tempo=$TEMPO:pitch=$RATIO:formant=shifted:pitchq=quality,bass=g=$BASS:f=160:w=0.7"
   F="$OUT/final/$NAME"
+  if [ "$SEMI" = "0" ] && [ "$BASS" = "0" ]; then AF="anull"; fi
   ffmpeg -hide_banner -loglevel error -y -i "$OUT/picked_all.wav" -af "$AF" -ar 24000 "$F.wav" \
    && ffmpeg -hide_banner -loglevel error -y -i "$F.wav" -ar 16000 -ac 1 "${F}_16k.wav" \
    && ffmpeg -hide_banner -loglevel error -y -i "$F.wav" -codec:a libmp3lame -b:a 192k "$F.mp3" || { say "deepen/encode failed"; exit 4; }
@@ -36,7 +38,7 @@ out, f, af, t0, latent, lang = sys.argv[1:7]
 p = json.load(open(out + "/picked.json", encoding="utf-8"))
 dur = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f + ".wav"]))
 synth = sum(t["synth_s"] for c in p["chunks"] for t in c["takes"]); asr = p.get("asr_seconds", 0)
-m = dict(pipeline="c_brokkr_episode.sh", lang=lang, latent=latent, text=p["text"], deepen=af, takes=p["takes"], seed=p["seed"], merge=p["merge"], respell=p["respell"],
+m = dict(pipeline="c_brokkr_episode.sh", lang=lang, gap_sentence_s=p.get("gap_sentence_s"), gap_paragraph_s=p.get("gap_paragraph_s"), latent=latent, text=p["text"], deepen=af, takes=p["takes"], seed=p["seed"], merge=p["merge"], respell=p["respell"],
          char_limit=p["char_limit"], audio_s=round(dur, 2), synth_compute_s=round(synth, 1), asr_compute_s=asr, synth_s_per_audio_s=round(synth / dur, 2),
          asr_s_per_audio_s=round(asr / dur, 3), picks=[c["picked"] for c in p["chunks"]],
          chunks=[dict(index=c["index"], paragraph=c["paragraph"], text=c["text"], picked=c["picked"], seed=c["takes"][c["picked"]]["seed"],

@@ -300,6 +300,7 @@ def main():
                 ctx.host(hk)["level"] = 0
                 ctx.host(hk)["files_today"] += 1
                 ctx.st["done"][row["destination"]] = {"dest": dest, "bytes": nbytes, "at": stamp()}
+                ctx.st["failed"].pop(row["destination"], None)   # a success clears an earlier failure
                 ctx.save()
                 write_result(row, "OK", dest, nbytes, meta, "")
                 log("OK %s %dB lic=%s | queue-lic=%s | credit=%s %s" % (

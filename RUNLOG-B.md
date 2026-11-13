@@ -80,3 +80,46 @@
 - 2026-11-12 19:15 [b_fetch] END attempted=18 done_total=12 failed_total=6
 - 2026-11-12 19:19 [b_fetch] START queue=fetch-queue.csv todo=6
 - 2026-11-12 19:20 [b_fetch] OK ep02 L7 Archival-Images\ep02\thumbs\L7__1-Pulk-Czogow-Wojska-Polskiego-we-Francji-czolgi-Renault-podczas-postoju-NAC-18-.jpg 423199B lic=Public domain | queue-lic=Public domain (per Commons; verify) | credit=Narodowe Archiwum Cyfrowe (NAC) 
+- 2026-11-12 19:21 [b_fetch] OK ep02 L9 Archival-Images\ep02\thumbs\L9__Chorale-d-un-regiment-regional-de-protection-a-Aulnois-fevrier-1940.jpg 514375B lic=Public domain | queue-lic=Public domain (per Commons; verify) | credit=per Commons page (verify provenance) 
+- 2026-11-12 19:22 [b_fetch] OK ep02 L9 Archival-Images\ep02\thumbs\L9__Drapeau-du-5e-genie-lors-d-une-prise-d-arme-janvier-1940.jpg 1470330B lic=Public domain | queue-lic=Public domain (per Commons; verify) | credit=per Commons page (verify provenance) 
+- 2026-11-12 19:22 [b_fetch] OK ep01 E1-L2 Archival-Images\ep01\thumbs\E1-L2__Bundesarchiv-Bild-183-1987-1210-502-Polen-Stukas.jpg 400960B lic=CC BY-SA 3.0 de | queue-lic=CC BY-SA 3.0 de | credit=Bundesarchiv, CC BY-SA 3.0 de 
+- 2026-11-12 19:23 [b_fetch] OK ep01 E1-L4 Archival-Images\ep01\thumbs\E1-L4__BA-10-Lublin-1939.jpg 562452B lic=Public domain | queue-lic=Public domain (per Commons; verify) | credit=per Commons page 
+- 2026-11-12 19:24 [b_fetch] OK ep04 E4-L1 Archival-Images\ep04\thumbs\E4-L1__Belgische-Propaganda-Poster-Van-Koning-Leopold-III-met-opschrifft-28-Mei-1940-Halt-Sir.jpg 1458767B lic=Public domain | queue-lic=Public domain (per Commons; verify) | credit=per Commons page 
+- 2026-11-12 19:24 [b_fetch] END attempted=6 done_total=18 failed_total=6
+- 2026-11-12 21:32 [b_fetch] CATS e1-L7 catsearch|Paris 1939 1940 guerre -> 8 items
+- 2026-11-12 21:33 [b_fetch] CATS e1-L7 members|Category:Phoney War -> 40 items
+- 2026-11-12 21:33 [b_fetch] CATS e1-L3 catsearch|Łuck 1939 -> 6 items
+- 2026-11-12 21:33 [b_fetch] CATS e1-L5 catsearch|Zaleszczyki 1939 -> 1 items
+- 2026-11-12 21:34 [b_fetch] CATS e1-L5 catsearch|Polish refugees Romania 1939 -> 0 items
+- 2026-11-12 21:34 [b_fetch] CATS e1-L6 catsearch|Polish soldiers Yugoslavia 1939 internment -> 0 items
+- 2026-11-12 21:35 [b_fetch] CATS e2-L4 members|Category:Sérignan-du-Comtat -> 27 items
+- 2026-11-12 21:35 [b_fetch] CATS e2-L4 members|Category:Sainte-Cécile-les-Vignes -> 24 items
+- 2026-11-12 21:36 [b_fetch] CATS e2-L6 catsearch|French troop train 1940 -> 1 items
+- 2026-11-12 21:36 [b_fetch] CATS e2-L8 catsearch|Mechelen incident 1940 -> 0 items
+- 2026-11-12 21:36 [b_fetch] CATS e4-L2 catsearch|Exode 1940 réfugiés -> 0 items
+- 2026-11-12 21:37 [b_fetch] CATS e4-L3 catsearch|Italian invasion of France 1940 -> 3 items
+- 2026-11-12 21:37 [b_fetch] CATS e4-L4 members|Category:Camp du Barcarès -> 5 items
+- 2026-11-12 21:38 [b_fetch] CATS e4-L4 members|Category:Camp de Bram -> 6 items
+- 2026-11-12 21:38 [b_fetch] CATS e4-L4 catsearch|Polish soldiers interned France 1940 -> 0 items
+- 2026-11-12 21:39 [b_fetch] START queue=fetch-queue.csv todo=20
+- 2026-11-12 21:40 [b_fetch] OK ep01 E1-L5 Archival-Images\ep01\thumbs\E1-L5__The-Nazi-soviet-Invasion-of-Poland-1939-HU106377.jpg 141708B lic=Public domain | queue-lic=Public domain (per Commons; verify) | credit=IWM (Imperial War Museums), per Commons page (verify attribution) 
+- 2026-11-12 21:41 [b_fetch] OK ep01 E1-L3 Archival-Images\ep01\thumbs\E1-L3__A-testimony-of-senseless-Polish-destruction-German-invasion-of-Poland-1939-33633762104.jpg 510101B lic=Public domain | queue-lic=Public domain (per Commons; verify) | credit=per Commons page (verify provenance) 
+- 2026-11-12 21:41 [b_fetch] OK ep01 E1-L3 Archival-Images\ep01\thumbs\E1-L3__Bundesarchiv-Bild-101I-012-0016-20-Polen-Panzer-IV-in-Ortschaft.jpg 72585B lic=CC BY-SA 3.0 de | queue-lic=CC BY-SA 3.0 de | credit=Bundesarchiv, CC BY-SA 3.0 de 
+- 2026-11-12 21:42 [b_fetch] OK ep01 E1-L3 Archival-Images\ep01\thumbs\E1-L3__Bundesarchiv-Bild-101I-012-0018-06A-Polen-Gefallene-polnische-Soldaten.jpg 74348B lic=CC BY-SA 3.0 de | queue-lic=CC BY-SA 3.0 de | credit=Bundesarchiv, CC BY-SA 3.0 de 
+- 2026-11-12 21:43 [b_fetch] OK ep01 E1-L4 Archival-Images\ep01\thumbs\E1-L4__Lviv.-September-1939.jpg 87866B lic=Public domain | queue-lic=Public domain (per Commons; verify) | credit=per Commons page (verify provenance) 
+- 2026-11-12 21:44 [b_fetch] OK ep01 E1-L4 Archival-Images\ep01\thumbs\E1-L4__Brest-22-september-1939.jpg 343942B lic=Public domain | queue-lic=Public domain (per Commons; verify) | credit=per Commons page (verify provenance) 
+- 2026-11-12 21:45 [b_fetch] OK ep01 E1-L4 Archival-Images\ep01\thumbs\E1-L4__Je-cy1.jpg 134353B lic=Public domain | queue-lic=Public domain (per Commons; verify) | credit=per Commons page (verify provenance) 
+- 2026-11-12 21:45 [b_fetch] OK ep02 L4 Archival-Images\ep02\thumbs\L4__Serignan-du-Comtat-1-by-JM-Rosier.jpg 160156B lic=CC BY-SA 3.0 | queue-lic=CC BY-SA 3.0 | credit=JM Rosier (modern photo, 2007; context only) 
+- 2026-11-12 21:46 [b_fetch] OK ep02 L4 Archival-Images\ep02\thumbs\L4__S-rignan---Remparts.JPG 510346B lic=CC BY-SA 3.0 | queue-lic=CC BY-SA 3.0 | credit=Commons contributor (modern photo, 2013; context only) 
+- 2026-11-12 21:47 [b_fetch] OK ep02 L4 Archival-Images\ep02\thumbs\L4__S-rignan---Campanile.JPG 1295727B lic=Public domain | queue-lic=Public domain (per Commons; verify) | credit=Commons contributor (modern photo, 2009; context only) 
+- 2026-11-12 21:48 [b_fetch] OK ep04 E4-L1 Archival-Images\ep04\thumbs\E4-L1__British-troops-and-Belgian-refugees-on-the-Brussels-Louvain-road-12-May-1940.-F4422.jpg 517032B lic=Public domain | queue-lic=Public domain (per Commons; verify) | credit=IWM (Imperial War Museums), per Commons page (verify attribution) 
+- 2026-11-12 21:49 [b_fetch] OK ep04 E4-L1 Archival-Images\ep04\thumbs\E4-L1__Belgian-refugees-during-the-Battle-of-Belgium.jpg 134091B lic=Public domain | queue-lic=Public domain (per Commons; verify) | credit=per Commons page (verify provenance) 
+- 2026-11-12 21:50 [b_fetch] OK ep04 E4-L3 Archival-Images\ep04\thumbs\E4-L3__Bundesarchiv-Bild-121-0400-Frankreich-zerst-rte-Hausfront.jpg 94314B lic=CC BY-SA 3.0 de | queue-lic=CC BY-SA 3.0 de | credit=Bundesarchiv, CC BY-SA 3.0 de 
+- 2026-11-12 21:51 [b_fetch] OK ep04 E4-L3 Archival-Images\ep04\thumbs\E4-L3__6th-Panzer-Div-1940-HU111379.jpg 311980B lic=Public domain | queue-lic=Public domain (per Commons; verify) | credit=IWM (Imperial War Museums), per Commons page (verify attribution) 
+- 2026-11-12 21:51 [b_fetch] OK ep04 E4-L4 Archival-Images\ep04\thumbs\E4-L4__BramRetirada2.jpg 245609B lic=CC BY-SA 3.0 | queue-lic=CC BY-SA 3.0 | credit=Commons contributor (Bram camp 1939, Spanish refugees; context only, not Polish internees) 
+- 2026-11-12 21:52 [b_fetch] OK ep04 E4-L4 Archival-Images\ep04\thumbs\E4-L4__22NUM1PH2-24-Correspond-la-photographie-27-Fi-124-du-fonds-Chauvin-Arriv-e-des-soldats.jpg 162944B lic=CC BY-SA 4.0 | queue-lic=CC BY-SA 4.0 | credit=Archives departementales (Barcares camp 1939, Spanish refugees; context only) 
+- 2026-11-12 21:53 [b_fetch] OK ep02 CTX Archival-Images\ep02\thumbs\CTX__25mm-antitank-gun-in-French-service-January-1940.jpg 586425B lic=Public domain | queue-lic=Public domain (per Commons; verify) | credit=per Commons page (verify provenance) 
+- 2026-11-12 21:54 [b_fetch] OK ep02 CTX Archival-Images\ep02\thumbs\CTX__French-D2-tank-January-1940-01.jpg 819888B lic=Public domain | queue-lic=Public domain (per Commons; verify) | credit=per Commons page (verify provenance) 
+- 2026-11-12 21:55 [b_fetch] OK ep02 CTX Archival-Images\ep02\thumbs\CTX__Anti-aircraft-St-Etienne-Mle-1907-machine-gun-in-service-with-French-supply-unit-1940.jpg 593685B lic=Public domain | queue-lic=Public domain (per Commons; verify) | credit=per Commons page (verify provenance) 
+- 2026-11-12 21:56 [b_fetch] OK ep02 CTX Archival-Images\ep02\thumbs\CTX__Deux-prisonniers-allemands-emmen-s-par-deux-gendarmeries-d-but-1940.jpg 690032B lic=Public domain | queue-lic=Public domain (per Commons; verify) | credit=per Commons page (verify provenance) 
+- 2026-11-12 21:56 [b_fetch] END attempted=20 done_total=38 failed_total=0

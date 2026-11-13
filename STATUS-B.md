@@ -45,3 +45,13 @@ Not ready (unchanged).
 
 ## IWM (2026-11-12)
 - Feasible but manual: collections search is robots-disallowed, item pages are fine. Free low-res images under the Non-Commercial Licence with a mandatory per-item attribution statement. Keep videos non-monetized. Details in sources-directory.md.
+
+## Fetch run 2 (retry, 19:19-19:24)
+- All 6 retried files downloaded OK; 18 of 18 queued files are on disk. The "failed_total=6" in the run log was a stale counter (failures were not cleared on success); fixed in b_fetch.py and state cleaned.
+
+## Round 3 (2026-11-12, evening)
+- Jim authorized me to run fetches. Fetch run 3: 20 more files OK (38/38 queued on disk, 0 failed). Total external images on disk: ~65 incl. earlier (credits.csv lists 70 rows incl. 4 notebook items).
+- New coverage: E1-L3, E1-L5 now have images; E1-L4, E2-L4, E4-L1, E4-L3, E4-L4 extended (E4-L4 context-only). Review in Archival-Images\review-notes.md.
+- Still no candidates: E1-L6, E1-L7, E2-L6, E2-L8, E4-L2, Italian air attack (E4-L3).
+- IWM leads to confirm by hand (share-and-reuse + attribution): HU 30523, HU 109706, HU 128179, 205039122 (Polish troops marching), Pawlik albums 205313939 (rights not shown), negative album 10 (205409289). Details in B-tasks.md.
+- 9 older manifest items still marked *verify* in Credits.md (pre-existing, not from this fetch).

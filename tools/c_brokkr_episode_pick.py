@@ -2,7 +2,7 @@
   python c_brokkr_episode_pick.py DIR --lang pl|en
 Reads DIR/chunks.json + take_*.wav/json from the render step. Transcribes every take (cached in the take JSON, so resumable),
 score = word errors + 2 x extra words after the last expected word + 5 x |pace/median pace - 1| (same rule as loki's c_pick_takes.py,
-which this reproduces). Best take per chunk, joined with 0.3 s (sentence) / 0.7 s (paragraph) gaps -> DIR/picked_all.wav (24 kHz) and
+which this reproduces). Best take per chunk, joined with --gap-sent (default 0.3 s) / --gap-para (default 0.7 s) gaps -> DIR/picked_all.wav (24 kHz) and
 DIR/picked.json. STOP file honoured between takes (exit 3). Numbers: Whisper writes digits, so digit tokens are ignored in the hypothesis
 and number words listed in NUMW (pl) are ignored in the expectation. Workstream C, 2026-11-12."""
 import argparse, difflib, json, re, sys, time
@@ -10,7 +10,7 @@ from pathlib import Path
 import numpy as np, soundfile as sf
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from c_brokkr_asr import load_asr, read16k
-ap = argparse.ArgumentParser(); ap.add_argument("dir"); ap.add_argument("--lang", required=True, choices=["pl", "en"]); a = ap.parse_args()
+ap = argparse.ArgumentParser(); ap.add_argument("dir"); ap.add_argument("--lang", required=True, choices=["pl", "en"]); ap.add_argument("--gap-sent", type=float, default=0.3); ap.add_argument("--gap-para", type=float, default=0.7); a = ap.parse_args()
 D = Path(a.dir); SR = 24000
 stop = lambda: (D / "STOP").exists() or (Path.home() / "c-workstream" / "STOP").exists()
 log = lambda *x: print(time.strftime("%H:%M:%S"), *x, flush=True)
@@ -55,8 +55,8 @@ for c in chunks:
 parts = []; prev = 0
 for c in chunks:
     w, _ = sf.read(D / f"take_s{c['index']:02d}_t{c['picked']}.wav", dtype="float32")
-    if c["index"]: parts.append(np.zeros(int(SR * (0.7 if c["paragraph"] != prev else 0.3)), dtype="float32"))
+    if c["index"]: parts.append(np.zeros(int(SR * (a.gap_para if c["paragraph"] != prev else a.gap_sent)), dtype="float32"))
     parts.append(w); prev = c["paragraph"]
 sf.write(D / "picked_all.wav", np.concatenate(parts), SR, subtype="PCM_16")
-cj.update(chunks=chunks, median_chars_per_s=round(med, 2), asr_seconds=round(asr_s, 1)); (D / "picked.json").write_text(json.dumps(cj, indent=1, ensure_ascii=False), encoding="utf-8")
+cj.update(gap_sentence_s=a.gap_sent, gap_paragraph_s=a.gap_para, chunks=chunks, median_chars_per_s=round(med, 2), asr_seconds=round(asr_s, 1)); (D / "picked.json").write_text(json.dumps(cj, indent=1, ensure_ascii=False), encoding="utf-8")
 log("picks", [c["picked"] for c in chunks]); log("wrote", D / "picked_all.wav")
