@@ -3,7 +3,7 @@ Workstream C, 2026-11-12.  Usage:
   CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=0 ~/c-workstream/venv-asr/bin/python c_brokkr_asr.py IN.wav [IN2.wav ...] [--lang pl] [--out DIR]
 Writes IN.asr.json next to each wav (or into --out): {file, model, lang, duration_s, text, words:[{w,start,end}]}.
 Importable: from c_brokkr_asr import load_asr, transcribe.  Same model/runtime as loki's c_asr_check.py (whisper-medium, fp16, temperature 0).
-Weights cached in ~/c-workstream/hf (offline after first download). No network service; files stay on brokkr."""
+Env C_ASR_FP32=1 selects fp32 (Pascal GPUs have weak fp16). Weights cached in ~/c-workstream/hf (offline after first download). No network service; files stay on brokkr."""
 import argparse, json, os, sys
 from pathlib import Path
 os.environ.setdefault("HF_HOME", str(Path.home() / "c-workstream" / "hf"))
@@ -13,7 +13,7 @@ MODEL = "openai/whisper-medium"
 def load_asr(model=MODEL):
     import torch
     from transformers import pipeline
-    return pipeline("automatic-speech-recognition", model=model, torch_dtype=torch.float16, device=0)
+    return pipeline("automatic-speech-recognition", model=model, dtype=(torch.float32 if os.environ.get("C_ASR_FP32") == "1" else torch.float16), device=0)
 
 def read16k(path):
     import soundfile as sf

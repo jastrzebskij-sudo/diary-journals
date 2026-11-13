@@ -36,7 +36,7 @@ THUMB_WIDTH = 1920                  # a standard Wikimedia thumbnail size
 MAX_BYTES = 60 * 1024 * 1024
 TIMEOUT = 60
 MAX_PAUSES_PER_RUN = 3
-DEFAULT_HOSTS = ["commons.wikimedia.org", "upload.wikimedia.org"]
+DEFAULT_HOSTS = ["commons.wikimedia.org", "upload.wikimedia.org", "thumb.wikimedia.org"]
 EXT = {"image/jpeg": ".jpg", "image/png": ".png", "image/gif": ".gif", "image/webp": ".webp", "image/tiff": ".tif"}
 ALT = {"image/jpeg": (".jpg", ".jpeg"), "image/tiff": (".tif", ".tiff")}
 

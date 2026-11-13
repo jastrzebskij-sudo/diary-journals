@@ -58,3 +58,25 @@
 - 2026-11-12 18:39 [b_fetch] CATS ep04-L1-3 members|Category:German invasion of Belgium (1940) -> 40 items
 - 2026-11-12 18:40 [b_fetch] CATS ep03-L2-ep04-L3 members|Category:Battle of France -> 40 items
 - 2026-11-12 18:40 [b_fetch] CATS ep04-L4 members|Category:Internierungslager in Frankreich -> 10 items
+- 2026-11-12 19:03 [b_fetch] START queue=fetch-queue.csv todo=18
+- 2026-11-12 19:04 [b_fetch] OK ep02 L7 Archival-Images\ep02\thumbs\L7__Chars-Renault-FT-du-29e-bataillon-de-chars-de-combat-septembre-1939.jpg 345766B lic=Public domain | queue-lic=Public domain | credit=per Commons page (verify provenance) 
+- 2026-11-12 19:04 [b_fetch] FAIL ep02 L7 Archival-Images\ep02\thumbs\L7__1-Pulk-Czogow-Wojska-Polskiego-we-Francji-czolgi-Renault-podczas-postoju-NAC-18-.jpg: unexpected file host
+- 2026-11-12 19:05 [b_fetch] FAIL ep02 L9 Archival-Images\ep02\thumbs\L9__Chorale-d-un-regiment-regional-de-protection-a-Aulnois-fevrier-1940.jpg: unexpected file host
+- 2026-11-12 19:05 [b_fetch] OK ep02 L9 Archival-Images\ep02\thumbs\L9__Auguste-Mallet-cuisinier-aux-armees-janvier-1940.jpg 115928B lic=Public domain | queue-lic=Public domain (per Commons; verify) | credit=per Commons page (verify provenance) 
+- 2026-11-12 19:06 [b_fetch] FAIL ep02 L9 Archival-Images\ep02\thumbs\L9__Drapeau-du-5e-genie-lors-d-une-prise-d-arme-janvier-1940.jpg: unexpected file host
+- 2026-11-12 19:07 [b_fetch] OK ep02 L10 Archival-Images\ep02\thumbs\L10__Marta-Eggerth-1938.jpg 1704196B lic=Public domain | queue-lic=Public domain (per Commons; verify) | credit=per Commons page (verify provenance) 
+- 2026-11-12 19:08 [b_fetch] OK ep02 L5 Archival-Images\ep02\thumbs\L5__Mont-Ventoux-par-Malauc-ne---P1000423.jpg 1285288B lic=CC BY-SA 3.0 | queue-lic=CC BY-SA 3.0 | credit=Commons contributor (modern photo, Feb 2008; context only) 
+- 2026-11-12 19:09 [b_fetch] OK ep02 L5 Archival-Images\ep02\thumbs\L5__Mont-ventoux-par-Malauc-ne---P1000502.jpg 1321901B lic=CC BY-SA 3.0 | queue-lic=CC BY-SA 3.0 | credit=Commons contributor (modern photo, Feb 2008; context only) 
+- 2026-11-12 19:09 [b_fetch] FAIL ep01 E1-L2 Archival-Images\ep01\thumbs\E1-L2__Bundesarchiv-Bild-183-1987-1210-502-Polen-Stukas.jpg: unexpected file host
+- 2026-11-12 19:10 [b_fetch] OK ep01 E1-L2 Archival-Images\ep01\thumbs\E1-L2__Bundesarchiv-Bild-101I-318-0053-35-Polen-Flugzeuge-Junkers-Ju-87-nach-Start.jpg 29097B lic=CC BY-SA 3.0 de | queue-lic=CC BY-SA 3.0 de | credit=Bundesarchiv, CC BY-SA 3.0 de 
+- 2026-11-12 19:10 [b_fetch] FAIL ep01 E1-L4 Archival-Images\ep01\thumbs\E1-L4__BA-10-Lublin-1939.jpg: unexpected file host
+- 2026-11-12 19:11 [b_fetch] OK ep01 E1-L4 Archival-Images\ep01\thumbs\E1-L4__Armia-Czerwona-przekracza-polsk-granic-.jpg 128904B lic=Public domain | queue-lic=Public domain (per Commons; verify) | credit=per Commons page 
+- 2026-11-12 19:12 [b_fetch] OK ep03 E3-L2 Archival-Images\ep03\thumbs\E3-L2__Bundesarchiv-Bild-146-1972-066-03-Albert-Kanal-Belgien.jpg 54948B lic=CC BY-SA 3.0 de | queue-lic=CC BY-SA 3.0 de | credit=Bundesarchiv, CC BY-SA 3.0 de 
+- 2026-11-12 19:12 [b_fetch] OK ep03 E3-L2 Archival-Images\ep03\thumbs\E3-L2__Bundesarchiv-Bild-101I-125-0251-08A-Belgien-Einmarsch-deutscher-Truppen.jpg 63021B lic=CC BY-SA 3.0 de | queue-lic=CC BY-SA 3.0 de | credit=Bundesarchiv, CC BY-SA 3.0 de 
+- 2026-11-12 19:13 [b_fetch] FAIL ep04 E4-L1 Archival-Images\ep04\thumbs\E4-L1__Belgische-Propaganda-Poster-Van-Koning-Leopold-III-met-opschrifft-28-Mei-1940-Halt-Sir.jpg: unexpected file host
+- 2026-11-12 19:14 [b_fetch] OK ep04 E4-L1 Archival-Images\ep04\thumbs\E4-L1__Bundesarchiv-Bild-146-1970-048-11-Belgien-Br-gge-Entwaffnung.jpg 93092B lic=CC BY-SA 3.0 de | queue-lic=CC BY-SA 3.0 de | credit=Bundesarchiv, CC BY-SA 3.0 de 
+- 2026-11-12 19:15 [b_fetch] OK ep04 E4-L3 Archival-Images\ep04\thumbs\E4-L3__Bundesarchiv-Bild-121-0398-Frankreich-ger-umte-Vormarsch-Strasse.jpg 79341B lic=CC BY-SA 3.0 de | queue-lic=CC BY-SA 3.0 de | credit=Bundesarchiv, CC BY-SA 3.0 de 
+- 2026-11-12 19:15 [b_fetch] OK ep04 E4-L3 Archival-Images\ep04\thumbs\E4-L3__Bundesarchiv-Bild-121-0411-Frankreich-Kriegssch-den-zerst-rte-Waggons.jpg 58281B lic=CC BY-SA 3.0 de | queue-lic=CC BY-SA 3.0 de | credit=Bundesarchiv, CC BY-SA 3.0 de 
+- 2026-11-12 19:15 [b_fetch] END attempted=18 done_total=12 failed_total=6
+- 2026-11-12 19:19 [b_fetch] START queue=fetch-queue.csv todo=6
+- 2026-11-12 19:20 [b_fetch] OK ep02 L7 Archival-Images\ep02\thumbs\L7__1-Pulk-Czogow-Wojska-Polskiego-we-Francji-czolgi-Renault-podczas-postoju-NAC-18-.jpg 423199B lic=Public domain | queue-lic=Public domain (per Commons; verify) | credit=Narodowe Archiwum Cyfrowe (NAC) 

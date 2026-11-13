@@ -1,11 +1,102 @@
 {
- "done": {},
- "failed": {},
+ "done": {
+  "Archival-Images\\ep01\\thumbs\\E1-L2__Bundesarchiv-Bild-101I-318-0053-35-Polen-Flugzeuge-Junkers-Ju-87-nach-Start.jpg": {
+   "at": "2026-11-12 19:10",
+   "bytes": 29097,
+   "dest": "D:\\Claude\\Projects\\Diary\\Archival-Images\\ep01\\thumbs\\E1-L2__Bundesarchiv-Bild-101I-318-0053-35-Polen-Flugzeuge-Junkers-Ju-87-nach-Start.jpg"
+  },
+  "Archival-Images\\ep01\\thumbs\\E1-L4__Armia-Czerwona-przekracza-polsk-granic-.jpg": {
+   "at": "2026-11-12 19:11",
+   "bytes": 128904,
+   "dest": "D:\\Claude\\Projects\\Diary\\Archival-Images\\ep01\\thumbs\\E1-L4__Armia-Czerwona-przekracza-polsk-granic-.jpg"
+  },
+  "Archival-Images\\ep02\\thumbs\\L10__Marta-Eggerth-1938.jpg": {
+   "at": "2026-11-12 19:07",
+   "bytes": 1704196,
+   "dest": "D:\\Claude\\Projects\\Diary\\Archival-Images\\ep02\\thumbs\\L10__Marta-Eggerth-1938.jpg"
+  },
+  "Archival-Images\\ep02\\thumbs\\L5__Mont-Ventoux-par-Malauc-ne---P1000423.jpg": {
+   "at": "2026-11-12 19:08",
+   "bytes": 1285288,
+   "dest": "D:\\Claude\\Projects\\Diary\\Archival-Images\\ep02\\thumbs\\L5__Mont-Ventoux-par-Malauc-ne---P1000423.jpg"
+  },
+  "Archival-Images\\ep02\\thumbs\\L5__Mont-ventoux-par-Malauc-ne---P1000502.jpg": {
+   "at": "2026-11-12 19:09",
+   "bytes": 1321901,
+   "dest": "D:\\Claude\\Projects\\Diary\\Archival-Images\\ep02\\thumbs\\L5__Mont-ventoux-par-Malauc-ne---P1000502.jpg"
+  },
+  "Archival-Images\\ep02\\thumbs\\L7__1-Pulk-Czogow-Wojska-Polskiego-we-Francji-czolgi-Renault-podczas-postoju-NAC-18-.jpg": {
+   "at": "2026-11-12 19:20",
+   "bytes": 423199,
+   "dest": "D:\\Claude\\Projects\\Diary\\Archival-Images\\ep02\\thumbs\\L7__1-Pulk-Czogow-Wojska-Polskiego-we-Francji-czolgi-Renault-podczas-postoju-NAC-18-.jpg"
+  },
+  "Archival-Images\\ep02\\thumbs\\L7__Chars-Renault-FT-du-29e-bataillon-de-chars-de-combat-septembre-1939.jpg": {
+   "at": "2026-11-12 19:04",
+   "bytes": 345766,
+   "dest": "D:\\Claude\\Projects\\Diary\\Archival-Images\\ep02\\thumbs\\L7__Chars-Renault-FT-du-29e-bataillon-de-chars-de-combat-septembre-1939.jpg"
+  },
+  "Archival-Images\\ep02\\thumbs\\L9__Auguste-Mallet-cuisinier-aux-armees-janvier-1940.jpg": {
+   "at": "2026-11-12 19:05",
+   "bytes": 115928,
+   "dest": "D:\\Claude\\Projects\\Diary\\Archival-Images\\ep02\\thumbs\\L9__Auguste-Mallet-cuisinier-aux-armees-janvier-1940.jpg"
+  },
+  "Archival-Images\\ep03\\thumbs\\E3-L2__Bundesarchiv-Bild-101I-125-0251-08A-Belgien-Einmarsch-deutscher-Truppen.jpg": {
+   "at": "2026-11-12 19:12",
+   "bytes": 63021,
+   "dest": "D:\\Claude\\Projects\\Diary\\Archival-Images\\ep03\\thumbs\\E3-L2__Bundesarchiv-Bild-101I-125-0251-08A-Belgien-Einmarsch-deutscher-Truppen.jpg"
+  },
+  "Archival-Images\\ep03\\thumbs\\E3-L2__Bundesarchiv-Bild-146-1972-066-03-Albert-Kanal-Belgien.jpg": {
+   "at": "2026-11-12 19:12",
+   "bytes": 54948,
+   "dest": "D:\\Claude\\Projects\\Diary\\Archival-Images\\ep03\\thumbs\\E3-L2__Bundesarchiv-Bild-146-1972-066-03-Albert-Kanal-Belgien.jpg"
+  },
+  "Archival-Images\\ep04\\thumbs\\E4-L1__Bundesarchiv-Bild-146-1970-048-11-Belgien-Br-gge-Entwaffnung.jpg": {
+   "at": "2026-11-12 19:14",
+   "bytes": 93092,
+   "dest": "D:\\Claude\\Projects\\Diary\\Archival-Images\\ep04\\thumbs\\E4-L1__Bundesarchiv-Bild-146-1970-048-11-Belgien-Br-gge-Entwaffnung.jpg"
+  },
+  "Archival-Images\\ep04\\thumbs\\E4-L3__Bundesarchiv-Bild-121-0398-Frankreich-ger-umte-Vormarsch-Strasse.jpg": {
+   "at": "2026-11-12 19:15",
+   "bytes": 79341,
+   "dest": "D:\\Claude\\Projects\\Diary\\Archival-Images\\ep04\\thumbs\\E4-L3__Bundesarchiv-Bild-121-0398-Frankreich-ger-umte-Vormarsch-Strasse.jpg"
+  },
+  "Archival-Images\\ep04\\thumbs\\E4-L3__Bundesarchiv-Bild-121-0411-Frankreich-Kriegssch-den-zerst-rte-Waggons.jpg": {
+   "at": "2026-11-12 19:15",
+   "bytes": 58281,
+   "dest": "D:\\Claude\\Projects\\Diary\\Archival-Images\\ep04\\thumbs\\E4-L3__Bundesarchiv-Bild-121-0411-Frankreich-Kriegssch-den-zerst-rte-Waggons.jpg"
+  }
+ },
+ "failed": {
+  "Archival-Images\\ep01\\thumbs\\E1-L2__Bundesarchiv-Bild-183-1987-1210-502-Polen-Stukas.jpg": {
+   "at": "2026-11-12 19:09",
+   "reason": "unexpected file host"
+  },
+  "Archival-Images\\ep01\\thumbs\\E1-L4__BA-10-Lublin-1939.jpg": {
+   "at": "2026-11-12 19:10",
+   "reason": "unexpected file host"
+  },
+  "Archival-Images\\ep02\\thumbs\\L7__1-Pulk-Czogow-Wojska-Polskiego-we-Francji-czolgi-Renault-podczas-postoju-NAC-18-.jpg": {
+   "at": "2026-11-12 19:04",
+   "reason": "unexpected file host"
+  },
+  "Archival-Images\\ep02\\thumbs\\L9__Chorale-d-un-regiment-regional-de-protection-a-Aulnois-fevrier-1940.jpg": {
+   "at": "2026-11-12 19:05",
+   "reason": "unexpected file host"
+  },
+  "Archival-Images\\ep02\\thumbs\\L9__Drapeau-du-5e-genie-lors-d-une-prise-d-arme-janvier-1940.jpg": {
+   "at": "2026-11-12 19:06",
+   "reason": "unexpected file host"
+  },
+  "Archival-Images\\ep04\\thumbs\\E4-L1__Belgische-Propaganda-Poster-Van-Koning-Leopold-III-met-opschrifft-28-Mei-1940-Halt-Sir.jpg": {
+   "at": "2026-11-12 19:13",
+   "reason": "unexpected file host"
+  }
+ },
  "hosts": {
   "wikimedia": {
    "day": "2026-11-12",
-   "files_today": 0,
-   "last_request": 1794526843.8384044,
+   "files_today": 13,
+   "last_request": 1794529245.3536255,
    "level": 0,
    "pause_until": 0
   }

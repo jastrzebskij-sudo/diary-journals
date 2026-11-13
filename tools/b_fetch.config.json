@@ -3,6 +3,7 @@
   "assets_root": "D:\\Claude\\Assets\\Diary",
   "allowed_hosts": [
     "commons.wikimedia.org",
-    "upload.wikimedia.org"
+    "upload.wikimedia.org",
+    "thumb.wikimedia.org"
   ]
 }

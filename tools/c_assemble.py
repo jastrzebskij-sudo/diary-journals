@@ -55,7 +55,7 @@ fc.append(f"[{f}:v]scale={PW}:{H}:force_original_aspect_ratio=increase,crop={PW}
           f"format=yuva420p,fade=t=in:st=1.5:d=1.2:alpha=1[fp]")
 fc.append(f"color=c=black:s={W}x{H}:r={FPS}:d={T:.2f}[bg]")
 fc.append(f"[bg][jf]overlay=0:0[b1]")
-fc.append(f"[b1][fp]overlay=x='560+40*sin(2*PI*t/45)':y=0:shortest=1[b2]")
+fc.append(f"[b1][fp]overlay=x='600+40*sin(2*PI*t/45)':y=0:shortest=1[b2]")
 look = "format=gray,format=rgb24,colorchannelmixer=.393:.769:.189:0:.349:.686:.168:0:.272:.534:.131" if a.look == "sepia" else "format=gray,format=rgb24"
 fc.append(f"[b2]{look},eq=brightness='0.012*sin(2*PI*7.3*t)+0.008*sin(2*PI*2.1*t)':eval=frame,"
           f"noise=alls={a.grain}:allf=t+u,vignette=PI/5,fade=t=in:st=0:d=1:color=black,fade=t=out:st={T-1:.2f}:d=1,format=yuv420p[v]")
@@ -74,5 +74,5 @@ Path(out + ".manifest.json").write_text(json.dumps({
     "page": a.page, "lang": a.lang, "duration_s": round(T, 2), "ffmpeg": ver, "inputs": {
         "audio": a.audio, "face": a.face, "journal": a.journal, "title": a.title},
     "settings": {"jx": a.jx, "look": a.look, "grain": a.grain, "zoom": a.zoom, "period_audio": not a.no_period_audio,
-                 "frame": f"{W}x{H}@{FPS}", "division": "560+40*sin(2*pi*t/45)"}}, indent=1), encoding="utf-8")
+                 "frame": f"{W}x{H}@{FPS}", "division": "600+40*sin(2*pi*t/45)"}}, indent=1), encoding="utf-8")
 print("wrote", out, f"{T:.1f}s")

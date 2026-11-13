@@ -10,6 +10,9 @@ Stopped 2026-11-12 ~19:10 local. Fetcher and queue are ready; Jim runs the fetch
 - Licenses: Bundesarchiv items are CC BY-SA 3.0 de (credit "Bundesarchiv, Bild ..."; share-alike matters if the video is ever monetized); several PD claims are from uploaders only; fetch-results.csv will record API license, artist and credit per file. Avoided Commons copies of IWM "HU" images (no IWM downloads until Jim approves).
 - IWM: Non-Commercial Licence (CC BY-NC equivalent), free standard-res; not used. NAC: nac.gov.pl says online copies are free unless noted; reuse terms vary by fonds (list: NAC_SPIS_ZESPOLOW_2024.pdf; contact czytelnia@nac.gov.pl). Read in the built-in browser, one page only, nothing saved.
 
+- Image count 2026-11-12: 27 unique external images on disk (Ep1 4, Ep2 6, Ep3 1, Ep4 1, Ep7 1, Ep8 1, Ep9 1, Ep10 2, Ep11 1, Ep12 2, Ep13 1, Ep14 1, Ep15 1, General 4; Ep5, Ep6, Ep16 none) + 7 glued-in notebook items; fetch not yet run, 18 queued.
+- Source map for more images: Archival-Images\sources-directory.md (tiers: free/open, museums needing permission, restricted/commercial).
+
 ## Run (from D:\Claude\Projects\Diary)
 - PowerShell: D:\Claude\Assets\Diary\venv\face\Scripts\python.exe tools\b_fetch.py --queue Archival-Images\fetch-queue.csv
 - Preview: add --dry-run. Stop cleanly: create STOP.txt in the project root (delete before next run). Resume is automatic (tools\b_fetch_state.json); if a lock is stale delete tools\b_fetch.lock.
@@ -17,14 +20,28 @@ Stopped 2026-11-12 ~19:10 local. Fetcher and queue are ready; Jim runs the fetch
 - Output: images in Archival-Images\epNN\thumbs\; log lines in RUNLOG-B.md; per-file license/credit in Archival-Images\fetch-results.csv.
 
 ## Next action
-After the run: a later session reviews all new thumbnails on one contact sheet, updates manifests and archival_coverage; then second-round searches for the no-candidate landmarks (try Commons subcategories e.g. "Winter at Mont Ventoux", Polish/French archives).
+Second-round search using the sources directory; contact museums only on Jim's go. After the run: a later session reviews all new thumbnails on one contact sheet, updates manifests and archival_coverage; then second-round searches for the no-candidate landmarks (try Commons subcategories e.g. "Winter at Mont Ventoux", Polish/French archives).
 
 ## Blockers
 - Sandbox proxy blocks commons.wikimedia.org (403); searches were run on Jim's machine via PowerShell instead. No Wikimedia 429 this session.
 
 ## Needs Jim
 - Run the fetch (commands above).
+- Pick which restricted/permission sources to approach (IWM, Sikorski Museum, Pilsudski Institute, ECPAD, KARTA).
 - Decide whether modern Ventoux photos (L5) and the Bundesarchiv German-propaganda images are acceptable as context imagery.
 
 ## Notebook 2 manifest
 Not ready (unchanged).
+
+## Credits and use (2026-11-12)
+- Project use: personal, educational, non-commercial only. Credit every source; credits go into the videos and descriptions.
+- Credits: `Credits.md` (per episode + description block) and `Archival-Images\credits.csv`. 50 images listed, 17 still marked *verify* until the fetch runs and the Commons API fills artist/licence. Rerun `python tools\b_credits.py` after the fetch.
+- Next: IWM feasibility check (robots.txt/terms) before any IWM download; museum outreach needs Jim's explicit go.
+
+## Fetch run 1 (2026-11-12 19:03-19:15)
+- 12 of 18 downloaded OK, 6 failed ("unexpected file host"): files wider than 1920 px are served from thumb.wikimedia.org, which was not allowlisted. Fixed (same rate bucket). Failed: NAC 18-264-6 tanks (Ep2 L7), Aulnois choir and 5e génie flag (Ep2 L9), BA-10 Lublin (Ep1 L4), Bundesarchiv Stukas 183-1987-1210-502 (Ep1 L2), Leopold III poster (Ep4 L1).
+- Jim: rerun with `--retry-failed` (same command as above plus that flag) to pick up the 6.
+- Credits regenerated from API data; `_to_delete\_dbg_hosts.py` is a throwaway debug script (safe to delete).
+
+## IWM (2026-11-12)
+- Feasible but manual: collections search is robots-disallowed, item pages are fine. Free low-res images under the Non-Commercial Licence with a mandatory per-item attribution statement. Keep videos non-monetized. Details in sources-directory.md.
