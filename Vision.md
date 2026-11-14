@@ -10,7 +10,7 @@ Source: Jim, 2026-11-07. Purpose: Christmas 2026 gift (soft 2026-12-15, hard 202
 
 ## Episode structure
 1. Fade in from black on grandfather's face (half-frame first). As he begins speaking, the journal page appears with an overlay of title, topic, date range and page range; Episode 1 adds the series title. Ep1 is the event-first exception: outbreak-of-war newsreel, fade, then this opening. (Updated 2026-11-13; supersedes earlier journal-first opening.)
-2. Lip-synced speech continues over the journal text. Layout under evaluation: `full` (journal full frame, face in feathered oval corner) vs `side` (journal panel + face column); smooth scroll via supersampling.
+2. Lip-synced speech continues over the journal text. Layout decided 2026-11-13: journal/landmark imagery fills the frame, younger bust-cropped portrait in a feathered oval placed per scene (opposite the text, over imagery, far corner of the journal text, or bottom-centre); smooth scroll via supersampling.
 3. The journal page pans top to bottom as it is read.
 4. **Landmarks** (events or places with imagery): a region fades to a panned crop of the chosen image, or a short video clip. Landmark sides are used equally but organically, not strict left-right alternation.
 5. Layout is a **moving division**, not a fixed 50/50: a strong landmark image may dominate the frame.
