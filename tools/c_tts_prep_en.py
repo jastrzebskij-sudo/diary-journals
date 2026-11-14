@@ -8,7 +8,7 @@ Whisper's real spellings). Rules are hand-written; every unknown digit token is 
 import argparse, datetime, re, sys
 from pathlib import Path
 ap = argparse.ArgumentParser(); ap.add_argument("src"); ap.add_argument("out"); ap.add_argument("--from", dest="frm"); ap.add_argument("--to")
-ap.add_argument("--names", default=str(Path(__file__).with_name("c_tts_names_en.txt"))); a = ap.parse_args()
+ap.add_argument("--auto-names", action="store_true"); ap.add_argument("--names", default=str(Path(__file__).with_name("c_tts_names_en.txt"))); a = ap.parse_args()
 ONES = "zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen".split()
 TENS = "_ _ twenty thirty forty fifty sixty seventy eighty ninety".split()
 def card(n):
@@ -56,6 +56,10 @@ for p in paras:
     p = prep(p)
     for w, s in names:
         if w in p: p = p.replace(w, s); used.append((s, w))
+    if a.auto_names:   # unlisted capitalised words with Polish diacritics: plain transliteration as the spoken form (Jim can override in the names file)
+        TR = str.maketrans({"ł": "l", "ą": "a", "ę": "e", "ć": "c", "ś": "s", "ź": "z", "ż": "z", "ń": "n", "ó": "o", "Ł": "L", "Ś": "S", "Ż": "Z", "Ź": "Z", "Ć": "C", "Ó": "O"})
+        for w in sorted(set(re.findall(r"\b[A-ZŁŚŻŹĆÓ][A-Za-zĄąĆćĘęŁłŃńÓóŚśŹźŻż'-]*[ĄąĆćĘęŁłŃńÓóŚśŹźŻż][A-Za-zĄąĆćĘęŁłŃńÓóŚśŹźŻż'-]*\b", p))):
+            sp = w.translate(TR); p = re.sub(r"\b%s\b" % re.escape(w), sp, p); used.append((sp, w))
     out_paras.append(p)
 text = "\n\n".join(out_paras) + "\n"; left = re.findall(r"\S*\d\S*", text)
 Path(a.out).write_text(text, encoding="utf-8", newline="\n")

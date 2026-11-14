@@ -14,3 +14,11 @@ Needs Jim: listen to the candidates; say when to pull and send the rest.
 ## Update 2026-11-12 21:4x - voice recipes locked by Jim
 PL: latent c_Kumar65_Ilkin35_80_Damien20, deepen -1.0 st/bass +2, TEMPO 1.05 (pitch-preserving), gaps 0.3/0.7 s. EN: same latent, NO deepen, gaps 0.5/1.0 s, TEMPO 1.0. Archival tinny feel to be done by band-limit filter in assembly. 10 other EN candidates remain on brokkr (finals dir) unreviewed.
 Needs Jim: go for full Ep1 PL+EN renders (about 3.7 h PL / 3 h EN compute at 8 takes).
+
+## Update 2026-11-12 22:1x - full Ep1 overnight run launched
+Brokkr: tools\c_brokkr_ep_job.sh runs 16 pages PL then EN (8 takes, seed 5000, PL deepen -1.0/bass 2/tempo 1.05/gaps 0.3/0.7; EN no deepen/gaps 0.5/1.0; 3 attempts per page, failures logged, run continues). Loki: tools\c_loki_ep_loop.ps1 (hidden PowerShell process, started 22:04) pulls each finished page, renders faces for WA0003 and WA0005, assembles mp4s into Assets\Diary\video\ep01\PL|EN. Page texts: Assets\Diary\tts\ep01_pl|ep01_en\pages (prep-report.txt per language). Computer must stay on.
+Needs Jim (morning): listen-check, flagged sentences (video\ep01\needs-ear.txt), EN name spellings are first guesses; if loop stopped, restart it with the command in the script header.
+
+
+## 2026-11-13 (audit)
+Pipeline v0 orchestrator running on brokkr (queue/ledger/status); approach locked in. Retired: c_loki_ep_loop.ps1, c_brokkr_ep_job.sh (archived). Ep1 tail jobs and layout choice pending. See PIPELINE-SPEC v0.3 and STATUS-PIPELINE.md.

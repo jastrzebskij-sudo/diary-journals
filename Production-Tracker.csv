@@ -1,8 +1,8 @@
 episode,title,language,pages,word_count,script_assembled,archival_images_sourced,audio_generated,timing_computed,video_rendered,thumbnail_description_done,published,publish_date,archival_coverage
-1,Invasion and Flight,EN,1-1..2-5,3435,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,,3/9
-1,Inwazja i ucieczka,PL,1-1..2-5,2622,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,,3/9
-2,Winter Quarters,EN,2-6..2-21,3570,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,,3/10
-2,Zimowe kwatery,PL,2-6..2-21,2736,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,,3/10
+1,Invasion and Flight,EN,1-1..2-6(part),3435,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,,3/9
+1,Inwazja i ucieczka,PL,1-1..2-6(part),2622,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,,3/9
+2,Winter Quarters,EN,2-6(part)..2-21,3570,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,,3/10
+2,Zimowe kwatery,PL,2-6(part)..2-21,2736,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,,3/10
 3,The Storm Breaks,EN,2-22..2-36,3490,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,,1/2
 3,Wybucha burza,PL,2-22..2-36,2720,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,,1/2
 4,The Fall of France,EN,2-37..2-50,3581,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,,1/4

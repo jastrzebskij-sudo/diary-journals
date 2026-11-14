@@ -10,3 +10,5 @@ Ryki=Riki
 Łuck=Wootsk
 Chełm=Hewm
 Górczewska=Goorchevska
+złoty=zloty
+jasełka=yasevka

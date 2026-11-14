@@ -58,3 +58,9 @@
 [B] 2026-11-12: round-3 Commons search done (queue-cats-results3.json); tools\b_build_queue3.py appended 20 gap/context files to fetch-queue.csv (E1-L3/L4/L5, E2-L4 + CTX, E4-L1/L3/L4; Bram/Barcares items are Spanish-refugee camps, context only). Fetch started in background ~21:47 (I ran it, per Jim's OK). Still no candidates: E1-L6, E1-L7, E2-L6 (specific), E2-L8, E4-L2, Italian air attack (E4-L3).
 [C] 2026-11-12 DECISION (Jim): Polish narration recipe approved = blend latent, deepen -1.0 st/bass +2, tempo 1.05, gaps 0.3/0.7 s. English recipe = same latent, no deepen, gaps 0.5/1.0 s. Use these for Ep1-4 full renders once Jim gives the go.
 [B] 2026-11-12: fetch run 3 done: 38/38 on disk, 0 failed. Review in Archival-Images\review-notes.md. Archival_coverage flags NOT edited (tracker is Hub-owned): by my count E1 now covers L1-L5,L8,L9 (L6,L7 open), E4 L1,L3(partial),L4(context only) with L2 open. Gaps and IWM leads in STATUS-B.md.
+[C] 2026-11-12: Jim "go" for full Ep1 overnight (PL then EN, both portraits WA0003/WA0005, 8 takes). Tools c_prep_ep_pages.py, c_brokkr_ep_job.sh, c_loki_ep_loop.ps1; texts in Assets\Diary\tts\ep01_pl|en\pages
+[C] 2026-11-13: overnight run: audio ok except 6 pages with sentences over XTTS char limit (hand-split, re-rendering); loki loop bug (face -Image array) meant no faces overnight, fixed and restarted 10:30
+
+
+## 2026-11-13 audit note
+Flow scripts c_loki_ep_loop.ps1 and c_brokkr_ep_job.sh are retired (in git-ignored _archive/); orchestrator is pipeline/orch.py. Ep1 ends at end of year; Ep1/Ep2 boundary is inside page 2-6.

@@ -60,3 +60,9 @@ id_ecdsa*
 *api_key*
 .git-credentials
 .netrc
+
+# Audit 2026-11-13
+_archive/
+/STATUS-PIPELINE.md
+/pipeline/ledger-brokkr.jsonl
+/pipeline/jobs/*.json.bak

@@ -9,8 +9,8 @@ Source: Jim, 2026-11-07. Purpose: Christmas 2026 gift (soft 2026-12-15, hard 202
 - **Archival footage and imagery predominate.** Grandfather's face is used sparingly: episode intro and outro, an occasional fade-in mid-episode; present, not in the spotlight (Jim, 2026-11-07).
 
 ## Episode structure
-1. Fade in from black. One region shows the journal title page; Episode 1 carries the series title, later episodes "continued" plus their date range.
-2. A moment later the other region fades in on grandfather's face, which begins speaking the journal text (lip-synced).
+1. Fade in from black on grandfather's face (half-frame first). As he begins speaking, the journal page appears with an overlay of title, topic, date range and page range; Episode 1 adds the series title. Ep1 is the event-first exception: outbreak-of-war newsreel, fade, then this opening. (Updated 2026-11-13; supersedes earlier journal-first opening.)
+2. Lip-synced speech continues over the journal text. Layout under evaluation: `full` (journal full frame, face in feathered oval corner) vs `side` (journal panel + face column); smooth scroll via supersampling.
 3. The journal page pans top to bottom as it is read.
 4. **Landmarks** (events or places with imagery): a region fades to a panned crop of the chosen image, or a short video clip. Landmark sides are used equally but organically, not strict left-right alternation.
 5. Layout is a **moving division**, not a fixed 50/50: a strong landmark image may dominate the frame.

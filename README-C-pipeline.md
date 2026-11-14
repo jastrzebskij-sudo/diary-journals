@@ -1,5 +1,7 @@
 # Workstream C pipeline (TTS, face, assembly) - README
 
+> **Status 2026-11-13: partly superseded.** Production flow is now `pipeline/orch.py` (see `pipeline/README-v0.md`, `PIPELINE-SPEC.md` v0.3). The Ep1-specific steps below remain valid as the description of the underlying stages/tools; scripts retired in the audit are in the git-ignored `_archive/`.
+
 Last updated 2026-11-12. Everything is scripts; no AI tokens are used while a job runs. Nothing is uploaded or pushed.
 
 ## Machines

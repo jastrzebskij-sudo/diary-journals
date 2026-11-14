@@ -51,27 +51,43 @@ CARD = [(r"\b5 minut\b", "pięć minut"), (r"\b2 dni i 2 noce\b", "dwa dni i dwi
         (r"\ba 11 kompania\b", "a jedenasta kompania"), (r"\btransport 500 ludzi\b", "transport pięciuset ludzi"),
         (r"\(około 150 ludzi\)", "(około stu pięćdziesięciu ludzi)"), (r"około 1000 ludzi\b", "około tysiąca ludzi"), (r"\b50 franków\b", "pięćdziesiąt franków"),
         (r"\b3 baraki\b", "trzy baraki"), (r"\bH\.81,(\s*[\uE000-\uE0FF]?)\s*79, 77\.", r"H osiemdziesiąt jeden,\1 H siedemdziesiąt dziewięć, H siedemdziesiąt siedem.")]
-# abbreviations: nominative / genitive / instrumental ; case chosen from the previous word (default nominative)
-AB = {"ppor": ("podporucznik", "podporucznika"), "por": ("porucznik", "porucznika"), "kpt": ("kapitan", "kapitana"), "mjr": ("major", "majora"),
-      "ppłk": ("podpułkownik", "podpułkownika"), "płk": ("pułkownik", "pułkownika"), "gen": ("generał", "generała"), "sierż": ("sierżant", "sierżanta"),
-      "kpr": ("kapral", "kaprala"), "plut": ("plutonowy", "plutonowego"), "chor": ("chorąży", "chorążego"), "inż": ("inżynier", "inżyniera"),
-      "p": ("pan", "pana"), "strz": ("strzelec", "strzelca"), "wach": ("wachmistrz", "wachmistrza"), "prezyd": ("prezydent", "prezydenta"),
-      "st": ("starszy", "starszego")}
-GEN_PREV = {"do", "od", "z", "ze", "bez", "u", "dla", "około", "rozkaz", "wstawiennictwem", "dowództwem", "powrót", "jednego", "generała", "pana", "przez",
-            "dow.", "o", "na"}
+# abbreviations -> (nominative, genitive, instrumental, dative); case chosen from the previous/next word (default nominative)  FLAG heuristic
+AB = {"ppor": ("podporucznik", "podporucznika", "podporucznikiem", "podporucznikowi"), "por": ("porucznik", "porucznika", "porucznikiem", "porucznikowi"),
+      "kpt": ("kapitan", "kapitana", "kapitanem", "kapitanowi"), "mjr": ("major", "majora", "majorem", "majorowi"),
+      "ppłk": ("podpułkownik", "podpułkownika", "podpułkownikiem", "podpułkownikowi"), "ppułk": ("podpułkownik", "podpułkownika", "podpułkownikiem", "podpułkownikowi"),
+      "płk": ("pułkownik", "pułkownika", "pułkownikiem", "pułkownikowi"), "gen": ("generał", "generała", "generałem", "generałowi"), "gener": ("generał", "generała", "generałem", "generałowi"),
+      "sierż": ("sierżant", "sierżanta", "sierżantem", "sierżantowi"), "sier": ("sierżant", "sierżanta", "sierżantem", "sierżantowi"),
+      "kpr": ("kapral", "kaprala", "kapralem", "kapralowi"), "plut": ("plutonowy", "plutonowego", "plutonowym", "plutonowemu"),
+      "chor": ("chorąży", "chorążego", "chorążym", "chorążemu"), "inż": ("inżynier", "inżyniera", "inżynierem", "inżynierowi"),
+      "p": ("pan", "pana", "panem", "panu"), "strz": ("strzelec", "strzelca", "strzelcem", "strzelcowi"), "wach": ("wachmistrz", "wachmistrza", "wachmistrzem", "wachmistrzowi"),
+      "prezyd": ("prezydent", "prezydenta", "prezydentem", "prezydentowi"), "podch": ("podchorąży", "podchorążego", "podchorążym", "podchorążemu"),
+      "st": ("starszy", "starszego", "starszym", "starszemu")}
+GEN_PREV = {"do", "od", "z", "ze", "bez", "u", "dla", "około", "rozkaz", "wstawiennictwem", "dowództwem", "powrót", "jednego", "pana", "przez", "p."}
+INSTR_PREV = {"przed", "z", "ze", "za", "nad", "pod"}
 def abbr_sub(t):
+    pat = re.compile(r"(?<![\wąćęłńóśźż])(%s)\.(?=\s+(\S+))" % "|".join(sorted(AB, key=len, reverse=True)), re.I)
     def rep(m):
-        key = m.group(2).lower().rstrip("."); cap = m.group(2)[0].isupper(); pre = m.group(1).split()[-1].lower().strip(".,;:()") if m.group(1).strip() else ""
-        nxt = m.group(3)
-        gen = pre in GEN_PREV or nxt.lower().endswith(("ego", "iego")) and key not in ("st",)
-        w = AB[key][1 if gen else 0]
-        if key == "st" and re.match(r"(sierż|wach|strz|sier)", nxt, re.I): w = "starszy"
-        return m.group(1) + (w.capitalize() if cap else w) + " " + m.group(3)
-    return re.sub(r"((?:\S+\s+)?)\b(ppor|por|kpt|mjr|ppłk|płk|gen|sierż|kpr|plut|chor|inż|prezyd|strz|wach|st|p)\.\s+(\S+)", rep, t, flags=re.I)
+        key = m.group(1).lower(); nxt = re.sub(r"[^\wąćęłńóśźż]+$", "", m.group(2)); nl = nxt.lower()
+        before = t[:m.start()].rstrip(); pw = re.findall(r"\S+", before)[-1].lower() if before else ""
+        pwc = pw.strip(",;:()")
+        start = (not before) or before[-1] in ".!?:\n"
+        if key == "st" and re.match(r"(sierż|sier|wach|strz)", nl): idx = 0
+        elif nl.endswith(("owi",)): idx = 3
+        elif pwc in INSTR_PREV and nl.endswith(("em", "iem", "ą")): idx = 2
+        elif pwc in GEN_PREV or pwc.endswith(("ego", "egoś", "iego", "iegoś")) or nl.endswith(("ego", "iego", "ina", "aka", "icza")): idx = 1
+        else: idx = 0
+        w = AB[key][idx]
+        return w.capitalize() if start else w
+    return pat.sub(rep, t)
 def prep_pl(t):
+    t = re.sub(r"Baonu Panc\.", "Batalionu Pancernego.", t); t = t.replace("III Batalionu", "Trzeciego Batalionu").replace("III Baonie Pancernym", "Trzecim Batalionie Pancernym"); t = re.sub(r"\bwach\.(?=\s*$|\s*[\uE000-\uE0FF])", "wachmistrz.", t)
+    for a,b in (("Batalionem Panc.","Batalionem Pancernym."),("Batalionu Panc.","Batalionu Pancernego."),("Baon Panc.","Batalion Pancerny."),("Kolumny Sam.","Kolumny Samochodowej"),
+                ("bul. ","bulwarze "),("pp. ","państwo "),("starszy wach.","starszy wachmistrz"),("Kapitana Ci","kapitana Ci")):
+        t = t.replace(a, b)
+    t = re.sub(r"(Batalionu[\s\uE000-\uE0FF]+)Panc\.", r"\1Pancernego.", t); t = re.sub(r"(starszy[\s\uE000-\uE0FF]+)wach\.", r"\1wachmistrz.", t)
     t = t.replace("sp[osób", "sposób").replace("/podpis/", "").replace("(zdjęcie)", "").replace("„ „", "nic ważnego")
     t = re.sub(r"\b(\d{1,2})³⁰", lambda m: ord_gen(int(m.group(1))).replace("ego", "ej") + " trzydzieści", t)
-    t = re.sub(r"\b(\d{1,2}) (%s) 1939(?: r\b\.?)?" % RM, lambda m: ord_gen(int(m.group(1))) + " " + MONTHS[m.group(2)] + " " + YEAR39 + ("." if m.group(3) else ""), t)
+    t = re.sub(r"\b(\d{1,2}) (%s) 1939(?: r\b(\.)?)?" % RM, lambda m: ord_gen(int(m.group(1))) + " " + MONTHS[m.group(2)] + " " + YEAR39 + ("." if m.group(3) else ""), t)
     t = re.sub(r"\bdnia (\d{1,2}) (%s)\b" % RM, lambda m: "dnia " + ord_gen(int(m.group(1))) + " " + MONTHS[m.group(2)], t)
     t = re.sub(r"\b(\d{1,2})/(%s)/1939\.?" % RM, lambda m: ord_gen(int(m.group(1))) + " " + MONTHS[m.group(2)] + " " + YEAR39 + ".", t)
     t = re.sub(r"\b(\d{1,2})\.(%s)\.(?!\d)" % RM, lambda m: ord_gen(int(m.group(1))) + " " + MONTHS[m.group(2)] + ".", t)
@@ -83,15 +99,21 @@ def prep_pl(t):
     t = re.sub(r"\bo (\d{1,2})\.", lambda m: "o " + fem(ord_gen(int(m.group(1)))) + ".", t)
     for p, r in CARD: t = re.sub(p, r, t)
     t = re.sub(r"\b(III|II)\b(?= Baonu)", lambda m: {"III": "Trzeciego", "II": "Drugiego"}[m.group(1)], t)
-    t = (t.replace("Komp. Gospodarczej", "Kompanii Gospodarczej").replace("Baonu Panc.", "Batalionu Pancernego").replace("Baonem Panc.", "Batalionem Pancernym")
+    t = (t.replace("Komp. Gospodarczej", "Kompanii Gospodarczej").replace("Baonu Panc. ", "Batalionu Pancernego. ").replace("Baonem Panc.", "Batalionem Pancernym")
          .replace("Baonu", "Batalionu").replace("dow. Kolumny", "dowódca Kolumny").replace("pod dow.", "pod dowództwem").replace("komp. Zamk.", "kompanii zamkowej")
-         .replace("Komp. Adm.", "Kompanii Administracyjnej").replace("dr lasów", "dyrekcja lasów").replace("Marji", "Marji"))
+         .replace("Komp. Adm.", "Kompanii Administracyjnej").replace("dr lasów", "dyrekcja lasów").replace("Kolumny Sam.", "Kolumny Samochodowej").replace("kpr. Pisul.", "kapral Pisulewski").replace("inż. Lecz", "inżynier. Lecz").replace("Baonu Panc.", "Batalionu Pancernego."))
     t = abbr_sub(t)
     t = re.sub(r"\bkpr\.(?=\s*$)", "kapral", t)
     return t
 COMMA_BEFORE = r"(że|lecz|ale|aby|żeby|gdy|gdzie|ponieważ|który|która|które|którego|której|którym|którą|którzy|którym)"
-def commas_pl(t):                                   # FLAG conservative standard-Polish clause commas; skips if a comma/sentence start precedes
-    return re.sub(r"(?<=[\wąćęłńóśźż])\s+(?=%s\b)" % COMMA_BEFORE, lambda m: ", ", t)
+SKIP_PREV = {"na", "w", "we", "z", "ze", "do", "od", "po", "przez", "o", "nad", "pod", "przed", "dla", "u", "za", "bez", "przy", "i", "a", "oraz", "lecz", "ale", "że", "to", "tak", "jak", "tym", "tego", "się"}
+def commas_pl(t):                                   # FLAG conservative standard-Polish clause commas; none after a preposition/conjunction, none at a sentence start
+    out_t = []; last = 0
+    for m in re.finditer(r"(?<=[\wąćęłńóśźż])(\s+)(?=%s\b)" % COMMA_BEFORE, t):
+        prev = re.findall(r"[\wąćęłńóśźż]+", t[:m.start()])[-1].lower()
+        if prev in SKIP_PREV: continue
+        out_t.append(t[last:m.start()] + ","); last = m.start()
+    return "".join(out_t) + t[last:]
 # ---------------------------------------------------------------- EN rules (delegated)
 if a.lang == "en":
     tmp = out / "_joined_en.txt"; tmp.write_text(joined, encoding="utf-8")
@@ -103,6 +125,7 @@ if a.lang == "en":
     if (out / "_prepped_en.txt.names.txt").exists(): (out / "names.txt").write_text((out / "_prepped_en.txt.names.txt").read_text(encoding="utf-8"), encoding="utf-8")
 else:
     paras = [prep_pl(" ".join(p.split())) for p in re.split(r"\n\s*\n", joined) if p.strip()]
+    paras = [p + "." if len(re.sub("[\uE000-\uE0FF]", "", p)) < 45 and not re.sub("[\uE000-\uE0FF]", "", p).endswith(TERMINAL) else p for p in paras]   # date headings etc. get a closing period
     prepped = "\n\n".join(commas_pl(p) for p in paras)
 # ---------------------------------------------------------------- sentences -> pages
 paras = [p for p in re.split(r"\n\s*\n", prepped) if p.strip()]

@@ -34,10 +34,22 @@ Intent: find a comparable English-tuned voice for the narrator; lengthen pauses 
 
 ## 2026-11-12 (night) - full Ep1 overnight run, PL then EN, two portraits, 8 takes (Jim: "go")
 Intent: build retry/independent brokkr job + loki pull/face/assemble loop, prep Ep1 PL and EN text per page, launch; hands-off overnight.
-- [ ] Ep1 page list = Text\PL 1-2..1-12 and 2-1..2-5 (1-1 title page not narrated); sentences assigned to the page where they start
-- [ ] PL Ep1 text prep: numbers/dates/times/abbreviations in correct case, bracket/ditto fixes, conservative commas; page 1-2 keeps Jim-approved commas
-- [ ] EN Ep1 text prep per page (names respelled, first guesses)
-- [ ] Brokkr job: pages one by one, 3 retries, PL and EN independent, STOP file, flags list
-- [ ] Loki loop: pull finished pages, faces (WA0003 + WA0005), assemble both variants, resumable
-- [ ] Launch and verify first page end to end
-- [ ] BLOCKED (morning): Jim's listen-check; flagged sentences list
+- [x] Ep1 page list = Text\PL 1-2..1-12 and 2-1..2-5 (1-1 title page not narrated); sentences assigned to the page where they start
+- [x] PL Ep1 text prep (tools\c_prep_ep_pages.py): 16 pages, 217 sentences; page 1-2 keeps Jim-approved commas; abbreviations/cases checked by regex scan, no digits left
+- [x] EN Ep1 text prep per page (c_tts_prep_en.py --auto-names; Polish names transliterated, first guesses; names in ep01_en\pages\names.txt)
+- [x] Brokkr job tools\c_brokkr_ep_job.sh: pages one by one, 3 attempts each, a failed page does not stop later ones, STOP file, flags.txt (sentences with word_errors>=2)
+- [x] Loki loop tools\c_loki_ep_loop.ps1: pulls finished pages, faces WA0003+WA0005, assembles both variants, resumable, STOP file Assets\Diary\video\ep01\STOP
+- [x] Launched 22:03 (brokkr: PL then EN; loki loop 22:04). Page 1-2 PL rendering
+- [ ] Verify first page end to end (audio -> face -> mp4)
+- [ ] BLOCKED (morning): Jim's listen-check; flagged sentences list (Assets\Diary\video\ep01\needs-ear.txt; brokkr /srv/tts-out/render/ep01_<l>/flags.txt)
+
+## 2026-11-13 (morning) - overnight review and recovery
+- [x] Overnight result: brokkr audio finished (PL ALL_DONE 01:36 with 5 failed pages; EN ALL_DONE 05:09 with 1 failed page). Loki loop produced NO faces/mp4s: bug in c_loki_ep_loop.ps1 (-Image array bound to -Size), and the loop process ended 01:18 (app restart)
+- [x] Root cause of 6 failed audio pages: sentences over XTTS char limit (PL 224: 1-6, 1-7, 1-11, 2-2, 2-5; EN 250: 2-2); retries were useless (deterministic). Split by hand in narration copy (Assets\Diary\tts\ep01_pl\pages\NOTES-manual-splits.txt), EN "(photograph)" markers removed
+- [x] Loop bug fixed (render called via -Command with explicit array); loop restarted detached 10:30; brokkr job relaunched 10:28 for the 6 failed pages
+- [ ] Verify first assembled mp4; listen-check; flagged sentences; the 6 hand-split pages need an ear
+- [ ] Add pre-flight length check to c_prep_ep_pages.py so over-limit sentences fail at prep, not after retries
+
+
+## 2026-11-13 audit note
+Tasks referencing c_loki_ep_loop.ps1 / c_brokkr_ep_job.sh are superseded by pipeline/orch.py; see PIPELINE-SPEC v0.3 section 12 and Hub diary-tasks for the live list.

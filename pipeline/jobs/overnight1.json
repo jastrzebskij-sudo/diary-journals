@@ -1,0 +1,5 @@
+[
+ {"id":"ep01-pl-p2-2-retry","kind":"audio","lang":"pl","text":"/home/claude-agent/diary-pipeline/jobs/ep01_pl_p2-2.txt","name":"ep01_pl_p2-2","takes":8,"seed":5000},
+ {"id":"ep01-pl-tail","kind":"audio","lang":"pl","text":"/home/claude-agent/diary-pipeline/jobs/ep01_tail_pl.txt","name":"ep01_pl_tail","takes":8,"seed":5000},
+ {"id":"ep01-en-tail","kind":"audio","lang":"en","text":"/home/claude-agent/diary-pipeline/jobs/ep01_tail_en.txt","name":"ep01_en_tail","takes":8,"seed":5000,"names":"/home/claude-agent/c-workstream/ep01_en/pages/names.txt"}
+]

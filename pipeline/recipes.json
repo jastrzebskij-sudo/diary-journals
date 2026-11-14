@@ -1,0 +1,5 @@
+{
+ "_note": "FROZEN recipes (spec D3/D8). Change only by a deliberate version bump that invalidates cached jobs (the key includes this content).",
+ "pl": {"latent": "c_Kumar65_Ilkin35_80_Damien20.pth", "deepen_st": -1.0, "bass": 2, "gap_s": 0.3, "gap_p": 0.7, "tempo": 1.05},
+ "en": {"latent": "c_Kumar65_Ilkin35_80_Damien20.pth", "deepen_st": 0, "bass": 0, "gap_s": 0.5, "gap_p": 1.0, "tempo": 1.0}
+}

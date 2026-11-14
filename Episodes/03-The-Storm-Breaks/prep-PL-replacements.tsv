@@ -1,0 +1,145 @@
+page	find	replace	kind	note
+2-22	nasz podpor. i zabrał nas do S­te Cecile.	nasz podporucznik i zabrał nas do Sainte Cecile.	abbreviation	nom.; S-te=Sainte (soft hyphen in source); page starts mid-sentence
+2-22	Niedziela 25 II 40	Niedziela dwudziestego piątego lutego tysiąc dziewięćset czterdziestego roku	date	genitive; "40"=1940
+2-22	na którym ks. proboszcz	na którym ksiądz proboszcz	abbreviation	nom.
+2-22	z p. sier. Gburem 6 franków	z panem sierżantem Gburem sześć franków	numeral	instr.; acc. pl.
+2-22	O godz. 14 idziemy	O godzinie czternastej idziemy	time	loc.
+2-22	i kpr. Francuzem Romanem i kpr. Świątkowskim Tadeuszem	i kapralem Francuzem Romanem i kapralem Świątkowskim Tadeuszem	abbreviation	instr.
+2-22	przeszło 3 godziny	przeszło trzy godziny	numeral	acc. pl.
+2-22	W miejscowości Gigondes	W miejscowości Gigondas	name	corrections-pl.tsv (Jim 2026-11-13)
+2-22	za 2 litry wina	za dwa litry wina	numeral	acc. pl.
+2-22	z omletu 2 litrów wina	z omletu dwóch litrów wina	numeral	gen. pl.
+2-22	jeszcze 3 oficerów lotnictwa Francuskiego i 6 szeregowych	jeszcze trzech oficerów lotnictwa Francuskiego i sześciu szeregowych	numeral	gen. pl. masc. personal
+2-22	Ste Cecile o godz. 2430.	Sainte Cecile o godzinie dwudziestej czwartej trzydzieści.	time	Ste=Sainte; "2430" superscript lost, reading ?
+2-22	26 II 40 Poniedziałek	dwudziestego szóstego lutego tysiąc dziewięćset czterdziestego roku Poniedziałek	date	genitive; "40"=1940
+2-23	27 II 40 Wtorek	dwudziestego siódmego lutego tysiąc dziewięćset czterdziestego roku Wtorek	date	genitive; "40"=1940
+2-23	podoficera służb. komp. we Francji po 5 miesięcznej przerwie	podoficera służbowego kompanii we Francji po pięciomiesięcznej przerwie	numeral	gen.; written as one word; służb.=służbowego ?
+2-23	28 II 40 Środa	dwudziestego ósmego lutego tysiąc dziewięćset czterdziestego roku Środa	date	genitive; "40"=1940
+2-23	to jest o 7. Mimo to Komp. zdążyła	to jest o siódmej. Mimo to Kompania zdążyła	time	loc. (7 o'clock); Komp.=Kompania nom.
+2-23	29 II 40 Czwartek	dwudziestego dziewiątego lutego tysiąc dziewięćset czterdziestego roku Czwartek	date	genitive; "40"=1940
+2-23	1 III Piątek	pierwszego marca Piątek	date	genitive
+2-23	jednego ze strzel.	jednego ze strzelców	abbreviation	gen. pl.
+2-23	w sumie 452 franki, 20 z tego	w sumie czterysta pięćdziesiąt dwa franki, dwadzieścia z tego	numeral	acc. pl.; nom.
+2-23	2 III Sobota	drugiego marca Sobota	date	genitive
+2-23	zapłaciwszy 10 fr.	zapłaciwszy dziesięć franków.	numeral	acc. pl.; fr.=franków
+2-24	3 III Niedziela	trzeciego marca Niedziela	date	genitive
+2-24	4 III Poniedziałek	czwartego marca Poniedziałek	date	genitive
+2-24	list od por. Gulina	list od porucznika Gulina	abbreviation	gen.
+2-24	5 III Wtorek	piątego marca Wtorek	date	genitive
+2-24	6 III Środa	szóstego marca Środa	date	genitive
+2-24	7 III Czwartek – Kpt. Kruczyński	siódmego marca Czwartek – Kapitan Kruczyński	date	genitive; nom.
+2-24	8 III Piątek	ósmego marca Piątek	date	genitive
+2-24	9 III Sobota - 1 Baon pojechał	dziewiątego marca Sobota - Pierwszy Batalion pojechał	date	genitive; nom.
+2-24	10 III Niedziela	dziesiątego marca Niedziela	date	genitive
+2-24	11 III Poniedziałek	jedenastego marca Poniedziałek	date	genitive
+2-24	12 III Wtorek	dwunastego marca Wtorek	date	genitive
+2-24	13 III Środa	trzynastego marca Środa	date	genitive
+2-24	14 III Czwartek Do obozu przyjechał gen. Maczek	czternastego marca Czwartek Do obozu przyjechał generał Maczek	date	genitive; nom.
+2-24	15 III Piątek	piętnastego marca Piątek	date	genitive
+2-24	16 III Sobota	szesnastego marca Sobota	date	genitive
+2-25	17 III Niedziela Palmowa	siedemnastego marca Niedziela Palmowa	date	genitive
+2-25	służbę dow-cy warty	służbę dowódcy warty	abbreviation	gen.
+2-25	aresztowaniem kpr. Maczewskiego Edwarda	aresztowaniem kaprala Maczewskiego Edwarda	abbreviation	instr. (name gen. in source)
+2-25	był jeden kpr. z Rumunii	był jeden kapral z Rumunii	abbreviation	nom.
+2-25	18 III Poniedziałek	osiemnastego marca Poniedziałek	date	genitive
+2-25	19 III Wtorek	dziewiętnastego marca Wtorek	date	genitive
+2-25	duszę ś.p. Marszałka	duszę świętej pamięci Marszałka	abbreviation	ś.p.=świętej pamięci
+2-25	20 III Środa	dwudziestego marca Środa	date	genitive
+2-25	21 III Czwartek	dwudziestego pierwszego marca Czwartek	date	genitive
+2-25	22 III Piątek	dwudziestego drugiego marca Piątek	date	genitive
+2-26	23 III Sobota	dwudziestego trzeciego marca Sobota	date	genitive
+2-26	placu alarmowym 2-go Baonu	placu alarmowym drugiego Batalionu	numeral	gen. sg. masc.
+2-26	ustawione było 5 stołów	ustawione było pięć stołów	numeral	nom. pl.
+2-26	ustawił się 1 Baon a z drugiej 2-gi Baon	ustawił się Pierwszy Batalion a z drugiej drugi Batalion	numeral	nom.
+2-26	Nadchodzą D-cy Baonów mjr. Zyrkiewicz i mjr. Harbowski, jeden z kpt zdaje	Nadchodzą Dowódcy Batalionów major Zyrkiewicz i major Habowski, jeden z kapitanów zdaje	abbreviation	nom.; Harbowski→Habowski per corrections-pl.tsv
+2-26	każdy z mjr. przechodzi	każdy z majorów przechodzi	abbreviation	gen. pl.
+2-26	nadszedł ks. kapelan który	nadszedł ksiądz kapelan który	abbreviation	nom.
+2-26	z d-cami Baonów	z dowódcami Batalionów	abbreviation	instr.; gen.
+2-26	24 III 1940 Niedziela Wielkanoc.	dwudziestego czwartego marca tysiąc dziewięćset czterdziestego roku Niedziela Wielkanoc.	date	genitive
+2-26	odprawił polski ks. wygłaszając	odprawił polski ksiądz wygłaszając	abbreviation	nom.
+2-26	W kazaniu tym ks. kapelan	W kazaniu tym ksiądz kapelan	abbreviation	nom.
+2-27	O godzinie 10 święcone w wielkiej bramie kwatery 23. D-ca komp. kpt Kruczyński	O godzinie dziesiątej święcone w wielkiej bramie kwatery dwadzieścia trzy. Dowódca kompanii kapitan Kruczyński	numeral	loc.; "kwatery 23" billet number cardinal as Ep1 H-barracks ?
+2-27	Por. Skowroński na urlopie a zastępował ich por. Osiecki.	Porucznik Skowroński na urlopie a zastępował ich porucznik Osiecki.	abbreviation	nom.
+2-27	czeka na p. mjr. Wreszcie	czeka na pana majora. Wreszcie	abbreviation	acc.
+2-27	Następnie p. mjr Habowski podzielił się jajkiem z por. Osieckim	Następnie pan major Habowski podzielił się jajkiem z porucznikiem Osieckim	abbreviation	nom.; instr.
+2-27	gdzie już raz byłem t.j. w Gigadas.	gdzie już raz byłem to jest w Gigondas.	abbreviation	t.j.=to jest; Gigadas→Gigondas per corrections-pl.tsv
+2-27	spotkałem kpr.	spotkałem kaprala	abbreviation	acc.; name "Francuza" starts 2-28
+2-28	st. strz. Strękowski	starszy strzelec Strękowski	abbreviation	nom.
+2-28	Rower miał kpr. Francuz lecz	Rower miał kapral Francuz lecz	abbreviation	nom.
+2-28	o godz. 3 rano	o godzinie trzeciej rano	time	loc.
+2-28	25 III Poniedziałek	dwudziestego piątego marca Poniedziałek	date	genitive
+2-28	pokpiwamy z plut. Dziadkowca i kpr. Dzierzyka	pokpiwamy z plutonowego Dziadkowca i kaprala Dzierzyka	abbreviation	gen. after "pokpiwać z"
+2-28	Kpr. Dzierzyk i plut. Dziadkowiec	Kapral Dzierzyk i plutonowy Dziadkowiec	abbreviation	nom.
+2-28	26 III Wtorek.	dwudziestego szóstego marca Wtorek.	date	genitive
+2-28	27 III Środa Od rana pada deszcz i cały dzień wykłady na kw. 46.	dwudziestego siódmego marca Środa Od rana pada deszcz i cały dzień wykłady na kwaterze czterdzieści sześć.	date	genitive; kw.=kwaterze ?
+2-28	30 III 40 Sobota Przybywa nowy transport wojska do Ste Cecile.	trzydziestego marca tysiąc dziewięćset czterdziestego roku Sobota Przybywa nowy transport wojska do Sainte Cecile.	date	genitive; "40"=1940; Ste=Sainte
+2-28	Pierwszy i drugi baon jest pełny	Pierwszy i drugi batalion jest pełny	abbreviation	baon=batalion
+2-28	przybył plut. Wolski	przybył plutonowy Wolski	abbreviation	nom.
+2-29	Michał i mjst Haze z III Baonu.	Michał i majster Haze z Trzeciego Batalionu.	numeral	gen.; mjst=majster ?
+2-29	31 III Niedziela	trzydziestego pierwszego marca Niedziela	date	genitive
+2-29	St. sier. Kurnik przyjmuje	Starszy sierżant Kurnik przyjmuje	abbreviation	nom.
+2-29	1 IV 40 Poniedziałek	pierwszego kwietnia tysiąc dziewięćset czterdziestego roku Poniedziałek	date	genitive; "40"=1940
+2-29	Plut. Wolski został przydzielony do 1 komp. 2 Baonu.	Plutonowy Wolski został przydzielony do pierwszej kompanii Drugiego Batalionu.	numeral	gen. after "do"
+2-29	2 IV 40 Wtorek	drugiego kwietnia tysiąc dziewięćset czterdziestego roku Wtorek	date	genitive; "40"=1940
+2-29	w sumie 1337 franków	w sumie tysiąc trzysta trzydzieści siedem franków	numeral	acc. pl.
+2-29	6 IV 40 Środa	szóstego kwietnia tysiąc dziewięćset czterdziestego roku Środa	date	genitive; "40"=1940
+2-29	11 IV 40 Czwartek	jedenastego kwietnia tysiąc dziewięćset czterdziestego roku Czwartek	date	genitive; "40"=1940
+2-29	14 IV 40 Niedziela	czternastego kwietnia tysiąc dziewięćset czterdziestego roku Niedziela	date	genitive; "40"=1940
+2-29	a kpr. Nocoń srebrny	a kapral Nocoń srebrny	abbreviation	nom.
+2-29	zatopieniu 7 kontrtorpedowców	zatopieniu siedmiu kontrtorpedowców	numeral	gen. pl.
+2-29	15 IV 40 Poniedziałek	piętnastego kwietnia tysiąc dziewięćset czterdziestego roku Poniedziałek	date	genitive; "40"=1940
+2-30	Przegląd Baonu przez francuzów.	Przegląd Batalionu przez francuzów.	abbreviation	gen.
+2-30	20 IV 40 Sobota	dwudziestego kwietnia tysiąc dziewięćset czterdziestego roku Sobota	date	genitive; "40"=1940
+2-30	we czterech, t.j. ja	we czterech, to jest ja	abbreviation	t.j.=to jest
+2-30	21 IV 40 Niedziela	dwudziestego pierwszego kwietnia tysiąc dziewięćset czterdziestego roku Niedziela	date	genitive; "40"=1940
+2-30	jedziemy na rowerach do Gigadas na obiad	jedziemy na rowerach do Gigondas na obiad	name	corrections-pl.tsv (Jim 2026-11-13)
+2-30	kosztował mnie 56 franków na czterech	kosztował mnie pięćdziesiąt sześć franków na czterech	numeral	acc. pl.
+2-30	jeszcze 20 franków	jeszcze dwadzieścia franków	numeral	acc. pl.
+2-30	wróciłem do St̶e̶ Cecile.	wróciłem do Sainte Cecile.	abbreviation	St-e struck through in source; read as Ste=Sainte
+2-30	22 IV 40 Poniedziałek	dwudziestego drugiego kwietnia tysiąc dziewięćset czterdziestego roku Poniedziałek	date	genitive; "40"=1940
+2-30	w towarzystwie kpt. Berga (zaraz mnie poznał) i jeszcze jednego kpt. i wybierali	w towarzystwie kapitana Berga (zaraz mnie poznał) i jeszcze jednego kapitana i wybierali	abbreviation	gen.
+2-30	23 IV 40 Wtorek	dwudziestego trzeciego kwietnia tysiąc dziewięćset czterdziestego roku Wtorek	date	genitive; "40"=1940
+2-30	czołg nr 68086	czołg numer sześćdziesiąt osiem tysięcy osiemdziesiąt sześć	numeral	tank number, read as one number ?
+2-30	24 IV 40 Środa	dwudziestego czwartego kwietnia tysiąc dziewięćset czterdziestego roku Środa	date	genitive; "40"=1940
+2-31	1 Maj 1940 r.	Pierwszy Maj tysiąc dziewięćset czterdziestego roku	date	month word kept as written (no rewording); nom. ?
+2-31	2 Maj 1940	Drugi Maj tysiąc dziewięćset czterdziestego roku	date	month word kept as written; nom. ?
+2-31	od d-cy kompanii mają jechać	od dowódcy kompanii mają jechać	abbreviation	gen.
+2-31	w d-twie Baonu	w dowództwie Batalionu	abbreviation	loc.; gen.
+2-31	także kpr. Dzierzyk i szef kompanii st. sierz. Kobylański i jeden st. strzel. którego	także kapral Dzierzyk i szef kompanii starszy sierżant Kobylański i jeden starszy strzelec którego	abbreviation	nom.
+2-31	o godzinie 21⁴⁵ jadąc	o godzinie dwudziestej pierwszej czterdzieści pięć jadąc	time	gen. after "o godzinie"? (loc.); time reading ?
+2-31	3 V 1940 Dzierzyk	trzeciego maja tysiąc dziewięćset czterdziestego roku Dzierzyk	date	genitive
+2-31	dopiero 100 km przed Paryżem	dopiero sto kilometrów przed Paryżem	numeral	acc. pl.; km=kilometrów
+2-32	będzie dopiero za 9 godzin	będzie dopiero za dziewięć godzin	numeral	acc. pl.
+2-32	do następnego dnia około 12 godzin	do następnego dnia około dwunastu godzin	numeral	gen. after "około"
+2-32	wypiliśmy 2 litry wina	wypiliśmy dwa litry wina	numeral	acc. pl.
+2-32	dołączyło jeszcze 2 polskich żołnierzy, jeden z nich znał kpr. Grześkowiaka	dołączyło jeszcze dwóch polskich żołnierzy, jeden z nich znał kaprala Grześkowiaka	numeral	gen. pl. masc. personal; acc.
+2-33	spotkałem 2 polaków	spotkałem dwóch polaków	numeral	acc. = gen. masc. personal
+2-33	do pp. Ciemniaków	do państwa Ciemniaków	abbreviation	pp.=państwo, gen.
+2-33	5 V 1940 Niedziela	piątego maja tysiąc dziewięćset czterdziestego roku Niedziela	date	genitive
+2-33	O godz. 8 rano	O godzinie ósmej rano	time	loc.
+2-33	ze sobą p. Pawłowski	ze sobą pan Pawłowski	abbreviation	nom.
+2-33	przybył po mnie p. Ciemniak	przybył po mnie pan Ciemniak	abbreviation	nom.
+2-33	Po zbiórce p. Pawłowski	Po zbiórce pan Pawłowski	abbreviation	nom.
+2-33	Wreszcie Ira i p. Ciemniakowa	Wreszcie Ira i pani Ciemniakowa	abbreviation	nom.; fem. surname so "pani"
+2-33	po godzinie 13 więc	po godzinie trzynastej więc	time	loc.
+2-34	około 40 fr. i popiłem piwo b. wielkie	około czterdziestu franków i popiłem piwo bardzo wielkie	numeral	gen. after "około"; fr.=franków; b.=bardzo
+2-34	6 V 1940 Poniedziałek	szóstego maja tysiąc dziewięćset czterdziestego roku Poniedziałek	date	genitive
+2-34	jeździłem z p. Ciemniakiem	jeździłem z panem Ciemniakiem	abbreviation	instr.
+2-34	7 V 40 Wtorek	siódmego maja tysiąc dziewięćset czterdziestego roku Wtorek	date	genitive; "40"=1940
+2-34	poznajemy 2 sierżantów angielskich	poznajemy dwóch sierżantów angielskich	numeral	acc. = gen. masc. personal
+2-34	8 V 40 Środa	ósmego maja tysiąc dziewięćset czterdziestego roku Środa	date	genitive; "40"=1940
+2-35	9 V 40 Czwartek	dziewiątego maja tysiąc dziewięćset czterdziestego roku Czwartek	date	genitive; "40"=1940
+2-35	10 V 1940 Piątek	dziesiątego maja tysiąc dziewięćset czterdziestego roku Piątek	date	genitive
+2-35	z 3-ma bombowcami	z trzema bombowcami	numeral	instr.
+2-35	11 V 40 Sobota	jedenastego maja tysiąc dziewięćset czterdziestego roku Sobota	date	genitive; "40"=1940
+2-35	12 V 40 Niedziela	dwunastego maja tysiąc dziewięćset czterdziestego roku Niedziela	date	genitive; "40"=1940
+2-35	poszedłem z p. Ciemniakiem po kafejkach i tak odwiedziliśmy około 5 polskich kafejek	poszedłem z panem Ciemniakiem po kafejkach i tak odwiedziliśmy około pięciu polskich kafejek	numeral	instr.; gen. after "około"
+2-36	13 V 40 Poniedziałek	trzynastego maja tysiąc dziewięćset czterdziestego roku Poniedziałek	date	genitive; "40"=1940
+2-36	około 4 km odległą	około czterech kilometrów odległą	numeral	gen. after "około"; km=kilometrów
+2-36	14 V 40 Wtorek	czternastego maja tysiąc dziewięćset czterdziestego roku Wtorek	date	genitive; "40"=1940
+2-36	przebywam 36 godzin	przebywam trzydzieści sześć godzin	numeral	acc. pl.
+2-36	15 V 40 Środa	piętnastego maja tysiąc dziewięćset czterdziestego roku Środa	date	genitive; "40"=1940
+2-36	jest kpr. armii czeskiej	jest kapral armii czeskiej	abbreviation	nom.
+2-36	16 V 40 Czwartek	szesnastego maja tysiąc dziewięćset czterdziestego roku Czwartek	date	genitive; "40"=1940
+2-36	Przyjechałem do St̶e̶ Cecile przed obiadem	Przyjechałem do Sainte Cecile przed obiadem	abbreviation	St-e struck through; Ste=Sainte
+2-36	Kpr. Dzierzyk jeszcze nie wrócił.	Kapral Dzierzyk jeszcze nie wrócił.	abbreviation	nom.
