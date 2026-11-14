@@ -1,0 +1,13 @@
+Boze=Boże
+Ciemniakowna=Ciemniakówna
+Dzieciol=Dzięcioł
+Jodlowski=Jodłowski
+Kobylinski=Kobyliński
+Lenczyk=Leńczyk
+Micherdzinski=Micherdziński
+Pigulka=Pigułka
+Polske=Polskę
+Sokol=Sokół
+Swiatkowski=Świątkowski
+Widlo=Widło
+Wolk=Wołk

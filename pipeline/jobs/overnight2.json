@@ -1,0 +1,292 @@
+[
+{
+"id": "ep03-en-p2-22",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep03_en/p2-22.txt",
+"name": "ep03_en_p2-22",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep03_en/names.txt"
+},
+{
+"id": "ep03-en-p2-23",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep03_en/p2-23.txt",
+"name": "ep03_en_p2-23",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep03_en/names.txt"
+},
+{
+"id": "ep03-en-p2-24",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep03_en/p2-24.txt",
+"name": "ep03_en_p2-24",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep03_en/names.txt"
+},
+{
+"id": "ep03-en-p2-25",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep03_en/p2-25.txt",
+"name": "ep03_en_p2-25",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep03_en/names.txt"
+},
+{
+"id": "ep03-en-p2-26",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep03_en/p2-26.txt",
+"name": "ep03_en_p2-26",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep03_en/names.txt"
+},
+{
+"id": "ep03-en-p2-27",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep03_en/p2-27.txt",
+"name": "ep03_en_p2-27",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep03_en/names.txt"
+},
+{
+"id": "ep03-en-p2-28",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep03_en/p2-28.txt",
+"name": "ep03_en_p2-28",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep03_en/names.txt"
+},
+{
+"id": "ep03-en-p2-29",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep03_en/p2-29.txt",
+"name": "ep03_en_p2-29",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep03_en/names.txt"
+},
+{
+"id": "ep03-en-p2-30",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep03_en/p2-30.txt",
+"name": "ep03_en_p2-30",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep03_en/names.txt"
+},
+{
+"id": "ep03-en-p2-31",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep03_en/p2-31.txt",
+"name": "ep03_en_p2-31",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep03_en/names.txt"
+},
+{
+"id": "ep03-en-p2-32",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep03_en/p2-32.txt",
+"name": "ep03_en_p2-32",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep03_en/names.txt"
+},
+{
+"id": "ep03-en-p2-33",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep03_en/p2-33.txt",
+"name": "ep03_en_p2-33",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep03_en/names.txt"
+},
+{
+"id": "ep03-en-p2-34",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep03_en/p2-34.txt",
+"name": "ep03_en_p2-34",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep03_en/names.txt"
+},
+{
+"id": "ep03-en-p2-35",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep03_en/p2-35.txt",
+"name": "ep03_en_p2-35",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep03_en/names.txt"
+},
+{
+"id": "ep03-en-p2-36",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep03_en/p2-36.txt",
+"name": "ep03_en_p2-36",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep03_en/names.txt"
+},
+{
+"id": "ep04-en-p2-37",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep04_en/p2-37.txt",
+"name": "ep04_en_p2-37",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep04_en/names.txt"
+},
+{
+"id": "ep04-en-p2-38",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep04_en/p2-38.txt",
+"name": "ep04_en_p2-38",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep04_en/names.txt"
+},
+{
+"id": "ep04-en-p2-39",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep04_en/p2-39.txt",
+"name": "ep04_en_p2-39",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep04_en/names.txt"
+},
+{
+"id": "ep04-en-p2-40",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep04_en/p2-40.txt",
+"name": "ep04_en_p2-40",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep04_en/names.txt"
+},
+{
+"id": "ep04-en-p2-41",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep04_en/p2-41.txt",
+"name": "ep04_en_p2-41",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep04_en/names.txt"
+},
+{
+"id": "ep04-en-p2-42",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep04_en/p2-42.txt",
+"name": "ep04_en_p2-42",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep04_en/names.txt"
+},
+{
+"id": "ep04-en-p2-43",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep04_en/p2-43.txt",
+"name": "ep04_en_p2-43",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep04_en/names.txt"
+},
+{
+"id": "ep04-en-p2-44",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep04_en/p2-44.txt",
+"name": "ep04_en_p2-44",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep04_en/names.txt"
+},
+{
+"id": "ep04-en-p2-45",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep04_en/p2-45.txt",
+"name": "ep04_en_p2-45",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep04_en/names.txt"
+},
+{
+"id": "ep04-en-p2-46",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep04_en/p2-46.txt",
+"name": "ep04_en_p2-46",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep04_en/names.txt"
+},
+{
+"id": "ep04-en-p2-47",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep04_en/p2-47.txt",
+"name": "ep04_en_p2-47",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep04_en/names.txt"
+},
+{
+"id": "ep04-en-p2-48",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep04_en/p2-48.txt",
+"name": "ep04_en_p2-48",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep04_en/names.txt"
+},
+{
+"id": "ep04-en-p2-49",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep04_en/p2-49.txt",
+"name": "ep04_en_p2-49",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep04_en/names.txt"
+},
+{
+"id": "ep04-en-p2-50",
+"kind": "audio",
+"lang": "en",
+"text": "/home/claude-agent/diary-pipeline/jobs/ep04_en/p2-50.txt",
+"name": "ep04_en_p2-50",
+"takes": 8,
+"seed": 5000,
+"names": "/home/claude-agent/diary-pipeline/jobs/ep04_en/names.txt"
+}
+]

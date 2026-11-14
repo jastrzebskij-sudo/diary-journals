@@ -1,0 +1,14 @@
+Boze=Boże
+Grzeskowiak=Grześkowiak
+Kobylanski=Kobylański
+Kruczynski=Kruczyński
+Michal=Michał
+Nocon=Nocoń
+Pawlowski=Pawłowski
+Pilsudski=Piłsudski
+Polske=Polskę
+Skowronski=Skowroński
+Slomnicki=Słomnicki
+Stekowski=Stękowski
+Strekowski=Strękowski
+Swiatkowski=Świątkowski
