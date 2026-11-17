@@ -1,0 +1,43 @@
+﻿<!doctype html><meta charset=utf-8><title>Jim's to-do (Diary) 2026-11-17</title>
+<style>body{font:15px system-ui,sans-serif;max-width:860px;margin:18px auto;padding:0 12px;line-height:1.45}h1{font-size:22px}h2{margin:22px 0 4px;font-size:17px;border-bottom:1px solid #8886}li{margin:7px 0;list-style:none}.s{color:#888;font-size:12.5px}code{background:#8882;padding:1px 4px;border-radius:3px;font-size:12px}a{word-break:break-all}input{margin-right:8px}</style>
+<h1>Diary: your to-do list (updated 2026-11-16 night)</h1><p class=s>Open in Chrome: <code>D:\Claude\Projects\Diary\JIM-TODO.html</code>. Links open files from disk. Ticks are remembered in this browser (reset on this rewrite). Previous version: JIM-TODO.html.2026-11-16b.bak.</p>
+<div id=app></div>
+<script>
+const P='file:///D:/Claude/';
+const L=(t,p)=>'<a href="'+P+p+'" target=_blank>'+t+'</a> <code>D:\\Claude\\'+p.replace(/\//g,'\\')+'</code>';
+const S=[
+['1. Tomorrow (Tue 2026-11-17): your part',[
+ ['Full start-to-finish listen of the Polish Ep1 audio (about 22 min). Note timestamps of anything wrong (I map them to chunks). Locked unless you find issues.',[L('ep01_pl_v3.mp3','Assets/Diary/lab/tone_out/ep01_pl_v3.mp3')]],
+ ['English picks: hymn (spoken before "Boze, cos Polske", with gloss) and G-RZ names (Grzeskowiak etc.). Cymerman stays "Symerman" (soft s) unless you want a retest of other spellings.',[L('audition_en_fix.html','Assets/Diary/lab/review/audition_en_fix.html'),L('audition_grz.html','Assets/Diary/lab/review/audition_grz.html')]],
+ ['Quick answers: (a) keep "baon" expanded to "batalion" everywhere (current) or keep the jargon "baon" in some places? (b) keep the funny "kh" at the very start of the audio? (v3 should have no start artifact; say if you want it back). (c) period FX: confirm L = barracks/safety, M = travel/outdoors.',[]]
+]],
+['2. Claude\'s plan for tomorrow (after your listen; start cheap)',[
+ ['A. Map your new timestamps to chunks, fix text/normalizer issues, re-render only affected chunks (retext.py method).',[]],
+ ['B. English Ep1 rebuild: lead-in word for EN, digit-tolerant checker, strip "(photograph)" and "/signed/", apply your hymn/G-RZ picks; QA like the Polish; send for your listen.',[]],
+ ['C. Diary abbreviation scan (local scripts): list every abbreviation and odd military term by frequency, check against sources T1-T3 in the ledger, bring you a short list to confirm.',[L('sources-ledger.md','Assets/Diary/research-B2/sources-ledger.md')]],
+ ['D. Ep1 shot list: Whisper-timestamp the locked Polish audio per page/event; map to storyboard slots, maps, stills, newsreel; photo-caption rule (show photo while spoken, drop caption if photo missing); flag media gaps.',[]],
+ ['E. Housekeeping when idle: repoint old scripts to D:\\AI\\envs; ask your OK before deleting old envs/MOSS-TTS/lab\\hf.',[]],
+ ['Budget note: weekly allocation was 78% on 2026-11-16; keep browsing and polling lean; GPU jobs are cheap in tokens.',[]]
+]],
+['3. Your manual research tasks (no deadline, none block audio)',[
+ ['Lista Krzystka lookups: Hofbauer, Ropelewski, Segda, Jaronski, Krosnowski, Tyszka, Gulin, camp NCOs (the research agent could not open the database).',[L('references-for-descriptions.md','Assets/Diary/research-B2/references-for-descriptions.md')]],
+ ['Licences: confirm with the US Military Academy that the West Point atlas maps may be used; decide your policy on Commons "public domain" labels for a family, non-monetized video.',[L('maps-catalog.csv','Assets/Diary/research-B2/maps-catalog.csv')]],
+ ['Hand-check IWM item pages (HU 30523, HU 109706, HU 128179, 205039122, album 205409289); pick the newsreel opener from the 3 clips on disk (Universal 803, 807, USHMM bulletin).',[L('newsreel folder','Assets/Diary/newsreel/'),L('events-by-date.md (media key M1-M21)','Assets/Diary/research-B2/events-by-date.md')]],
+ ['Optional: download the 3 PDFs on the Polish Exiles of WW2 translations page (Google Drive) so I can read them; they are glossaries (1943 terminology, PL-EN, EN-PL).',[L('page','Assets/Diary/research-B2/sources-ledger.md')]],
+ ['Optional: scan other family photos of Stefan (600 dpi, no auto-enhance) after Thanksgiving; second-notebook text on your own timeline.',[]]
+]],
+['4. Decided / done (reference)',[
+ ['Ep1 ends on New Year\'s Eve ("...We go to sleep at 9:30"); the 17 Jan 1940 end point in research-B2 is obsolete. Younger portrait only; Ditto C; oval narrator; emotion cues parked.',[]],
+ ['Polish audio v3 locked pending your full listen; backup script run 2026-11-16 night (see tools\\backup.log).',[]]
+]],
+['5. Parked on purpose',[
+ ['Emotion cues; breath-before-long-sentences; Notebook 2 OCR and local-model comparison; GPU purchase; compositing-model survey (after Ep1 audio settled).',[]]
+]],
+['6. Reference',[
+ ['Running log of tests, decisions, lessons, listening notes.',[L('LAB-LOG.md','Projects/Diary/LAB-LOG.md'),L('STATUS-C.md (current state at the bottom)','Projects/Diary/STATUS-C.md')]]
+]]];
+let h='',n=0,st={};try{st=JSON.parse(localStorage.getItem('jt2')||'{}')}catch(e){}
+S.forEach(sec=>{h+='<h2>'+sec[0]+'</h2><ul>';sec[1].forEach(it=>{const id='c'+(n++);h+='<li><label><input type=checkbox id='+id+(st[id]?' checked':'')+'>'+it[0]+'</label>'+(it[1].length?'<div class=s>'+it[1].join('<br>')+'</div>':'')+'</li>'});h+='</ul>'});
+document.getElementById('app').innerHTML=h;
+document.getElementById('app').addEventListener('change',e=>{st[e.target.id]=e.target.checked;try{localStorage.setItem('jt2',JSON.stringify(st))}catch(x){}});
+</script>

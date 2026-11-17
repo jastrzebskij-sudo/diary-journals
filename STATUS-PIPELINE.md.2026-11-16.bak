@@ -1,0 +1,18 @@
+---
+title: Pipeline status
+---
+# Pipeline status (orchestrator v0, brokkr)
+Updated 2026-11-13T18:22:59 | {'todo': 3, 'running': 0, 'done': 0, 'failed': 0} | current: None
+
+| job | lang | state | key | flagged chunks |
+|---|---|---|---|---|
+| ep01-pl-p2-2-retry | pl | todo | f528525bef | 0 |
+| ep01-pl-tail | pl | todo | 088e4991af | 0 |
+| ep01-en-tail | en | todo | 14931b00ce | 0 |
+
+### Recent ledger
+- `{"ts": "2026-11-13T18:22:55", "ev": "queued", "job": "ep01-pl-p2-2-retry"}`
+- `{"ts": "2026-11-13T18:22:55", "ev": "queued", "job": "ep01-pl-tail"}`
+- `{"ts": "2026-11-13T18:22:55", "ev": "queued", "job": "ep01-en-tail"}`
+- `{"ts": "2026-11-13T18:22:55", "ev": "orch_start", "pid": 574264}`
+- `{"ts": "2026-11-13T18:22:55", "ev": "start", "job": "ep01-pl-p2-2-retry", "key": "f528525bef", "attempt": 1}`

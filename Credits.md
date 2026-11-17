@@ -103,3 +103,7 @@ This project is a personal, educational, non-commercial family archive. Every ar
 ## Description block (copy into the video description)
 
 Archival images courtesy of: Archiwum Glowne Akt Dawnych (Polish Central Archives of Historical Records); Bundesarchiv; Narodowe Archiwum Cyfrowe (NAC); National Archives and Records Administration (NARA); New York Public Library; Wikimedia Commons; Wikimedia Commons (Athens War Museum) (credit to verify on the Commons page); Wikimedia Commons (German Federal Archives; Wikimedia Commons (Getty Images (credit to verify on the Commons page); Wikimedia Commons (Handbook of the Russian Army 1940 (credit to verify on the Commons page); Wikimedia Commons (Library of Congress FSA/OWI Collection via Free French press) (credit to verify on the Commons page); Wikimedia Commons (WW2 Photo Archive; photographer Johannes Hahle 1906-1944) (credit to verify on the Commons page); Wikimedia Commons (donated by Istorijski arhiv u Pancevu; Wikimedia Commons (scanned from Witold Biegański. Images from Bundesarchiv are licensed CC BY-SA 3.0 de. Family photographs and notebook pages: family archive. This video is a non-commercial, educational family project.
+
+## 2026-11-16 addendum
+Terminology and media credits ledger for episode descriptions: D:\Claude\Assets\Diary\research-B2\sources-ledger.md (also events-by-date.md key M1-M21, maps-catalog.csv). Credit lines: West Point maps = United States Military Academy Department of History; Universal newsreels via NARA; Commons files per their listed licence.
+

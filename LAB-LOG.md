@@ -104,3 +104,50 @@ Clips: 708 (T1 diacritics + T2 rule-based respelling for Polish-origin names; T2
 - Whisper heard names mangled even in v3: "Waltzack and Miller" (Walczak, Miler), "Gigand as" (Gigondas/Gigadas), "Stacey Seal" (Ste Cecile), "Grzesi Skowiak", "Kruczynski" ok. Confirms the need for the pronunciation lexicon.
 - PL tone test on brokkr (both GPUs in parallel, 13 chunks, 1,456 chars, same March entries; ref_pl transcript from Whisper is imperfect: "31 grudnia ... O!"): plain 199 s, ultimate 216 s (Pascal, one GPU each). Files: tone_out\tone_pl_plain.mp3, tone_pl_ultimate.mp3. Awaiting Jim's ear.
 - Pipeline fix notes: merge date-only lines into next entry; tail check per chunk; ultimate cloning = baseline candidate for EN pending PL verdict.
+
+Backup note (02:25): milestone backup committed 7f73fec; NAS robocopy (D:\Claude -> X:\Journals-Project\D-Claude, /MT:8, excludes only __pycache__ and .venv) still running after 35 min because the lab folder now adds ~52 GB of re-downloadable material (hf model cache 24 GB, five env-* venvs ~26 GB, ditto checkpoints 2.2 GB). The brokkr copy and git push follow it in the script. Suggest excluding lab\hf, lab\env-*, lab\ditto-talkinghead\checkpoints from backup.ps1 (Jim's decision; not edited).
+
+## 2026-11-15 backup prune
+Deleted from NAS (X:\Journals-Project\D-Claude) and brokkr (~/diary-backup/D-Claude) copies: lab/hf, lab/env-* (chatterbox, ditto, moss, score, voxcpm), lab/ditto-talkinghead/checkpoints. Now excluded by tools/backup.ps1. Originals on Loki untouched. brokkr disk after: 67G used of 1.9T.
+
+## 2026-11-15 names review done
+Jim's picks for review pages 1-7 saved as lab\lexicon_names.json (388 entries; built via lab\mk_lexicon*.py from lab\picks_page*.txt). Open: Grześkowiak respelling, G-RZ sound test (Grzyb, Skrzypek, Grzegorzewski, Brzozowski), Hankiewicz/Sikorski option-1-vs-hint check, Carpiagne variants, Orange needs context mark in applier.
+
+## 2026-11-15 layout decision
+Jim: oval (soft mask) preferred over full square crop; Ditto replaces old lip animation; Ditto full-time on screen is feasible (~2.7x realtime).
+Jim confirmed: Ditto replaces the old mouth-only lip animation (head mobility is the deciding factor).
+
+## 2026-11-15 voice decision (EN)
+Jim LIKES English read through the Polish-voice reference (Polish-accented English, grandfather's voice). Picked seed 1235 variants for chunks 0,1,7. Chunk 3 garbled after 'parish priest' in ALL clips (hymn title + parenthetical) - fix via hymn lexicon entry. English abbreviations must expand: 'Ste. Cecile' -> 'Saint Cecile'.
+
+## 2026-11-16 (Jim, listening notes)
+- Period-FX presets (pipeline\period_fx.py) judged good: add a vintage layer and tame the baritone's bassiness. Plan: use degrees of treatment as scene context - lightest (L) for barracks/safety, heavier (M) for travel/outdoors/field (H kept in reserve). Assumed mapping L/M for Jim's '1/2' - confirm.
+- Older portrait (WA0005) rejected for Ditto: off-axis gaze, eyes don't move; younger portrait (WA0003/bust.jpg) chosen, also fits present-tense diary.
+- 'kh' start artifact still audible, especially before incompatible sounds; mirror-image of the G-RZ problem (soft g + sh/zh not coupling). Trim-to-first-word detector (Whisper timestamps) did not isolate it; energy detector only cut 2/13 chunks in the 2-min sample.
+- Breath-before-long-sentence idea queued for trial (synthetic breath variant rendered, B2).
+- 2026-11-16 emotion cues: little audible difference to Jim, more artifacts; ultimate+cue reads the cue aloud; exciting free cue liked, happy cue shifts accent (Japanese-sounding). DECISION: parked - revisit only after other work; default plan is faithful voice + period FX.
+
+## 2026-11-16 (evening) status
+- Polish normalizer: eight Morfeusz-revealed case fixes applied (pl_text.py); Morfeusz agreement 354/382 = 92.7%; no Ep1 chunk text changed, so tone_out\ep01_pl_v2.mp3 (112/113 chunks, 21.6 min; e01pl057 'Schallim' missing, likely Whisper false alarm) stands. Sent to Jim. No period FX applied yet.
+- Jim: the audio starts with the 'kh' artifact on chunk 1; he finds it funny and may want it kept. Decide keep/cut when assembling final.
+- FX mapping (Jim): preset L = barracks/safety, M = travel/outdoors; H reserved. Breath-before-long-sentences still undecided.
+- Ep1 EN rebuild still waits on Jim's picks: hymn (audition_en_fix.html), G-RZ (audition_grz.html), Cymerman 'Symerman'; 17 failed chunks need lead-in method with an English lead word + digit-tolerant checker; strip '(photograph)' and '/signed/' placeholders.
+- Video composition for Ep1 (started): research-B2 holds CATALOG ONLY (maps-catalog.csv 38 rows, ~25 for Ep1; events-by-date 32 Ep1 events; M1-M21 media key). On disk: newsreel\ (3 mp4: Universal 803, 807, USHMM War Dept bulletin 48). Gaps with no authoritative media: Chelm/Luck raids, Romanian crossing, Bucharest, Yugoslavia-Italy train, sandbagged Paris, Dec 1939 Coetquidan visit.
+- Jim to-dos: USMA licence confirm for West Point atlas maps; Commons PD policy decision; hand-check IWM items (HU 30523, HU 109706, HU 128179, 205039122, album 205409289); pick newsreel opener; optional scans after Thanksgiving.
+- Proposed next step (awaiting Jim's go): Ep1 shot list = Whisper-timestamp the PL audio per page/event, map to storyboard slots (0:12, 2:50, 4:46, 6:40, 7:28, 13:56, 16:26, 20:52, 25:51), maps, stills, events table; treatments: oval avatar over notebook page / map with route marker / archival media; flag gaps.
+
+## 2026-11-16 (late) Jim's v2b listening notes and fixes
+- Overall impression EXCELLENT. 'kh' at chunk starts (4:14, 4:29, 5:01, 5:15, 6:57, 8:26, 9:04, 9:14, 9:29, 10:00, 15:17, 15:36, 21:10, 21:39) were in v2b; 64 chunks without lead-in were re-rendered with lead-in in v3 (ep01_pl_v2.mp3, 22:29) - to verify by ear.
+- Fixed in normalizer (pl_text.py): Chelm -> 'Helm' (soft h, Jim's ear); 'sp[osob' bracket typo; 'z gener.' -> 'z generalem' (the 10:10 cut-off was also because chunk e01pl057 'Schallim' had been dropped from the build); 'P.Z.L.' -> 'Pe Zet El.'; slash dates like 15/XII/1939 now end with 'roku' (16:58 garble was a dangling ' .'); stray ' .' cleanup; e01pl025 had been excluded by a first-word false alarm and is now included (check by ear).
+- Photo captions (e.g. 16:23 left-to-right naming of a photograph): keep the photo on screen while spoken; need text-to-notebook-image correlation (Images\1-x.jpg); if the photo is missing, omit the caption from the video.
+- Lists of consecutive empty days ('20th, 21st, 22nd nothing of note') stay: Jim likes the sense of idle time passing.
+- Terminology research: research-B2\sources-ledger.md (credits ledger); next = scan diary for abbreviations and cross-check against T1-T3 sources.
+
+## 2026-11-16 Lessons and conclusions (consolidated)
+- Job texts are FROZEN normalized snapshots (jobs\ep01_pl2.json). Changing pl_text.py does nothing until retext.py compares normalize(raw from ep01_pl.json) with the job text; run `retext.py` to list, `retext.py --apply` to update, move old wavs, reset status, set lead "Tak.", rerun run_pl2.ps1. ep1_chg.py only tests idempotence of normalize on already-normalized text and can miss changes.
+- Every audible "kh" was a chunk start without the lead-in; the lead-in method on all chunks fixed it (Jim: v3 sounds perfect).
+- A chunk that fails the automatic check is dropped from the concat and leaves an audible cut-off (e01pl057 'Schallim' -> sentence ended at 'gener'; e01pl025 'Stamtad'). Whisper first-word mismatches on respelled names are usually false alarms: list excluded chunks and decide by ear instead of silently dropping.
+- Normalizer additions today: baon -> batalion (all forms), Panc. -> pancerny by case, roman unit numbers -> ordinals, "pod dow." -> "pod dowodztwem", "N-go" ordinals, Zamk. -> Zamkowa, Otwock -> Otfotsk, Chelm -> Helm, "z gener." -> generalem, P.Z.L. -> Pe Zet El, "sp[osob" bracket typo, slash dates end with "roku", stray " ." removed.
+- Research method: Google AI Overviews are leads only (invented 'Dtwo', 'Dca', capitalization rule, bpanc). Real sources: Zolnierze Niepodleglosci abbreviation list, Ostrycharz ranks/abbreviations (opened via the browser; fetch tool is robots-blocked), polishforcesinbritain.info table. Google Search/Scholar worked in the built-in browser without CAPTCHA; parallel preview_start calls collide into one tab, use tabs_create per tab. Ledger: research-B2\sources-ledger.md.
+- Ops: pl2.log is held open by the pipeline (Add-Content in a pipe): poll with process counts and mp3 timestamps instead; keep tool waits under ~80 s; weekly token allocation was 78% on 2026-11-16 (today about 10%): keep tool polling and web research lean.
+- Backup script: tools\backup.cmd (excludes models, envs and caches).

@@ -1,0 +1,48 @@
+<!doctype html><meta charset=utf-8><title>Jim's to-do (Diary) 2026-11-15</title>
+<style>body{font:15px system-ui,sans-serif;max-width:860px;margin:18px auto;padding:0 12px;line-height:1.45}h1{font-size:22px}h2{margin:22px 0 4px;font-size:17px;border-bottom:1px solid #8886}li{margin:7px 0;list-style:none}.s{color:#888;font-size:12.5px}code{background:#8882;padding:1px 4px;border-radius:3px;font-size:12px}a{word-break:break-all}input{margin-right:8px}</style>
+<h1>Diary: your to-do list</h1><p class=s>Open this page in Chrome (File &gt; Open, or paste its path: <code>D:\Claude\Projects\Diary\JIM-TODO.html</code>). Links open the files straight from disk. Ticks are remembered in this browser. Time estimates are rough guesses.</p>
+<div id=app></div>
+<script>
+const P='file:///D:/Claude/';
+const L=(t,p)=>'<a href="'+P+p+'" target=_blank>'+t+'</a> <code>D:\\Claude\\'+p.replace(/\//g,'\\')+'</code>';
+const S=[
+['1. Listen and decide (new this weekend)',[
+ ['Name review pages (pick diacritics vs respelling per name). Start with 1 and 2, they cover the most frequent names. Press <b>Make code</b> at the bottom of each page and paste the text into chat. ~10 min per page.',
+  [1,2,3,4,5,6].map(i=>L('names_review_'+i,'Assets/Diary/lab/review/names_review_'+i+'.html')).concat([L('names_review_7 (foreign places, one play button each)','Assets/Diary/lab/review/names_review_7.html')])],
+ ['Polish voice: which clip sounds right and consistent? Plain (reference clip only) vs ultimate (reference + transcript). ~5 min.',[L('tone_pl_plain.mp3','Assets/Diary/lab/tone_out/tone_pl_plain.mp3'),L('tone_pl_ultimate.mp3','Assets/Diary/lab/tone_out/tone_pl_ultimate.mp3')]],
+ ['English long video, new voice settings: tone consistent now? any odd sounds or head-motion glitches? Compare with the earlier long render. ~10 min.',[L('NEW ditto_ep03_long_en_v3_C.mp4','Assets/Diary/lab/video/ditto_ep03_long_en_v3_C.mp4'),L('audio only: ep03_long_en_v3.mp3','Assets/Diary/lab/tone_out/ep03_long_en_v3.mp3'),L('earlier: ditto_ep03_long_en_C.mp4','Assets/Diary/lab/video/ditto_ep03_long_en_C.mp4')]],
+ ['Optional: earlier comparison material (tone variants v0-v3 are mp3 files in the same folder; names test with key).',[L('tone_out folder','Assets/Diary/lab/tone_out/'),L('names_test.mp3','Assets/Diary/lab/tone_out/names_test.mp3'),L('names_test_key.txt','Assets/Diary/lab/tone_out/names_test_key.txt')]]
+]],
+['2. Decisions needed from you',[
+ ['Voice baseline for Polish and English (ultimate cloning = reference clip + its transcript looks best in English; Polish pending your ear).',[]],
+ ['Avatar layout: Ditto gives a 512x512 full-face crop. Keep it in the feathered oval narrator layout, or use it larger? Does Ditto replace the mouth-only lip animation entirely? Compare the old approach on the same Polish audio:',[L('lipanim_pl_voxcpm.mp4 (mouth-only)','Assets/Diary/lab/video/lipanim_pl_voxcpm.mp4'),L('ditto_pl_voxcpm_C_steps100.mp4 (Ditto C)','Assets/Diary/lab/video/ditto_pl_voxcpm_C_steps100.mp4'),L('ditto_en_voxcpm_C_steps100.mp4 (Ditto C, EN)','Assets/Diary/lab/video/ditto_en_voxcpm_C_steps100.mp4')]],
+ ['Python environments: keep separate isolated environments (recommended) but move them and the model cache out of D:\\Claude to e.g. D:\\AI\\ (I recreate them with uv; nothing to back up). OK?',[]],
+ ['Backup script now excludes lab model cache, environments and Ditto checkpoints (done, original saved as tools\\backup.ps1.2026-11-15.bak). Optional cleanup: the ~52 GB already copied to the NAS and brokkr could be deleted.',[]],
+ ['Later: GPU purchase (decide after we see how the render queue looks).',[]]
+]],
+['3. Carry-over items from earlier this week',[
+ ['Confirm the English sentence splits I made for three pages (p2-33, p2-48, p2-50).',[L('prep-EN-splits.md','Projects/Diary/Episodes/prep-EN-splits.md')]],
+ ['Answer the Polish prep flags for Episodes 2-4 (blocks PL Ep2-4 audio).',[L('prep-PL-flags-ep2-4.md','Projects/Diary/Episodes/prep-PL-flags-ep2-4.md')]],
+ ['Review pages for glitch tagging (keys A / W / P tag problems).',[L('Ep3 review','Assets/Diary/review/ep03/review.html'),L('Ep4 review','Assets/Diary/review/ep04/review.html'),L('Ep1 demo','Assets/Diary/review/ep01-demo/review.html')]],
+ ['Still open: EN deepen confirmation (files in Assets\\Diary\\tts\\audition-en-deepen), blink v11 freeze, oval placement, period FX preset, newsreel and lexicon items.',[]]
+]],
+['4. Parked on purpose',[
+ ['Notebook 2 OCR and the local-model comparison (after Notebook 1 videos and the next Fable window). Note is in the Hub task list.',[]],
+ ['Notebook 1 scan vs typed page inventory (first step when OCR work resumes).',[]]
+]],
+['5. Reference',[
+ ['Running log of every model test, timings and your listening notes.',[L('LAB-LOG.md','Projects/Diary/LAB-LOG.md')]],
+ ['Old A/B pages (audio may not play inside the Claude viewer, should work in Chrome).',[L('ab_v2_pl_en.html','Assets/Diary/lab/ab/ab_v2_pl_en.html'),L('ab_v2_pl_stress60.html','Assets/Diary/lab/ab/ab_v2_pl_stress60.html')]]
+]],
+['6. Added 2026-11-16 (later, after the overnight run)',[
+ ['Review the overnight samples: emotion-cue audition, Polish v2 sample (with oval video), English hymn/Saint fixes, G-RZ splice page, and the Episode 1 PL and EN candidate audio. Pages: Assets/Diary/lab/review/audition_*.html.',[]],
+ ['Compare Ditto on the younger vs older portrait (30 s clip, same audio). Likeness check by eye; show relatives if possible.',[]],
+ ['Look up the unresolved camp names by hand in Lista Krzystka (listakrzystka.pl): Hofbauer, Ropelewski, Segda, Jaroński, Krosnowski, Tyszka, Gulin and the camp NCOs. The research agent could not open the database.',[L('references-for-descriptions.md','Assets/Diary/research-B2/references-for-descriptions.md')]],
+ ['Decide: Commons licence check + USMA licence query for West Point maps; Episode 1 end point (17 Jan 1940?); any second-notebook text.',[L('research-B2 folder','Assets/Diary/research-B2/')]],
+ ['Optional: scan other family photos of Stefan (600 dpi, no auto-enhance) after Thanksgiving, for likeness checks on portrait restoration.',[]]
+]]];
+let h='',n=0,st={};try{st=JSON.parse(localStorage.getItem('jt')||'{}')}catch(e){}
+S.forEach(sec=>{h+='<h2>'+sec[0]+'</h2><ul>';sec[1].forEach(it=>{const id='c'+(n++);h+='<li><label><input type=checkbox id='+id+(st[id]?' checked':'')+'>'+it[0]+'</label>'+(it[1].length?'<div class=s>'+it[1].join('<br>')+'</div>':'')+'</li>'});h+='</ul>'});
+document.getElementById('app').innerHTML=h;
+document.getElementById('app').addEventListener('change',e=>{st[e.target.id]=e.target.checked;try{localStorage.setItem('jt',JSON.stringify(st))}catch(x){}});
+</script>

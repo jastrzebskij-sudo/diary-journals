@@ -1,4 +1,4 @@
-<#
+﻿<#
  Milestone backup: commit -> NAS mirror -> brokkr copy -> git push.
  Usage: powershell -File tools\backup.ps1 -Message "milestone: what changed" [-NoPush] [-SkipNas] [-SkipBrokkr] [-Full]
  Write-only copies: nothing is ever deleted on the destinations (no /MIR, no rsync --delete).
@@ -22,7 +22,7 @@ if ($LASTEXITCODE -ne 0) {
 } else { L "nothing to commit" }
 if (-not $SkipNas) {
   if (Test-Path "X:\Journals-Project") {
-    robocopy $src "X:\Journals-Project\D-Claude" /E /XO /MT:8 /R:1 /W:1 /NP /NFL /NDL /NJH /XD "__pycache__" ".venv" | Select-Object -Last 8 | ForEach-Object { if ($_.Trim()) { L "nas: $_" } }
+    robocopy $src "X:\Journals-Project\D-Claude" /E /XO /MT:8 /R:1 /W:1 /NP /NFL /NDL /NJH /XD "__pycache__" ".venv" "D:\Claude\Assets\Diary\lab\hf" "D:\Claude\Assets\Diary\lab\env-*" "D:\Claude\Assets\Diary\lab\ditto-talkinghead\checkpoints" | Select-Object -Last 8 | ForEach-Object { if ($_.Trim()) { L "nas: $_" } }
     if ($LASTEXITCODE -ge 8) { L "NAS ROBOCOPY ERROR code $LASTEXITCODE" } else { L "nas OK (robocopy code $LASTEXITCODE)" }
   } else { L "NAS NOT REACHABLE (X:\Journals-Project)" }
 }
@@ -30,7 +30,7 @@ if (-not $SkipBrokkr) {
   $newer = ""
   if ((Test-Path $stampFile) -and -not $Full) { $t = (Get-Content $stampFile -Raw).Trim(); $newer = "--newer-mtime `"$t`"" }
   ssh brokkr-agent "mkdir -p ~/diary-backup/D-Claude"
-  $cmd = "tar.exe -C $src $newer --exclude=__pycache__ --exclude=.venv --exclude=`"Music Download`" -cf - . | ssh brokkr-agent `"tar -C ~/diary-backup/D-Claude -xf -`""
+  $cmd = "tar.exe -C $src $newer --exclude=__pycache__ --exclude=.venv --exclude=*/lab/hf --exclude=*/lab/env-* --exclude=*/lab/ditto-talkinghead/checkpoints --exclude=`"Music Download`" -cf - . | ssh brokkr-agent `"tar -C ~/diary-backup/D-Claude -xf -`""
   cmd /c $cmd
   if ($LASTEXITCODE -eq 0) { $start.AddMinutes(-1).ToString("yyyy-MM-dd HH:mm:ss") | Set-Content $stampFile; L "brokkr OK" } else { L "BROKKR COPY ERROR code $LASTEXITCODE" }
 }

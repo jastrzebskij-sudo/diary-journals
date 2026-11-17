@@ -1,4 +1,4 @@
----
+﻿---
 title: Diary pipeline spec
 status: v0.3 (v0.2 approved; locked-in approach 2026-11-13)
 created: 2026-11-13
@@ -6,6 +6,9 @@ updated: 2026-11-13
 owner: Jim
 tags: [diary, pipeline, spec, workstream-C]
 ---
+> **2026-11-16 NOTE:** the brokkr orchestrator / SadTalker / XTTS design below is SUPERSEDED. Current stack and state are in STATUS-C.md (section '2026-11-16 CURRENT STATE') and LAB-LOG.md. Kept for history.
+
+
 # Diary pipeline spec (v0.3)
 
 Related: [[Diary/Vision]] · [[Diary/README-C-pipeline]] (current implementation) · [[Diary/STATUS-C]] · [[Diary/C-tasks]] · [[Diary/Credits]] · [[Hub/diary-tasks]]
@@ -264,3 +267,4 @@ Acceptance numbers are set from what the sample measures, then frozen with the r
 
 ## 15. Conventions
 Tracking and hand-offs are md files under `Claude\Projects`, viewed in Obsidian. Auto-written files (`STATUS-PIPELINE.md`) are marked as generated and never hand-edited. Decisions go into `NOTES.md` as `[C] date DECISION (Jim):` lines, as today.
+
