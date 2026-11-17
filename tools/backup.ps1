@@ -22,7 +22,7 @@ if ($LASTEXITCODE -ne 0) {
 } else { L "nothing to commit" }
 if (-not $SkipNas) {
   if (Test-Path "X:\Journals-Project") {
-    robocopy $src "X:\Journals-Project\D-Claude" /E /XO /MT:8 /R:1 /W:1 /NP /NFL /NDL /NJH /XD "__pycache__" ".venv" "D:\Claude\Assets\Diary\lab\hf" "D:\Claude\Assets\Diary\lab\env-*" "D:\Claude\Assets\Diary\lab\ditto-talkinghead\checkpoints" | Select-Object -Last 8 | ForEach-Object { if ($_.Trim()) { L "nas: $_" } }
+    robocopy $src "X:\Journals-Project\D-Claude" /E /XO /MT:8 /R:1 /W:1 /NP /NFL /NDL /NJH /XD "__pycache__" ".venv" "D:\Claude\Assets\Diary\lab\hf" "env-*" "D:\Claude\Assets\Diary\lab\ditto-talkinghead\checkpoints" | Select-Object -Last 8 | ForEach-Object { if ($_.Trim()) { L "nas: $_" } }
     if ($LASTEXITCODE -ge 8) { L "NAS ROBOCOPY ERROR code $LASTEXITCODE" } else { L "nas OK (robocopy code $LASTEXITCODE)" }
   } else { L "NAS NOT REACHABLE (X:\Journals-Project)" }
 }
@@ -36,3 +36,4 @@ if (-not $SkipBrokkr) {
 }
 if (-not $NoPush) { git push origin main 2>&1 | ForEach-Object { L "git: $_" } }
 L "== backup end ($([int]((Get-Date)-$start).TotalSeconds) s)"
+
